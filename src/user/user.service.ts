@@ -4,6 +4,8 @@ import { Repository } from "typeorm";
 import { CreateUserDto } from "@app/user/dto/createUser.dto";
 import { UserEntity } from "@app/user/user.entity";
 import { UserResponseInterface } from "@app/user/types/userResponse.interface";
+import { JWT_SECRET } from "@app/config";
+import { sign } from "jsonwebtoken";
 
 @Injectable()
 
@@ -35,13 +37,28 @@ export class UserService {
   return await this.userRepository.save(newUser);
 };
 
+generateJwt(user: UserEntity): string {
+  return sign({
+    id: user.id,
+    username: user.username,
+    email: user.email,
+  }, 
+    JWT_SECRET,
+  );
+};
+
 
   buildUserResponse(user: UserEntity): UserResponseInterface {
     return {
       user: {
-        ...user
+        ...user,
+        token: this.generateJwt(user)
       }
     };
  };
- 
+
+ async findById(id: number): Promise<UserEntity> {
+   return this.userRepository.findOne({ where: {id} });
+ }
+
 } 
