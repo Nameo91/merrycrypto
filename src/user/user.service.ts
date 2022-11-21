@@ -6,6 +6,8 @@ import { UserEntity } from "@app/user/user.entity";
 import { UserResponseInterface } from "@app/user/types/userResponse.interface";
 import { JWT_SECRET } from "@app/config";
 import { sign } from "jsonwebtoken";
+import { LoginUserDto } from "./dto/loginUser.dto";
+import { compare } from 'bcrypt';
 
 @Injectable()
 
@@ -37,6 +39,39 @@ export class UserService {
   return await this.userRepository.save(newUser);
 };
 
+async loginUser(loginUserDto: LoginUserDto): Promise<UserEntity> {
+ 
+  const user = await this.userRepository.findOne({
+    where: {
+      email: loginUserDto.email
+    },
+    select: ['id', 'username', 'email', 'password']
+  });
+
+  if(!user) {
+    throw new HttpException(
+      'Login details are incorrect', 
+      HttpStatus.UNPROCESSABLE_ENTITY,
+    );
+  }
+
+  const isPasswordCorrect = await compare(loginUserDto.password, user.password);
+
+  if (!isPasswordCorrect) {
+    throw new HttpException(
+      'Login details are incorrect', 
+      HttpStatus.UNPROCESSABLE_ENTITY,
+    );
+  }
+  
+  delete user.password;
+  return user;
+};
+
+async findById(id: number): Promise<UserEntity> {
+  return this.userRepository.findOne({ where: {id} });
+}
+
 generateJwt(user: UserEntity): string {
   return sign({
     id: user.id,
@@ -47,7 +82,6 @@ generateJwt(user: UserEntity): string {
   );
 };
 
-
   buildUserResponse(user: UserEntity): UserResponseInterface {
     return {
       user: {
@@ -56,9 +90,5 @@ generateJwt(user: UserEntity): string {
       }
     };
  };
-
- async findById(id: number): Promise<UserEntity> {
-   return this.userRepository.findOne({ where: {id} });
- }
 
 } 

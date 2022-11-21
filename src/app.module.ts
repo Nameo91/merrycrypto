@@ -4,7 +4,7 @@ import { AppController } from '@app/app.controller';
 import { AppService } from '@app/app.service';
 import config from '@app/ormconfig';
 import { UserModule } from '@app/user/user.module';
-import { AuthMiddleware } from './user/middlewares/auth.middleware';
+import { AuthMiddleware } from '@app/user/middlewares/auth.middleware';
 
 @Module({
   imports: [TypeOrmModule.forRoot(config), UserModule],
