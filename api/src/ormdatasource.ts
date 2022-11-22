@@ -1,4 +1,4 @@
 import { DataSource } from "typeorm";
-import config from "nestJS/src/ormconfig";
+import config from "@app/ormconfig";
 
 export default new DataSource(config);

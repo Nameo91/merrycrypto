@@ -1,4 +1,4 @@
-import { ExpressRequest } from "../../types/expressRequest.interface";
+import { ExpressRequest } from "@app/types/expressRequest.interface";
 import { CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable } from "@nestjs/common";
 
 @Injectable()
