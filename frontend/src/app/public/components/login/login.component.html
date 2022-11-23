@@ -1,37 +1,36 @@
-<div class="parent clearfix">
-  <div class="bg-illustration">
-    <img src="https://i.ibb.co/Pcg0Pk1/logo.png" alt="logo">
+<div class="container">
 
-    <div class="burger-btn">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div>
+    <div class="register">
+      <a [routerLink]="['../register']">Go to Register</a>
     </div>
 
+    <div>
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="form">
+
+            <mat-form-field>
+              <input type="email" matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
+              <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input type="password" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
+            </mat-form-field>
+
+            <mat-hint *ngIf="!form.valid"><small>Please fill out all needed information</small></mat-hint>
+
+            <div class="button">
+              <button mat-button type="submit" [disabled]="!form.valid">Login</button>
+            </div>
+
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-  
-  <div class="login">
-    <div class="container">
-      <h1>Login to access to<br />your account</h1>
-  
-      <div class="login-form">
-        <form action="">
-          <input type="email" placeholder="E-mail Address">
-          <input type="password" placeholder="Password">
-
-          <div class="remember-form">
-            <input type="checkbox">
-            <span>Remember me</span>
-          </div>
-          <div class="forget-pass">
-            <a href="#">Forgot Password ?</a>
-          </div>
-
-          <button type="submit">LOG-IN</button>
-
-        </form>
-      </div>
-  
-    </div>
-    </div>
 </div>
