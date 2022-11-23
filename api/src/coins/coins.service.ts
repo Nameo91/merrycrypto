@@ -21,11 +21,29 @@ export class PriceService {
       console.log(json.Data)
       const coins = json.Data
       
-      function relevantData(coin) {
-        return [coin.CoinInfo.Name, coin.DISPLAY.USD.MKTCAP, coin.DISPLAY.USD.CHANGEPCT24HOUR, coin.DISPLAY.USD.PRICE]
+      // function relevantData(coin) {
+      //   return [coin.CoinInfo.Name, coin.DISPLAY.USD.MKTCAP, coin.DISPLAY.USD.CHANGEPCT24HOUR, coin.DISPLAY.USD.PRICE]
+      // }
+
+      interface CryptoCoin {
+        name: any,
+        price: any,
+        mc: any,
+        dc: any
+       }
+
+      function specificData(coin) {
+        const object: CryptoCoin = {
+          name: coin.CoinInfo.Name,
+          price: coin.DISPLAY.USD.PRICE,
+          mc: coin.DISPLAY.USD.MKTCAP,
+          dc: coin.DISPLAY.USD.CHANGEPCT24HOUR
+        }
+        return object
       }
 
-      const finalData = coins.map(relevantData)
+      //const finalData = coins.map(relevantData)
+      const finalData = coins.map(specificData)
       //http://localhost:3000/coins?from=BTC&to=USD
     return finalData
   }
