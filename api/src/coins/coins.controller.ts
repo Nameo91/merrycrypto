@@ -1,13 +1,13 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { PriceService } from './coins.service';
+import { CoinService } from './coins.service';
 
 @Controller('coins')
-export class PriceController {
-  constructor(private readonly priceService: PriceService) {}
+export class CoinController {
+  constructor(private readonly coinService: CoinService) {}
 
   @Get()
   async get(@Query('to') to: string): Promise<{ coins: any }> {
-    let coins = await this.priceService.getPrice(to);
+    let coins = await this.coinService.getCoins(to);
     return { coins };
   }
 }
