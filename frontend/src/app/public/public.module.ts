@@ -9,11 +9,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { TableComponent } from './components/table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
+    LoginComponent,
     RegisterComponent,
-    LoginComponent
+    HomepageComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +30,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule 
+    MatIconModule,
+    MatTableModule,
+    MatSortModule
   ]
 })
 export class PublicModule { }
