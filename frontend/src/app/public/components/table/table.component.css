@@ -1,8 +1,6 @@
 table {
-    width: 100%;
-  }
-  
-  th.mat-sort-header-sorted {
-    color: black;
+    height: 200px;
+    width: 10px;
+    padding: 10px;
   }
   
