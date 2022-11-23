@@ -16,5 +16,14 @@ export class AuthenticationService {
         return token;
       })
     )
-  }
+  };
+
+  register(user: Object = {}, email: string, password: string, username: string) {
+    return this.http.post<any>("http://localhost:3000/api/users", {user: {username, email, password}}).pipe(
+      map((token) => {
+        localStorage.setItem('token', token.user.token);
+        return token;
+      })
+    )
+  };
 }

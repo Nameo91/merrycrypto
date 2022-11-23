@@ -3,24 +3,25 @@ import { FormControl, FormGroup, Validators, AbstractControl, FormBuilder, Valid
 import { AuthenticationService } from 'src/app/src/app/services/authentication.service';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 class CustomValidators {
   static passwordContainsNumber(control: AbstractControl): ValidationErrors {
     const regex= /\d/;
 
     if(regex.test(control.value) && control.value !== null) {
-      return null;
+      return null as any;
     } else {
       return {passwordInvalid: true};
     }
   }
   
   static passwordsMatch (control: AbstractControl): ValidationErrors {
-    const password = control.get('password').value;
-    const confirmPassword = control.get('passwordConfirm').value;
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('passwordConfirm')?.value;
 
     if((password === confirmPassword) && (password !== null && confirmPassword !== null)) {
-      return null;
+      return null as any;
     } else {
       return {passwordsNotMatching: true};
     }
@@ -73,10 +74,23 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.minLength(3)
       ]],
-      confirmPassword: [null, [Validators.required]]
-    },{
-       validators: CustomValidators.passwordsMatch
-    })
+      passwordConfirm: [null, [Validators.required]]
+    }, {
+      validators: CustomValidators.passwordsMatch
+   })
+  }
+
+  onSubmit(){
+    if(this.registerForm.invalid) {
+      return;
+    }
+    const email = this.registerForm.value.email;
+    const password = this.registerForm.value.password;
+    const username = this.registerForm.value.username;
+
+    this.authService.register("user", email, password, username).pipe(
+      map(user => this.router.navigate(['login']))
+    ).subscribe(data => console.log(data));
   }
 
 }
