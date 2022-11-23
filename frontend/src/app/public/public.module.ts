@@ -8,15 +8,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { HomepageComponent } from './homepage/homepage.component';
-import { TableComponent } from './components/table/table.component'
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    HomepageComponent,
-    TableComponent
+    HomepageComponent
   ],
   imports: [
     CommonModule,
