@@ -26,18 +26,18 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Enter your password</mat-label>
-              <input [type]="passwordHide ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
-              <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
-                <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <input [type]="passwordHideOne ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
+              <button mat-icon-button matSuffix (click)="passwordHideOne = !passwordHideOne" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideOne">
+                <mat-icon>{{passwordHideOne ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Confirm your password</mat-label>
-              <input type="password" matInput placeholder="Password confirmation" formControlName="passwordConfirm">
-              <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
-                <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <input [type]="passwordHideTwo ? 'password' : 'text'" matInput placeholder="Password confirmation" formControlName="passwordConfirm">
+              <button mat-icon-button matSuffix (click)="passwordHideTwo = !passwordHideTwo " [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideTwo">
+                <mat-icon>{{passwordHideTwo  ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field>
 
@@ -48,7 +48,7 @@
             </mat-error>
 
             <div class="button">
-              <button mat-button type="submit" [disabled]="!registerForm.valid">Login</button>
+              <button mat-button type="submit" [disabled]="!registerForm.valid">Create an account</button>
             </div>
 
           </form>

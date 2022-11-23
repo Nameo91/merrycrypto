@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) { }
 
-  passwordHide = true;
+  passwordHideOne = true;
+  passwordHideTwo = true;
 
   get email(): FormControl {
     return this.registerForm.get('email') as FormControl;
@@ -63,7 +64,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      name: [null, [Validators.required]],
       username: [null, [Validators.required]],
       email: [null, [
         Validators.required,
@@ -84,6 +84,7 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.invalid) {
       return;
     }
+
     const email = this.registerForm.value.email;
     const password = this.registerForm.value.password;
     const username = this.registerForm.value.username;
