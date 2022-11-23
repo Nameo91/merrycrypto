@@ -13,13 +13,15 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    TableComponent
+    TableComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
