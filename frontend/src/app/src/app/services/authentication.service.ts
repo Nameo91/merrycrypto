@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +17,8 @@ export class AuthenticationService {
       map((token) => {
         localStorage.setItem('token', token.user.token);
         return token;
-      })
+      }),
+      catchError(this.handleError)
     )
   };
 
@@ -23,7 +27,13 @@ export class AuthenticationService {
       map((token) => {
         localStorage.setItem('token', token.user.token);
         return token;
-      })
+      }),
+      catchError(this.handleError)
     )
   };
+
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = error.error.message
+    return throwError(errorMessage);
+  }
 }

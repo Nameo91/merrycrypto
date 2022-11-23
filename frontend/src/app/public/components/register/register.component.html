@@ -47,6 +47,10 @@
               <small>Passwords are not matching</small>
             </mat-error>
 
+            <div id="register-error-message">
+              <h5>{{errormessage}}</h5>
+            </div>
+
             <div class="button">
               <button mat-button type="submit" [disabled]="!registerForm.valid">Create an account</button>
             </div>
