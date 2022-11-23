@@ -1,1 +1,28 @@
-<h1>Table linking to homepage</h1>
+<table mat-table [dataSource]="crypto" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="mc">
+    <th mat-header-cell *matHeaderCellDef> Market Cap </th>
+    <td mat-cell *matCellDef="let element"> {{element.mc}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dc">
+    <th mat-header-cell *matHeaderCellDef> 24hr </th>
+    <td mat-cell *matCellDef="let element"> {{element.dc}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

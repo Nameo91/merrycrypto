@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TableComponent } from './components/table/table.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ]
 })
 export class PublicModule { }
