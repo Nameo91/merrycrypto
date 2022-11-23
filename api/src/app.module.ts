@@ -5,11 +5,20 @@ import { AppService } from '@app/app.service';
 import config from '@app/ormconfig';
 import { UserModule } from '@app/user/user.module';
 import { AuthMiddleware } from '@app/user/middlewares/auth.middleware';
+import { ConfigModule } from '@nestjs/config';
+import { HttpModule } from '@nestjs/axios';
+import { PriceController } from './coins/coins.controller';
+import { PriceService } from './coins/coins.service';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), UserModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    TypeOrmModule.forRoot(config), 
+    UserModule,
+    ConfigModule.forRoot(),
+    HttpModule
+  ],
+  controllers: [AppController, PriceController],
+  providers: [AppService, PriceService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
