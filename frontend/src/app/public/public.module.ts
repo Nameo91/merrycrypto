@@ -9,12 +9,15 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { TableComponent } from './components/table/table.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
