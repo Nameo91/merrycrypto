@@ -7,12 +7,17 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { TableComponent } from './components/table/table.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomepageComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
