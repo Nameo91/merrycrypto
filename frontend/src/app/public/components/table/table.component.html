@@ -1,1 +1,38 @@
-<h1>Table linking to homepage</h1>
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Price">
+      Price
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+
+  <!-- Market Cap Column -->
+  <ng-container matColumnDef="mc">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Market Cap">
+      Market Cap
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.mc}} </td>
+  </ng-container>
+
+  <!-- Daily Change Column -->
+  <ng-container matColumnDef="dc">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Daily Change">
+      Daily Change
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.dc}}% </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
