@@ -1,26 +1,36 @@
-<table mat-table [dataSource]="crypto" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
 
-  <!-- Name Column -->
+  <!-- name Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
+      Name
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Price Column -->
   <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Price">
+      Price
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.price}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Market Cap Column -->
   <ng-container matColumnDef="mc">
-    <th mat-header-cell *matHeaderCellDef> Market Cap </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Market Cap">
+      Market Cap
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.mc}} </td>
   </ng-container>
 
+  <!-- Daily Change Column -->
   <ng-container matColumnDef="dc">
-    <th mat-header-cell *matHeaderCellDef> 24hr </th>
-    <td mat-cell *matCellDef="let element"> {{element.dc}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Daily Change">
+      Daily Change
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.dc}}% </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
