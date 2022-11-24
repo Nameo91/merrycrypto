@@ -11,7 +11,7 @@ import { CoinsService } from '../../../../app/coins.service'
 })
 
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['imageURL', 'name', 'price', 'mc', 'dc'];
+  displayedColumns: string[] = ['imageURL', 'name', 'price', 'mc', 'dc', 'favourite'];
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
