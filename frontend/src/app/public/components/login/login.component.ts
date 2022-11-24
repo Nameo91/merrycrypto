@@ -9,8 +9,8 @@ import { AuthenticationService } from 'src/app/src/app/services/authentication.s
 })
 
 export class LoginComponent {
-  loginForm!: FormGroup 
-  
+  loginForm!: FormGroup; 
+  errormessage: any;
   passwordHide = true;
 
   constructor(
@@ -36,6 +36,10 @@ export class LoginComponent {
   onSubmit() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
-    this.authService.signin("user", email, password).subscribe(data => console.log(data));
+    this.authService.signin("user", email, password).subscribe(
+      data => {console.log(data)},
+      error => {
+        this.errormessage = error
+      });
   }
 }

@@ -35,7 +35,8 @@ class CustomValidators {
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm!: FormGroup
+  registerForm!: FormGroup;
+  errormessage: any;
   
   constructor(
     private authService: AuthenticationService,
@@ -91,7 +92,12 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register("user", email, password, username).pipe(
       map(user => this.router.navigate(['login']))
-    ).subscribe(data => console.log(data));
+    ).subscribe(
+      data => console.log(data),
+      error => {
+        this.errormessage = error
+      }
+      );
   }
 
 }
