@@ -2,12 +2,14 @@
 
   <div>
     <div class="register">
-      <a [routerLink]="['../register']">Go to Register</a>
+      <a [routerLink]="['../register']">Go to Register</a><!-- might not need this either, should be in navbar -->
     </div>
 
     <div>
       <mat-card>
-        <mat-card-title>Login</mat-card-title>
+        <div class="login-text">
+          <mat-card-title>Login</mat-card-title>
+        </div>
         <mat-card-content>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
@@ -21,20 +23,20 @@
             <mat-form-field appearance="outline">
               <mat-label>Enter your password</mat-label>
               <input [type]="passwordHide ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
-              <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+              <button mat-icon-button matSuffix color="primary" (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
                 <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
               <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
             </mat-form-field>
 
-            <mat-hint *ngIf="!loginForm.valid"><small>Please fill out all needed information</small></mat-hint>
+            <mat-hint *ngIf="!loginForm.valid"><small class="needed-info">Please fill out all needed information</small></mat-hint>
 
             <div id="login-error-message">
               <h5>{{errormessage}}</h5>
             </div>
 
             <div class="button">
-              <button mat-button type="submit" [disabled]="!loginForm.valid">Login</button>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
             </div>
 
           </form>
