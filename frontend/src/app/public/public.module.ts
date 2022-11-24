@@ -13,6 +13,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { CoinComponent } from './components/coin/coin.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatSortModule } from '@angular/material/sort';
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    TableComponent
+    TableComponent,
+    CoinComponent
   ],
   imports: [
     CommonModule,

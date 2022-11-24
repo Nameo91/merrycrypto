@@ -2,6 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CoinsService } from '../../../../app/coins.service'
 
  @Component({
@@ -16,7 +17,11 @@ export class TableComponent implements OnInit {
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private coinsService: CoinsService, private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private coinsService: CoinsService,
+    private _liveAnnouncer: LiveAnnouncer,
+    private router: Router
+    ) {}
 
   ngOnInit(): void { 
     this.loadCoins();
@@ -40,6 +45,11 @@ export class TableComponent implements OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  };
+
+  navigateToCoin(row: any) {
+    let id = row.name;
+    this.router.navigateByUrl('coins/' + id);
   };
 
 }
