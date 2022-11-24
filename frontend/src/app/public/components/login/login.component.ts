@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/src/app/services/authentication.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +12,13 @@ import { AuthenticationService } from 'src/app/src/app/services/authentication.s
 
 export class LoginComponent {
   loginForm!: FormGroup; 
-  errormessage: any;
+  errorMessage: any;
   passwordHide = true;
 
   constructor(
     private authService: AuthenticationService,
     private formBuilder: FormBuilder,
+    private router: Router
     ) { }
   
   get email(): FormControl {
@@ -36,10 +39,11 @@ export class LoginComponent {
   onSubmit() {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
-    this.authService.signin("user", email, password).subscribe(
+    this.authService.signin("user", email, password).pipe(
+      map(token => this.router.navigate(['']))
+    ).subscribe(
       data => {console.log(data)},
-      error => {
-        this.errormessage = error
-      });
-  }
+      error => { this.errorMessage = error });
+  };
+
 }

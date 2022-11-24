@@ -10,7 +10,7 @@
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
-      Crypto
+      Name
     </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
@@ -34,7 +34,7 @@
      <!-- Daily Change Column -->
   <ng-container matColumnDef="dc">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Daily Change">
-      24hr Change
+      Daily Change
     </th>
     <td mat-cell *matCellDef="let element" [ngClass]="{'positive': element.dc>0, 'negative': element.dc<0 || element.dc==0}"> {{element.dc}}% </td>
   </ng-container>
