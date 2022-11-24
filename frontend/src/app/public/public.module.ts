@@ -12,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
