@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/src/app/services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  constructor(private router: Router, private authService: AuthenticationService) {}
+
+  navigateTo(value: string) {
+    this.router.navigate([value]);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate([''])
+  }
+
+  isLoggedIn():boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  onHomePage():boolean {
+    return this.router.url === '/';
+  }
+
+  onLoginPage() {
+    return this.router.url === '/login';
+
+  }
+
+  onRegisterPage() {
+    return this.router.url === '/register';
+  }
 
 }
