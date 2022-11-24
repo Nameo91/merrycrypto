@@ -29,11 +29,12 @@ export class CoinService {
         imageURL: any
        }
 
+
       function specificData(coin: any) {
         const coinObject: CryptoCoin = {
           name: coin.CoinInfo.Name,
-          price: coin.DISPLAY.USD.PRICE,
-          mc: coin.DISPLAY.USD.MKTCAP,
+          price: Number(coin.DISPLAY.USD.PRICE.replace(/[^0-9.-]+/g,"")),
+          mc: Number(coin.DISPLAY.USD.MKTCAP.replace(/[^0-9.-]+/g,"")),
           dc: coin.DISPLAY.USD.CHANGEPCT24HOUR,
           imageURL: coin.DISPLAY.USD.IMAGEURL
         }
