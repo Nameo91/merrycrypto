@@ -44,6 +44,14 @@ export const JWT_SECRET = 'super-secret';
 $ yarn db:migrate 
 ```
 
+6. Setting up Crypto Compare API
+```
+code .env 
+
+CRYPTOCOMPARE_API_KEY=... <- Insert your own api key
+
+```
+
 ## Frontend (Angular) installation
 ```bash
 $ cd frontend
