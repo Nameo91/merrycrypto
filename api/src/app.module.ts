@@ -9,6 +9,8 @@ import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { CoinController } from './coins/coins.controller';
 import { CoinService } from './coins/coins.service';
+import { GlobalController } from './global/global.controller';
+import { GlobalService } from './global/global.service';
 
 @Module({
   imports: [
@@ -17,8 +19,8 @@ import { CoinService } from './coins/coins.service';
     ConfigModule.forRoot(),
     HttpModule
   ],
-  controllers: [AppController, CoinController],
-  providers: [AppService, CoinService],
+  controllers: [AppController, CoinController, GlobalController],
+  providers: [AppService, CoinService, GlobalService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

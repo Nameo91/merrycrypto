@@ -21,8 +21,6 @@ export class CoinService {
      
       const coins = json.Data
 
-      console.log(coins[0])
-
       interface CryptoCoin {
         name: any,
         price: any,
@@ -32,7 +30,6 @@ export class CoinService {
         volume: any
        }
 
-       
       function specificData(coin: any) {
         const coinObject: CryptoCoin = {
           name: coin.CoinInfo.Name,
