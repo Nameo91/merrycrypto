@@ -1,16 +1,39 @@
 .coins {
   display:inline;
+  color: rgb(114, 183, 218);
+  margin-right: 20px;
 }
 
 .mc {
   display:inline;
+  color: rgb(114, 183, 218);
 }
 
-.mcChange {
+.mcChangeTitle {
   display:inline;
+  color: rgb(129, 126, 126);
+}
+
+.mcChangeBracket {
+  display:inline;
+  color: rgb(129, 126, 126);
+  margin-right: 20px;
+}
+
+.positive {
+  display:inline;
+  color: rgb(97, 190, 97);
+}
+
+.negative {
+  display:inline;
+  color: rgb(156, 34, 34);
 }
 
 .volume {
   display:inline;
+  color: rgb(114, 183, 218);
 }
+
+
 
