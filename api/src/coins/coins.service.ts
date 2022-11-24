@@ -20,7 +20,6 @@ export class CoinService {
       });
      
       const coins = json.Data
-      console.log(json.Data[0])
 
       interface CryptoCoin {
         name: any,

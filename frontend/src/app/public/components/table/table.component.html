@@ -31,14 +31,14 @@
     <td mat-cell *matCellDef="let element"> {{element.mc}} </td>
   </ng-container>
 
-  <!-- Daily Change Column -->
+     <!-- Daily Change Column -->
   <ng-container matColumnDef="dc">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Daily Change">
       Daily Change
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.dc}}% </td>
+    <td mat-cell *matCellDef="let element" [ngClass]="{'positive': element.dc>0, 'negative': element.dc<0 || element.dc==0}"> {{element.dc}}% </td>
   </ng-container>
- 
+     
    <!-- Favourite Button Column -->
    <ng-container matColumnDef="favourite">
     <th mat-header-cell *matHeaderCellDef> </th>
