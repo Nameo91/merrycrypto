@@ -1,2 +1,19 @@
 <div *ngIf="loading">Loading...</div>
-<p *ngIf="!loading">Coins: ${{globalData.coins}}  Market Cap: {{globalData.mc}} ({{globalData.mcChange}})  24hr Vol: ${{globalData.volume}}</p>
+<p *ngIf="!loading">
+  <span class="coins">
+    Coins: {{globalData.coins}}
+  </span>
+  
+  <span class="marketCap">
+    Market Cap: ${{globalData.mc}}
+  </span>
+  
+  <span class="mcChange">
+    {{globalData.mcChange}}%
+  </span>
+  
+  <span class="volume">
+    24hr Vol: ${{globalData.volume}}
+  </span>
+</p>
+
