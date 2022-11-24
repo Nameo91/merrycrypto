@@ -14,7 +14,7 @@ export class CoinService {
       CoinService.API_ROOT, {
         params: {
           apiKey: this.configService.get<string>('CRYPTOCOMPARE_API_KEY'),
-          limit: 10, // how many coins to show
+          limit: 30, // how many coins to show
           tsym: 'USD', // currency i.e USD
         }
       });
