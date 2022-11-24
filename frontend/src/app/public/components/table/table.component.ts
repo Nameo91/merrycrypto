@@ -1,7 +1,8 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, Input, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CoinsService } from '../../../../app/coins.service'
 
 interface CryptoCoins {
   name: string,
@@ -42,11 +43,27 @@ const ELEMENT_DATA: CryptoCoins[] = [
   styleUrls: ['./table.component.css']
 })
 
-export class TableComponent implements AfterViewInit {
+export class TableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'price', 'mc', 'dc'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource!: any;
+  coins!: any;
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(private coinsService: CoinsService, private _liveAnnouncer: LiveAnnouncer) {}
+
+  ngOnInit(): void { 
+    this.loadCoins();
+  } 
+
+  loadCoins() {
+    this.coinsService.getCoins().subscribe(coins => {
+      this.coins = coins;
+      this.dataSource = new MatTableDataSource(this.coins);
+    });
+  }
+
+  get loading(): boolean {
+    return this.coins === undefined;
+  }
 
   @ViewChild(MatSort) sort!: MatSort;
 

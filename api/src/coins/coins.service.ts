@@ -9,13 +9,13 @@ export class CoinService {
 
   constructor(private configService: ConfigService, private http: HttpService) { }
 
-  async getCoins(to: string): Promise<any> {
+  async getCoins(): Promise<any> {
     let json = await this.request<{ [key: string]: any }>(
       CoinService.API_ROOT, {
         params: {
           apiKey: this.configService.get<string>('CRYPTOCOMPARE_API_KEY'),
           limit: 10, // how many coins to show
-          tsym: to, // currency i.e USD
+          tsym: 'USD', // currency i.e USD
         }
       });
      
@@ -29,13 +29,13 @@ export class CoinService {
        }
 
       function specificData(coin) {
-        const object: CryptoCoin = {
+        const coinObject: CryptoCoin = {
           name: coin.CoinInfo.Name,
           price: coin.DISPLAY.USD.PRICE,
           mc: coin.DISPLAY.USD.MKTCAP,
           dc: coin.DISPLAY.USD.CHANGEPCT24HOUR
         }
-        return object
+        return coinObject
       }
 
       const finalData = coins.map(specificData)

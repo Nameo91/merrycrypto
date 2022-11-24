@@ -1,10 +1,10 @@
 body {
-    max-width: 500px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .cryptoTable {
   height: 100px;
-  width: 50px;
+  width: 800px;
   padding: 10px;
 }
