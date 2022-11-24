@@ -20,28 +20,30 @@ export class CoinService {
       });
      
       const coins = json.Data
+      console.log(json.Data[0])
 
       interface CryptoCoin {
         name: any,
         price: any,
         mc: any,
-        dc: any
+        dc: any,
+        imageURL: any
        }
 
-      function specificData(coin) {
+      function specificData(coin: any) {
         const coinObject: CryptoCoin = {
           name: coin.CoinInfo.Name,
           price: coin.DISPLAY.USD.PRICE,
           mc: coin.DISPLAY.USD.MKTCAP,
-          dc: coin.DISPLAY.USD.CHANGEPCT24HOUR
+          dc: coin.DISPLAY.USD.CHANGEPCT24HOUR,
+          imageURL: coin.DISPLAY.USD.IMAGEURL
         }
         return coinObject
       }
-
+      
       const finalData = coins.map(specificData)
-      //http://localhost:3000/coins?to=USD
     return finalData
-  }
+  } //http://localhost:3000/coins
 
   private async request<T>(url: string, params: { [key: string]: any }): Promise<T> {
     let request = this.http.get(url, params).pipe(map(response => response.data));
