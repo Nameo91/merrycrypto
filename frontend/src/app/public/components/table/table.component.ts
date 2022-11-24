@@ -28,11 +28,11 @@ export class TableComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.coins);
       this.dataSource.sort = this.sort;
     });
-  }
+  };
 
   get loading(): boolean {
     return this.coins === undefined;
-  }
+  };
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -40,5 +40,6 @@ export class TableComponent implements OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
-  }
+  };
+
 }
