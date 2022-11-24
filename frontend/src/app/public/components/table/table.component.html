@@ -1,7 +1,13 @@
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
        class="mat-elevation-z8">
 
-  <!-- name Column -->
+  <!-- Image Column -->
+  <ng-container matColumnDef="imageURL">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element"> <img src="https://www.cryptocompare.com{{element.imageURL}}" style="height: 40px;width: 40px;"/> </td>
+  </ng-container>
+
+  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
       Name
@@ -31,6 +37,15 @@
       Daily Change
     </th>
     <td mat-cell *matCellDef="let element"> {{element.dc}}% </td>
+  </ng-container>
+
+ 
+   <!-- Favourite Button Column -->
+   <ng-container matColumnDef="favourite">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let row" >
+      <button mat-button ><span>&#9734;</span></button>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

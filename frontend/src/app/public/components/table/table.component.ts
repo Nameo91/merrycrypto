@@ -1,40 +1,8 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
-interface CryptoCoins {
-  name: string,
-  price: number,
-  mc: number,
-  dc: number
- }
-const ELEMENT_DATA: CryptoCoins[] = [
-  {
-    name: "BTC",
-    price: 16591,
-    mc: 318881782391,
-    dc: 5
-  },
-  {
-    name: "ETH",
-    price: 1172,
-    mc: 141297194997,
-    dc: 7.3
-  },
-  {
-    name: "USDT",
-    price: 0.99,
-    mc: 65483976330,
-    dc: -0.2
-  },
-  {
-    name: "BNB",
-    price: 297,
-    mc: 48437062392,
-    dc: 16.4
-  }
-];
+import { CoinsService } from '../../../../app/coins.service'
 
  @Component({
   selector: 'table-root',
@@ -42,16 +10,28 @@ const ELEMENT_DATA: CryptoCoins[] = [
   styleUrls: ['./table.component.css']
 })
 
-export class TableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['name', 'price', 'mc', 'dc'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
-
+export class TableComponent implements OnInit {
+  displayedColumns: string[] = ['imageURL', 'name', 'price', 'mc', 'dc', 'favourite'];
+  dataSource!: any;
+  coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+  constructor(private coinsService: CoinsService, private _liveAnnouncer: LiveAnnouncer) {}
+
+  ngOnInit(): void { 
+    this.loadCoins();
+  } 
+
+  loadCoins() {
+    this.coinsService.getCoins().subscribe(coins => {
+      this.coins = coins;
+      this.dataSource = new MatTableDataSource(this.coins);
+      this.dataSource.sort = this.sort;
+    });
+  }
+
+  get loading(): boolean {
+    return this.coins === undefined;
   }
 
   announceSortChange(sortState: Sort) {

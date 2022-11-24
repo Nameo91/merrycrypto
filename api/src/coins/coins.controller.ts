@@ -6,8 +6,8 @@ export class CoinController {
   constructor(private readonly coinService: CoinService) {}
 
   @Get()
-  async get(@Query('to') to: string): Promise<{ coins: any }> {
-    let coins = await this.coinService.getCoins(to);
+  async get(): Promise<{ coins: any }> {
+    let coins = await this.coinService.getCoins();
     return { coins };
   }
 }
