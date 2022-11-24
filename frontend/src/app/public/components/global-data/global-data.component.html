@@ -1,2 +1,2 @@
 <div *ngIf="loading">Loading...</div>
-<p *ngIf="!loading">{{globalData}}</p>
+<p *ngIf="!loading">Coins: ${{globalData.coins}}  Market Cap: {{globalData.mc}} ({{globalData.mcChange}})  24hr Vol: ${{globalData.volume}}</p>
