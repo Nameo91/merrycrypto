@@ -1,0 +1,26 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  padding-left: 30px;
+  width: 200px;
+  padding-top: 5px;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: rgb(28, 105, 58);
+}
+
+.mat-green { 
+  /* background-color: rgb(28, 105, 58); */
+}
+

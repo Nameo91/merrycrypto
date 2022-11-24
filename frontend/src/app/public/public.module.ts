@@ -12,16 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    TableComponent,
-    NavbarComponent
+    TableComponent
   ],
   imports: [
     CommonModule,
