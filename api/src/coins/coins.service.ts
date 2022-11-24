@@ -21,22 +21,26 @@ export class CoinService {
      
       const coins = json.Data
 
+      console.log(coins[0])
+
       interface CryptoCoin {
         name: any,
         price: any,
         mc: any,
         dc: any,
         imageURL: any
+        volume: any
        }
 
-
+       
       function specificData(coin: any) {
         const coinObject: CryptoCoin = {
           name: coin.CoinInfo.Name,
           price: Number(coin.DISPLAY.USD.PRICE.replace(/[^0-9.-]+/g,"")),
           mc: Number(coin.DISPLAY.USD.MKTCAP.replace(/[^0-9.-]+/g,"")),
           dc: coin.DISPLAY.USD.CHANGEPCT24HOUR,
-          imageURL: coin.DISPLAY.USD.IMAGEURL
+          imageURL: coin.DISPLAY.USD.IMAGEURL,
+          volume: Number((coin.DISPLAY.USD.VOLUME24HOURTO.replace(/[^0-9.-]+/g,"") / 1000000).toFixed(2))
         }
         return coinObject
       }
