@@ -13,6 +13,8 @@ import { GlobalController } from './global/global.controller';
 import { GlobalService } from './global/global.service';
 import { NewsController } from './news/news.controller';
 import { NewsService } from './news/news.service';
+import { ExchangesController } from './exchanges/exchanges.controller';
+import { ExchangesService } from './exchanges/exchanges.service';
 
 @Module({
   imports: [
@@ -21,8 +23,8 @@ import { NewsService } from './news/news.service';
     ConfigModule.forRoot(),
     HttpModule
   ],
-  controllers: [AppController, CoinController, GlobalController, NewsController],
-  providers: [AppService, CoinService, GlobalService, NewsService],
+  controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController],
+  providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
