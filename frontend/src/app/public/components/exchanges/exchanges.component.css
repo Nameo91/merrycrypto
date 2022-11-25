@@ -1,20 +1,19 @@
 body {
   max-width: 1000px;
   margin: auto;
-  margin-top: 80px;
 }
 
 .globalData {
-  margin-top: 60px;
-  margin-left: 50px;
+  padding: 20px;
+  margin-top: 80px;
+  margin-left: 40px;
   margin-right: auto;
 }
 
 .exchangeTable {
   height: 50px;
   width: 800px;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
 }
