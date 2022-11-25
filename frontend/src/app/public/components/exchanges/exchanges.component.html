@@ -1,1 +1,52 @@
-<p>exchanges works!</p>
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Image Column -->
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element"> <img src="{{element.image}}" style="height: 40px;width: 40px;"/> </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Year">
+      Year
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+  </ng-container>
+
+  <!-- Market Cap Column -->
+  <ng-container matColumnDef="trustRank">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Rank">
+      Trust Rank
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.trustRank}} </td>
+  </ng-container>
+
+     <!-- Daily Change Column -->
+     <ng-container matColumnDef="trustScore">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Score">
+        Trust Score
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.trustScore}} </td>
+    </ng-container>
+
+   <!-- Volume Column -->
+   <ng-container matColumnDef="volume">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Volume">
+      24hr Volume
+    </th>
+    <td mat-cell *matCellDef="let element"> ${{element.volume}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
