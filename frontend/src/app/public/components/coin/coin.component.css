@@ -1,3 +1,100 @@
-h1 {
-  padding-top: 100px;
+.main-wrapper {
+  padding-top: 150px;
+  padding-left: 230px;
+  padding-right: 230px;
+}
+
+/* TOP HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-header div {
+  margin: 20px;
+}
+
+#coin-name {
+  font-size: 33pt;
+  font-weight: 350;
+}
+
+/* PRICE HEADER */
+
+.price-header {
+  margin: 20px;
+}
+
+.price-header .heading {
+  font-weight: 600;
+  font-size: 12pt;
+  color: rgb(98, 98, 98);
+}
+
+.price-header .big-price {
+  font-size: 25pt;
+}
+
+.price-header .change {
+  font-size: 14pt;
+  color: rgb(205, 3, 3);
+}
+
+/* MARKET HEADER */
+
+.market-header {
+  align-items: center;
+  display: flex;
+  margin: 20px;
+}
+
+#market-heading {
+  font-size: 32pt;
+  font-weight: 350;
+}
+
+.market-stats-header {
+  align-items: center;
+  display: flex;
+  margin: 20px;
+}
+
+.market-stats-section {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 150px;
+}
+
+.stat-heading {
+  font-weight: 500;
+  color: rgb(98, 98, 98);;
+}
+
+.stat-number {
+  margin-top: 8px;
+  font-size: 15pt;
+}
+
+
+
+
+/* INFO ICON DISPLAY */
+
+::ng-deep.mat-icon {
+  height: 17px;
+  width: 17px;
+  font-size: 17px;
+  line-height: 32px;
+  color: rgb(98, 98, 98);
+}
+
+::ng-deep.mat-mdc-icon-button.mat-mdc-button-base {
+  width: 1px;
+  height: 1px; 
+  padding: 1px;
 }

@@ -1,1 +1,141 @@
-<h1>{{id}}</h1>
+<div class="main-wrapper">
+
+  <!-- TOP HEADER COIN NAME-->
+  <!-- Coin name -->
+  <div class="top-header">
+    <div>
+      <h1 id="coin-name">Bitcoin</h1>
+    </div>
+
+    <!-- Currency button -->
+    <div>
+      <button mat-stroked-button 
+      [matMenuTriggerFor]="menu">
+      GBP 
+      </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>USD</button>
+          <button mat-menu-item>EUR</button>
+        </mat-menu>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- PRICE DIV -->
+  <div class="price-header">
+    <p class="heading">Price</p>
+    <p class="big-price">£13,611.17</p>
+    <p class="change">↘ £71.61 (-0.53%)</p>
+  </div>
+  
+  <mat-divider></mat-divider>
+
+  <!-- MARKET HEADER -->
+  <div class="market-header">
+    <h1 id="market-heading">Market</h1>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- MARKET STATS HEADER -->
+  <div class="market-stats-header">
+    <h2>Market stats</h2>
+  </div>
+
+  <!-- MARKET STATS FIRST ROW -->
+  <div class="market-stats-section">
+    <div>
+      <span class="stat-heading">MARKET CAP</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">MARKET CAP RANK</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">PRICE CHANGE (24H)</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">PRICE CHANGE (7D)</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+  </div>
+
+  <!-- MARKET STATS SECOND ROW -->
+  <div class="market-stats-section">
+    <div>
+      <span class="stat-heading">VOLUME (24H)</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">CIRCULATING SUPPLY</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">TOTAL SUPPLY</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+
+    <div>
+      <span class="stat-heading">MAX SUPPLY</span>
+      <span><button mat-icon-button
+        matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
+        matTooltipPosition="above">
+        <mat-icon>info</mat-icon>
+      </button></span>
+      <br>
+      <div class="stat-number">£262.8B</div>
+    </div>
+  </div>
+
+</div>
+
