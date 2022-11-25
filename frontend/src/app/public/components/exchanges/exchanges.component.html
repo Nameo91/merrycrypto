@@ -1,3 +1,9 @@
+<body>
+
+<div class="globalData">
+  <app-global-data></app-global-data>
+</div>
+
 <div class="exchangeTable">
 
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
@@ -33,20 +39,11 @@
     <td mat-cell *matCellDef="let element"> {{element.year}} </td>
   </ng-container>
 
-
-     <!-- Trust Score Column -->
-     <!-- <ng-container matColumnDef="trustScore">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Score">
-        Trust Score
-      </th>
-      <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.trustScore}} </td>
-    </ng-container> -->
-
     <ng-container matColumnDef="trustScore">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Score">
         Trust Score
       </th>
-      <td mat-cell *matCellDef="let element" [ngClass]="{'good': element.trustScore>7, 'bad': element.trustScore<7, amber: element.trustScore == 8 || element.trustScore == 7 }" style="text-align: center" > {{element.trustScore}} </td> 
+      <td mat-cell *matCellDef="let element" [ngClass]="{'good': element.trustScore>7, 'bad': element.trustScore<7, amber: element.trustScore == 8 || element.trustScore == 7 }" style="text-align: center; font-weight: bold" > {{element.trustScore}} </td> 
     </ng-container>
 
    <!-- Volume Column -->
@@ -62,3 +59,5 @@
 </table>
 
 </div>
+
+</body>
