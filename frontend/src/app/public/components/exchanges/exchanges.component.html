@@ -20,7 +20,7 @@
   <!-- Image Column -->
   <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element"> <img src="{{element.image}}" style="height: 50px;width: 50px; padding: 5px"/> </td>
+    <td mat-cell *matCellDef="let element"> <a href="{{element.url}}"><img src="{{element.image}}" style="height: 50px;width: 50px; padding: 5px"/></a> </td>
   </ng-container>
 
   <!-- Name Column -->
