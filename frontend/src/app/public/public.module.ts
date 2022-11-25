@@ -14,6 +14,7 @@ import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { GlobalDataComponent } from './components/global-data/global-data.component';
+import { StarComponent } from './components/star/star.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { GlobalDataComponent } from './components/global-data/global-data.compon
     RegisterComponent,
     HomepageComponent,
     TableComponent,
-    GlobalDataComponent
+    GlobalDataComponent,
+    StarComponent
   ],
   imports: [
     CommonModule,

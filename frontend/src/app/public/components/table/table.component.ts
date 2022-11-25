@@ -1,8 +1,9 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoinsService } from '../../../../app/coins.service'
+import { SelectionModel } from '@angular/cdk/collections';
 
  @Component({
   selector: 'table-root',
@@ -15,6 +16,7 @@ export class TableComponent implements OnInit {
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
+  @Input() isActive!: boolean;
 
   constructor(private coinsService: CoinsService, private _liveAnnouncer: LiveAnnouncer) {}
 
@@ -41,4 +43,9 @@ export class TableComponent implements OnInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+  
+  onClick() {
+    this.isActive = !this.isActive;
+  }
+
 }
