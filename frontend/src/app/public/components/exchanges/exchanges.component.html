@@ -1,10 +1,20 @@
+<div class="exchangeTable">
+
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
        class="mat-elevation-z8">
+
+  <!-- Trust Rank Column -->
+  <ng-container matColumnDef="trustRank">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Rank">
+      Trust Rank
+    </th>
+    <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.trustRank}} </td>
+  </ng-container>
 
   <!-- Image Column -->
   <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element"> <img src="{{element.image}}" style="height: 40px;width: 40px;"/> </td>
+    <td mat-cell *matCellDef="let element"> <img src="{{element.image}}" style="height: 50px;width: 50px; padding: 5px"/> </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -15,7 +25,7 @@
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
 
-  <!-- Price Column -->
+  <!-- Year Column -->
   <ng-container matColumnDef="year">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Year">
       Year
@@ -23,20 +33,20 @@
     <td mat-cell *matCellDef="let element"> {{element.year}} </td>
   </ng-container>
 
-  <!-- Market Cap Column -->
-  <ng-container matColumnDef="trustRank">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Rank">
-      Trust Rank
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.trustRank}} </td>
-  </ng-container>
 
-     <!-- Daily Change Column -->
-     <ng-container matColumnDef="trustScore">
+     <!-- Trust Score Column -->
+     <!-- <ng-container matColumnDef="trustScore">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Score">
         Trust Score
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.trustScore}} </td>
+      <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.trustScore}} </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="trustScore">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Trust Score">
+        Trust Score
+      </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'good': element.trustScore>7, 'bad': element.trustScore<7, amber: element.trustScore == 8 || element.trustScore == 7 }" style="text-align: center" > {{element.trustScore}} </td> 
     </ng-container>
 
    <!-- Volume Column -->
@@ -44,9 +54,11 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Volume">
       24hr Volume
     </th>
-    <td mat-cell *matCellDef="let element"> ${{element.volume}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.volume}} btc</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+</div>

@@ -17,12 +17,12 @@ export class ExchangesService {
       const data = json
 
       interface exchangeData { //need to add specifc types
-        trustRank: any,
+        trustRank: number,
         name: any,
         year: any,
         url: any,
         image: any,
-        trustScore: any,
+        trustScore: number,
         volume: any
        }
       
@@ -34,7 +34,7 @@ export class ExchangesService {
           url: data.url,
           image: data.image,
           trustScore: data.trust_score,
-          volume: data.trade_volume_24h_btc
+          volume: data.trade_volume_24h_btc.toFixed(0)
         }
         return exchangeObject
       }

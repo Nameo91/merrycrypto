@@ -1,0 +1,25 @@
+.exchangeTable {
+  height: 100px;
+  width: 800px;
+  margin-top: 80px;
+  margin-right: 80px;
+  margin-left: 300px;
+}
+
+
+.mat-mdc-row:hover .mat-mdc-cell {
+cursor: pointer;
+background-color: rgba(195, 194, 194, 0.1);
+}
+
+.good {
+  color: rgb(97, 190, 97);
+}
+
+.bad {
+  color: rgb(233, 16, 16);
+}
+
+.amber {
+  color: rgb(248, 124, 16);
+}
