@@ -1,1 +1,11 @@
-<p>search works!</p>
+<div class="searchbar">
+<form class="form-inline" id="searchForm">
+  <div class="form-group">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search by cryptocurrency..."
+          id="cryptoNameSearch" name="cryptoNameSearch" aria-label="Search"
+          (keyup.enter)="getSearchResult($event)">
+  </div>
+</form>
+</div>
+
+   
