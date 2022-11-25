@@ -1,1 +1,42 @@
-<p>{{news[0].title}}</p>
+<h1>Recent Crypto News</h1>
+<div class="container mt-5" >
+
+  <div class="row">
+
+    <div *ngFor="let article of news" class="col-lg-3 mt-3 mb-3">
+        
+    <li>
+      <div class="box">
+        <img src="{{article.image}}" width="100%">
+        <h3>{{article.title}}</h3>
+        <p>{{article.body}}</p> 
+        <a mat-raised-button href="{{article.url}}" class="button">Read more</a>
+      </div>
+    </li> 
+ 
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+
+
+<!-- <h1>Latest Crypto News</h1>
+
+<div class="mb-1" style="width: 60%" *ngFor="let article of news">
+  <div class="image">
+    <img src="{{article.image}}">
+  </div>
+  <div class="title">
+     <h2>{{article.title}}</h2>
+  </div>
+  <div class="body">
+    {{article.body}}
+ </div>
+
+ <a href="{{article.url}}" target="_blank">Visit Article</a>
+  
+</div> -->

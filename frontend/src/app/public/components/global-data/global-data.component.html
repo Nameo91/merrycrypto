@@ -1,7 +1,7 @@
 <div *ngIf="loading">Loading...</div>
 <p *ngIf="!loading">
   <span class="coinsTitle">
-    Coins:
+    Total Active Coins:
   </span>
 
   <span class="coins">
@@ -9,7 +9,7 @@
   </span>
   
   <span class="marketTitle">
-    Market Cap:
+    Total Market Cap:
   </span>
 
   <span class="mc">
@@ -25,7 +25,7 @@
         +{{globalData.mcChange}}% &#9757;
     </span>
     <span *ngIf="globalData.mcChange<0">
-      -{{globalData.mcChange}}%
+      {{globalData.mcChange}}% 👎
     </span>
   </span>
 
@@ -34,7 +34,7 @@
   </span>
   
   <span class="volumeTitle">
-    24hr Vol: 
+    Total 24hr Vol: 
   </span>
 
   <span class="volume">

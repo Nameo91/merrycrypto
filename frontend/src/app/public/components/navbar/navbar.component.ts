@@ -28,6 +28,10 @@ export class NavbarComponent {
     return this.router.url === '/';
   }
 
+  onNewsPage():boolean {
+    return this.router.url === '/news';
+  }
+
   onLoginPage() {
     return this.router.url === '/login';
 

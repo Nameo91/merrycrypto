@@ -27,9 +27,9 @@ export class NewsService {
        function specificData(data: any) {
         const newsObject: newsData = {
           title: data.title,
-          url: data.guid,
-          image: data.url,
-          body: data.body,
+          url: data.url,
+          image: data.imageurl,
+          body: data.body.substring(0, 130).concat("..."),
           tags: data.tags
         }
         return newsObject
@@ -45,3 +45,5 @@ export class NewsService {
     return lastValueFrom(request);
   }
 }
+
+24
