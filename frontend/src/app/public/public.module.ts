@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { GlobalDataComponent } from './components/global-data/global-data.component';
 import { NewsComponent } from './components/news/news.component';
+import { ExchangesComponent } from './components/exchanges/exchanges.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NewsComponent } from './components/news/news.component';
     HomepageComponent,
     TableComponent,
     GlobalDataComponent,
-    NewsComponent
+    NewsComponent,
+    ExchangesComponent
   ],
   imports: [
     CommonModule,
