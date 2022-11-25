@@ -54,7 +54,8 @@ export class TableComponent implements OnInit {
     this.router.navigateByUrl('coins/' + id);
   };
   
-  onClick() {
+  onClick(row: any) {
+    console.log(row);
     this.isActive = !this.isActive;
   }
 

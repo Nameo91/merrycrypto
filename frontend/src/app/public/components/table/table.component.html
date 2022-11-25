@@ -12,7 +12,7 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Name">
       Name
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <td id="coin-name-row" mat-cell *matCellDef="let element" (click)="navigateToCoin(element)"> {{element.name}} </td>
   </ng-container>
 
   <!-- Price Column -->
@@ -54,12 +54,12 @@
       <button mat-button><span
         class="likeButton"
         [class.highlighted]="isActive"
-        (click)="onClick()"
+        (click)="onClick(row)"
         aria-hidden="true"><mat-icon>star_border</mat-icon></span>
      </button>
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToCoin(row)"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

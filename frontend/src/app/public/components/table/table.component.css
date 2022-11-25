@@ -6,8 +6,11 @@ table {
 
 
 .mat-mdc-row:hover .mat-mdc-cell {
-  cursor: pointer;
   background-color: rgba(195, 194, 194, 0.1);
+}
+
+#coin-name-row {
+  cursor: pointer;
 }
 
 
