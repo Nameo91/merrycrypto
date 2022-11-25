@@ -13,9 +13,15 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { CoinComponent } from './components/coin/coin.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { GlobalDataComponent } from './components/global-data/global-data.component';
 import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
+import { StarComponent } from './components/star/star.component';
 
 
 @NgModule({
@@ -27,6 +33,10 @@ import { ExchangesComponent } from './components/exchanges/exchanges.component';
     GlobalDataComponent,
     NewsComponent,
     ExchangesComponent
+    NewsComponent
+    CoinComponent,
+    GlobalDataComponent,
+    StarComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +49,11 @@ import { ExchangesComponent } from './components/exchanges/exchanges.component';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatTooltipModule
   ]
 })
 export class PublicModule { }

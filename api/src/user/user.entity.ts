@@ -1,8 +1,8 @@
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { hash } from "bcrypt";
+import { BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import { hash } from 'bcrypt';
+import { WatchlistEntity } from '@app/watchlist/watchlist.entity';
 
-@Entity( {name: 'users'} ) 
-
+@Entity({ name: 'users' })
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -13,10 +13,13 @@ export class UserEntity {
   @Column()
   username: string;
 
-  @Column( { select: false } ) 
+  @Column({ select: false })
   password: string;
 
-  @BeforeInsert() 
+  @OneToMany(() => WatchlistEntity, (watchlist) => watchlist.user)
+  watchlists: WatchlistEntity[];
+
+  @BeforeInsert()
   async hashPassword() {
     this.password = await hash(this.password, 10);
   }
