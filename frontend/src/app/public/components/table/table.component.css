@@ -4,16 +4,22 @@ table {
     padding: 10px;
   }
 
-  
-.positive {
-  color: green;
-}
-
-.negative {
-  color: red;
-}
 
 .mat-mdc-row:hover .mat-mdc-cell {
   cursor: pointer;
   background-color: rgba(195, 194, 194, 0.1);
 }
+
+
+  .positive {
+    color: rgb(97, 190, 97);
+  }
+
+  .negative {
+    color: rgb(156, 34, 34);
+  }
+
+  .highlighted {
+    color: rgb(156, 34, 34);
+  }
+

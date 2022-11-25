@@ -1,9 +1,10 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from '../../../../app/coins.service'
+import { SelectionModel } from '@angular/cdk/collections';
 
  @Component({
   selector: 'table-root',
@@ -16,6 +17,7 @@ export class TableComponent implements OnInit {
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
+  @Input() isActive!: boolean;
 
   constructor(
     private coinsService: CoinsService,
@@ -51,5 +53,9 @@ export class TableComponent implements OnInit {
     let id = row.name;
     this.router.navigateByUrl('coins/' + id);
   };
+  
+  onClick() {
+    this.isActive = !this.isActive;
+  }
 
 }
