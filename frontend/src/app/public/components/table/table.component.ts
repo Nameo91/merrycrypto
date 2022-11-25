@@ -2,6 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CoinsService } from '../../../../app/coins.service'
 import { SelectionModel } from '@angular/cdk/collections';
 
@@ -18,7 +19,11 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @Input() isActive!: boolean;
 
-  constructor(private coinsService: CoinsService, private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private coinsService: CoinsService,
+    private _liveAnnouncer: LiveAnnouncer,
+    private router: Router
+    ) {}
 
   ngOnInit(): void { 
     this.loadCoins();
@@ -30,11 +35,11 @@ export class TableComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.coins);
       this.dataSource.sort = this.sort;
     });
-  }
+  };
 
   get loading(): boolean {
     return this.coins === undefined;
-  }
+  };
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -42,7 +47,12 @@ export class TableComponent implements OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
-  }
+  };
+
+  navigateToCoin(row: any) {
+    let id = row.name;
+    this.router.navigateByUrl('coins/' + id);
+  };
   
   onClick() {
     this.isActive = !this.isActive;
