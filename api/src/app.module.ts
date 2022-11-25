@@ -15,16 +15,30 @@ import { NewsController } from './news/news.controller';
 import { NewsService } from './news/news.service';
 import { ExchangesController } from './exchanges/exchanges.controller';
 import { ExchangesService } from './exchanges/exchanges.service';
+import { WatchlistModule } from './watchlist/watchlist.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(config), 
+    TypeOrmModule.forRoot(config),
     UserModule,
     ConfigModule.forRoot(),
-    HttpModule
+    HttpModule,
+    WatchlistModule,
   ],
-  controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController],
-  providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService],
+  controllers: [
+    AppController,
+    CoinController,
+    GlobalController,
+    NewsController,
+    ExchangesController,
+  ],
+  providers: [
+    AppService,
+    CoinService,
+    GlobalService,
+    NewsService,
+    ExchangesService,
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
