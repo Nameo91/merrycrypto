@@ -32,6 +32,10 @@ export class NavbarComponent {
     return this.router.url === '/news';
   }
 
+  onExchangePage():boolean {
+    return this.router.url === '/exchanges';
+  }
+
   onLoginPage() {
     return this.router.url === '/login';
 
