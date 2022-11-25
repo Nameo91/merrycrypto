@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from '../../../../app/coins.service'
 import { SelectionModel } from '@angular/cdk/collections';
+import { I } from 'chart.js/dist/chunks/helpers.core';
 
  @Component({
   selector: 'table-root',
