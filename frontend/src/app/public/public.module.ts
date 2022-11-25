@@ -22,6 +22,7 @@ import { GlobalDataComponent } from './components/global-data/global-data.compon
 import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { StarComponent } from './components/star/star.component';
     ExchangesComponent,
     CoinComponent,
     GlobalDataComponent,
-    StarComponent
+    StarComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
