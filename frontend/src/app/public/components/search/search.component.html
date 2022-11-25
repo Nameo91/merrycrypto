@@ -1,8 +1,15 @@
-<form>
+<div class="search-box">
+  <input class="search-input" type="search" placeholder="Search a coin ..." id="cryptoNameSearch" name="cryptoNameSearch" aria-label="Search"
+  (keyup.enter)="getSearchResult($event)">
+</div>
+
+
+<!-- <form>
   <input class="form-control mr-sm-2" type="search" placeholder="Search a coin ..." id="cryptoNameSearch" name="cryptoNameSearch" aria-label="Search"
   (keyup.enter)="getSearchResult($event)">
   <button type="submit">Search</button>
-</form>
+</form> -->
+
 
 
 <!-- mat-form-field -->
