@@ -6,8 +6,8 @@ export class ExchangesController {
   constructor(private readonly exchangesService: ExchangesService) {}
 
   @Get()
-  async get(): Promise<{ data: any }> {
-    let data = await this.exchangesService.getData();
-    return { data };
+  async get(): Promise<{ exchangeData: any }> {
+    let exchangeData = await this.exchangesService.getData();
+    return { exchangeData };
   }
 }
