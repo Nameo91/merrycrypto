@@ -1,33 +1,36 @@
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
 
 .logo {
-  padding-left: 30px;
   width: 200px;
-  padding-top: 5px;
   cursor: pointer;
 }
 
-.news{
-  margin-right: 50px;
-  margin-right: 50px
+::ng-deep.mat-mdc-raised-button {
+  font-weight: 600;
 }
 
-.coins{
-  margin-right: 50px;
-  margin-right: 50px
+::ng-deep.mat-mdc-button {
+  font-weight: 600;
 }
 
-.exchanges{
-  margin-right: 50px;
-  margin-right: 50px
+.logo {
+  margin-left: 10%;
 }
 
-.portfolio{
-  margin-right: 50px;
-  margin-right: 50px
+.central-component {
+  margin-right: 7%;
 }
+
+.central-component button {
+  margin-right: 5%;
+}
+
+.rightside-component {
+  margin-right: 10%;
+}
+
 
 .navbar {
   background-color: white;
