@@ -14,15 +14,15 @@ table {
 }
 
 
-  .positive {
-    color: rgb(97, 190, 97);
-  }
+.positive {
+  color: rgb(97, 190, 97);
+}
 
-  .negative {
-    color: rgb(156, 34, 34);
-  }
+.negative {
+  color: rgb(156, 34, 34);
+}
 
-  .highlighted {
-    color: rgb(156, 34, 34);
-  }
+.highlighted {
+  color: rgb(156, 34, 34);
+}
 

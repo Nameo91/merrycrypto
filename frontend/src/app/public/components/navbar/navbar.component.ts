@@ -24,21 +24,8 @@ export class NavbarComponent {
     return this.authService.isAuthenticated();
   }
 
-  onHomePage():boolean {
-    return this.router.url === '/';
-  }
-
-  onNewsPage():boolean {
-    return this.router.url === '/news';
-  }
-
-  onExchangePage():boolean {
-    return this.router.url === '/exchanges';
-  }
-
   onLoginPage() {
     return this.router.url === '/login';
-
   }
 
   onRegisterPage() {

@@ -1,52 +1,62 @@
 <!-- USER LOGGED IN -->
 <mat-toolbar *ngIf="isLoggedIn()" class="navbar">
-    <span>
-        <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
-    </span>
-    <span class="example-spacer"></span> 
-    <button mat-button color="grey" class="news" (click)="navigateTo('news')">News</button>
-    <button mat-button color="green" class="coins" (click)="navigateTo('')">Coins</button>
-    <button mat-button color="green" class="exchanges" (click)="navigateTo('exchanges')">Exchanges</button>
-    <button mat-button color="green" class="portfolio" (click)="navigateTo('register')">Portfolio</button>
-    <span class="example-spacer"></span> 
-    <button mat-button color="green">Watchlist</button>
-    <button mat-button color="green" (click)="logout()">Sign out</button>
+            <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+            
+            <span class="spacer"></span>
+
+            <span class="central-component">
+            <button mat-button color="primary" (click)="navigateTo('news')">News</button>
+            <button mat-button color="primary" (click)="navigateTo('')">Coins</button>
+            <button mat-button color="primary" (click)="navigateTo('exchanges')">Exchanges</button>
+            <button mat-button color="primary" (click)="navigateTo('register')">Watchlist</button>
+            </span>
+            <span class="spacer"></span>
+
+            <span class="rightside-component">
+                <button id="signout" mat-button color="primary" (click)="logout()">Sign out</button>
+            </span>
 </mat-toolbar>
 
-<!-- USER IS NOT LOGGED IN AND ON HOME PAGE -->
-<mat-toolbar *ngIf="!isLoggedIn() && onHomePage()" class="navbar">
-    <span>
-        <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+<!-- USER IS NOT LOGGED NOT LOGIN NOT REGISTER -->
+<mat-toolbar *ngIf="!isLoggedIn() && !onLoginPage() && !onRegisterPage()"  class="navbar">
+    <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+    
+    <span class="spacer"></span>
+
+    <span class="central-component">
+    <button mat-button color="primary" (click)="navigateTo('login')">News</button>
+    <button mat-button color="primary" (click)="navigateTo('')">Coins</button>
+    <button mat-button color="primary" (click)="navigateTo('login')">Exchanges</button>
+    <button mat-button color="primary" (click)="navigateTo('login')">Watchlist</button>
     </span>
+    <span class="spacer"></span>
 
-    <span class="example-spacer"></span>
-
-    <button mat-button color="grey" class="news" (click)="navigateTo('news')">News</button>
-    <button mat-button color="green" class="coins" (click)="navigateTo('')">Coins</button>
-    <button mat-button color="green" class="exchanges" (click)="navigateTo('exchanges')">Exchanges</button>
-    <button mat-button color="green" class="portfolio" (click)="navigateTo('register')">Portfolio</button>
-
-    <span class="example-spacer"></span> 
-
-    <button mat-button color="green" (click)="navigateTo('login')">Sign in</button>
-    <button mat-raised-button color="moregreen" (click)="navigateTo('register')">Get started</button>
+    <span class="rightside-component">
+        <button mat-button color="primary" (click)="navigateTo('login')">Sign in</button>
+        <button mat-raised-button color="primary" (click)="navigateTo('register')">Get started</button>
+    </span>
 </mat-toolbar>
 
 <!-- USER IS NOT LOGGED IN AND ON LOGIN PAGE -->
 <mat-toolbar *ngIf="!isLoggedIn() && onLoginPage()" class="navbar">
-    <span>
-        <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+    <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+    
+    <span class="spacer"></span>
+
+    <span class="rightside-component">
+        <button mat-raised-button color="primary" (click)="navigateTo('register')">Get started</button>
     </span>
-    <span class="example-spacer"></span> 
-    <button mat-raised-button color="moregreen" (click)="navigateTo('register')">Get started</button>
 </mat-toolbar>
 
 <!-- USER IS NOT LOGGED IN AND ON REGISTER PAGE -->
 <mat-toolbar *ngIf="!isLoggedIn() && onRegisterPage()" class="navbar">
-    <span>
-        <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+    <img class="logo" src="/assets/img/logo7.png" alt="logo" (click)="navigateTo('')">
+    
+    <span class="spacer"></span>
+
+    <span class="rightside-component">
+        <button mat-button color="primary" (click)="navigateTo('login')">Sign in</button>
     </span>
-    <span class="example-spacer"></span> 
-    <button mat-button color="green" (click)="navigateTo('login')">Sign in</button>
 </mat-toolbar>
+
 

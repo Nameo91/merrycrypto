@@ -46,7 +46,40 @@ $grinch-palette: (
     )
 );
 
-$frontend-primary: mat.define-palette($grinch-palette);
+$grinchv2-palette: (
+    50 : #276a2a,
+    100 : #276a2a,
+    200 : #276a2a,
+    300 : #276a2a,
+    400 : #276a2a,
+    500 : #276a2a,
+    600 : #276a2a,
+    700 : #276a2a,
+    800 : #276a2a,
+    900 : #276a2a,
+    A100 : #276a2a,
+    A200 : #276a2a,
+    A400 : #276a2a,
+    A700 : #276a2a,
+    contrast: (
+        50 : #ffffff,
+        100 : #ffffff,
+        200 : #ffffff,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$frontend-primary: mat.define-palette($grinchv2-palette);
 $frontend-accent: mat.define-palette(mat.$green-palette);
 
 // The warn palette is optional (defaults to red).
