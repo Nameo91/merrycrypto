@@ -11,6 +11,8 @@ import { CoinController } from './coins/coins.controller';
 import { CoinService } from './coins/coins.service';
 import { GlobalController } from './global/global.controller';
 import { GlobalService } from './global/global.service';
+import { NewsController } from './news/news.controller';
+import { NewsService } from './news/news.service';
 
 @Module({
   imports: [
@@ -19,8 +21,8 @@ import { GlobalService } from './global/global.service';
     ConfigModule.forRoot(),
     HttpModule
   ],
-  controllers: [AppController, CoinController, GlobalController],
-  providers: [AppService, CoinService, GlobalService],
+  controllers: [AppController, CoinController, GlobalController, NewsController],
+  providers: [AppService, CoinService, GlobalService, NewsService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

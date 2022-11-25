@@ -19,6 +19,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { GlobalDataComponent } from './components/global-data/global-data.component';
+import { NewsComponent } from './components/news/news.component';
 import { StarComponent } from './components/star/star.component';
 
 
@@ -28,6 +29,8 @@ import { StarComponent } from './components/star/star.component';
     RegisterComponent,
     HomepageComponent,
     TableComponent,
+    GlobalDataComponent,
+    NewsComponent
     CoinComponent,
     GlobalDataComponent,
     StarComponent
