@@ -12,3 +12,7 @@ table {
   .negative {
     color: rgb(156, 34, 34);
   }
+
+  .highlighted {
+    color: rgb(156, 34, 34);
+  }
