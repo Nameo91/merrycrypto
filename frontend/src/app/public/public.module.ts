@@ -32,8 +32,8 @@ import { StarComponent } from './components/star/star.component';
     TableComponent,
     GlobalDataComponent,
     NewsComponent,
-    ExchangesComponent
-    NewsComponent
+    ExchangesComponent,
+    NewsComponent,
     CoinComponent,
     GlobalDataComponent,
     StarComponent
