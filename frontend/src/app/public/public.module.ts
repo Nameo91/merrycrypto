@@ -23,6 +23,7 @@ import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
 import { SearchComponent } from './components/search/search.component';
+import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SearchComponent } from './components/search/search.component';
     CoinComponent,
     GlobalDataComponent,
     StarComponent,
-    SearchComponent
+    SearchComponent,
+    PurchaseFormComponent
   ],
   imports: [
     CommonModule,

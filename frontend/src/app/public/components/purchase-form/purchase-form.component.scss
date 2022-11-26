@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600");
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  min-width: 350px;
+}
+  
+h2 {
+  margin-top: 50px;
+  font-size: 1.45rem;
+}
+label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+.group-gap {
+  margin-bottom: 40px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.form-control:focus,
+.custom-select:focus {
+  border: 1px solid #690f15;
+}
+
+.btn-group-lg > .btn,
+.btn-lg {
+  padding: 13px 15px 15px;
+  font-size: 16px;
+  border-radius: 0;
+}
+.custom-select {
+  height: auto;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  color: #000;
+  background-color: #ffffff;
+  border: 1px solid #000;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #e91e63;
+  background-color: #e91e63;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none;
+}
+.custom-control-label {
+  cursor: pointer;
+}
+.error:focus,
+.error {
+  border-color: #e91e63;
+  color: #e91e63;
+}
+.invalid-feedback {
+  color: #e91e63;
+}
+.btn-danger,
+body .btn-danger:hover {
+  background: #f63240;
+  border-color: #f63240;
+  color: #fff;
+}
