@@ -11,7 +11,7 @@
           <option value="">Choose Crypto</option>
           <option *ngFor="let crypto of Crypto" [ngValue]="crypto">
             <img src="https://www.cryptocompare.com{{crypto[1]}}" style="height: 20px;width: 20px;"/>
-            {{ crypto[0] }}
+            {{ crypto.name }}
           </option>
         </select>
 

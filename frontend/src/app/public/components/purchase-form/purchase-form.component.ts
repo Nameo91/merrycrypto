@@ -26,10 +26,9 @@ export class PurchaseFormComponent {
 
   loadCoins() {
     this.coinsService.getCoins().subscribe(coins => {
-      this.Crypto = coins.map((coin: any) => [coin.name, coin.imageURL]);
+      this.Crypto = coins;
     });
   };
-  
 
   changeCrypto(e: any) {
     this.cryptoName?.setValue(e.target.value, {
