@@ -8,6 +8,7 @@ import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { CoinComponent } from './components/coin/coin.component';
 import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
   component: ExchangesComponent
  }, {
   path: 'portfolio',
-  component: PurchaseFormComponent
+  component: PortfolioComponent
  },
  {
   path: 'coins/:id',

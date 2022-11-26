@@ -40,9 +40,7 @@ export class PurchaseFormComponent {
     return this.registrationForm.get('cryptoName');
   }
 
-  onSubmit(): void {
-    console.log(this.Crypto)
-    console.log(this.registrationForm);
+  onSubmit(): void { // want to save crypto name, id, price bought and number bought 
     this.isSubmitted = true;
     if (!this.registrationForm.valid) {
       false;

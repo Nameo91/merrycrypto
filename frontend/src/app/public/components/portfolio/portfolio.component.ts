@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PortfolioComponent {
 
+  // import crypto name, id, price bought and number bought 
+  // import crypto price
+
 }
