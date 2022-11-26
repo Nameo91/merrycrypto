@@ -26,6 +26,7 @@ import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
+import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PriceDisplayComponent } from './components/price-display/price-display.
     SearchComponent,
     PurchaseFormComponent,
     PortfolioComponent,
-    PriceDisplayComponent
+    PriceDisplayComponent,
+    PortfolioTableComponent
   ],
   imports: [
     CommonModule,
