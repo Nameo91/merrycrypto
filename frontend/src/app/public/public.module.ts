@@ -25,6 +25,7 @@ import { StarComponent } from './components/star/star.component';
 import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PriceDisplayComponent } from './components/price-display/price-display.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     StarComponent,
     SearchComponent,
     PurchaseFormComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    PriceDisplayComponent
   ],
   imports: [
     CommonModule,
