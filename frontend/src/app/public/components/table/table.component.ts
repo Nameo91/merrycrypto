@@ -1,5 +1,5 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, ViewChild, OnInit, Input } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -12,6 +12,7 @@ import { StarService } from 'src/app/services/star.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
+
 export class TableComponent implements OnInit {
   displayedColumns: string[] = [
     'imageURL',
@@ -25,7 +26,6 @@ export class TableComponent implements OnInit {
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
-  @Input() isWatchlist: boolean = false;
   userId!: number;
   starredCoins!: string[];
 
@@ -68,19 +68,18 @@ export class TableComponent implements OnInit {
   }
 
   onClick(rowdata: any) {
-    if (this.authService.isAuthenticated()) {
+    if(this.isLoggedIn()) {
       this.starService.updateWatchlist(rowdata.name, this.userId).subscribe(
-        (data) => { console.log(this.starredCoins = data.starredCoins)}
+        (data) => { this.starredCoins = data.starredCoins }
       );
     }
   }
 
   starButton(rowdata: any) {
-    if (this.starredCoins.includes(rowdata.name)) {
+    if(this.isLoggedIn() && this.isStarred(rowdata.name)){
       return "star";
-    } else {
-      return "star_border";
-    }
+    } 
+    return "star_border";
   }
 
   getUserId() {
@@ -88,5 +87,13 @@ export class TableComponent implements OnInit {
       this.userId = data.id;
       this.starredCoins = data.starredCoins;
     });
+  }
+
+  private isLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  private isStarred(data: any): boolean {
+    return this.starredCoins.includes(data);
   }
 }

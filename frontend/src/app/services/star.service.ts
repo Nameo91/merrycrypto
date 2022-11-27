@@ -26,7 +26,6 @@ export class StarService implements OnInit {
     return this.http
       .put<any>(`http://localhost:3000/api/star/${userId}`, body, options)
       .pipe(map((res: any) => {
-        console.log(res);
         return res;
       }));
   }
@@ -41,7 +40,6 @@ export class StarService implements OnInit {
     return this.http
       .get<any>(`http://localhost:3000/api/${userId}`, options)
       .pipe(map((res: any) => {
-          console.log(res);
           return res['_body'];
         })
       );
