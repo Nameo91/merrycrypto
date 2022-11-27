@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.positive {
+  color: rgb(97, 190, 97);
+}
+
+.negative {
+  color: rgb(156, 34, 34);
+}

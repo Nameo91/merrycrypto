@@ -1,2 +1,15 @@
-<app-purchase-form></app-purchase-form>
-<price-display from="BTC" to="USD"></price-display>
+<body>
+
+<span class="title">
+  <h1>Portfolio Tracker</h1>
+</span>
+
+<div class="addButton">
+  <button mat-raised-button color="primary" (click)="navigateTo('new/holding')">Add new holdings</button>
+</div>
+
+<div class="portfolioTable">
+  <app-portfolio-table></app-portfolio-table>
+</div>
+
+</body>

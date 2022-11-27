@@ -28,7 +28,6 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 
-
 @NgModule({
   declarations: [
     LoginComponent,

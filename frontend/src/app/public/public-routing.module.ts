@@ -24,6 +24,10 @@ const routes: Routes = [
   component: RegisterComponent
  },
  {
+ path: 'new/holding',
+  component: PurchaseFormComponent
+ },
+ {
   path: 'news',
   component: NewsComponent
  },

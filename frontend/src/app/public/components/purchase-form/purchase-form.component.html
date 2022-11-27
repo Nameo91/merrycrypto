@@ -1,6 +1,8 @@
+<body>
+
 <div class="container mt-5">
   <div class="row custom-wrapper">
-    <h2 class="mb-3 text-center">Add new purchase</h2>
+    <h2 class="mb-3 text-center">Add new holdings</h2>
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <div class="d-grid">
         <select
@@ -16,12 +18,12 @@
         </select>
 
         <mat-form-field appearance="outline">
-          <mat-label>Enter price of purchase</mat-label>
+          <mat-label>Price of cryptocurrency at purchase</mat-label>
           <input type="text" matInput placeholder="Price" formControlName="price">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Enter number of coins purchase</mat-label>
+          <mat-label>Number of coins purchased</mat-label>
           <input type="text" matInput placeholder="Number of coins" formControlName="amount">
         </mat-form-field>
 
@@ -40,3 +42,5 @@
     </form>
   </div>
 </div>
+
+</body>

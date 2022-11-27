@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { CoinsService } from '../../../../app/coins.service'
+import { CoinsService } from '../../../../app/coins.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-purchase-form',
@@ -12,7 +13,7 @@ export class PurchaseFormComponent {
   Crypto: any;
   //coins!: any;
   
-  constructor(private coinsService: CoinsService, public fb: FormBuilder) {}
+  constructor(private coinsService: CoinsService, public fb: FormBuilder, private router: Router) {}
   
   registrationForm = this.fb.group({
     cryptoName: ['', [Validators.required]],
@@ -46,6 +47,7 @@ export class PurchaseFormComponent {
       false;
     } else {
       console.log(JSON.stringify(this.registrationForm.value));
+      this.router.navigate(['portfolio'])
     }
   }
 }
