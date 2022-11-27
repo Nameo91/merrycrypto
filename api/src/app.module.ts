@@ -15,7 +15,6 @@ import { NewsController } from './news/news.controller';
 import { NewsService } from './news/news.service';
 import { ExchangesController } from './exchanges/exchanges.controller';
 import { ExchangesService } from './exchanges/exchanges.service';
-import { WatchlistModule } from './watchlist/watchlist.module';
 
 @Module({
   imports: [
@@ -23,7 +22,6 @@ import { WatchlistModule } from './watchlist/watchlist.module';
     UserModule,
     ConfigModule.forRoot(),
     HttpModule,
-    WatchlistModule,
   ],
   controllers: [
     AppController,
