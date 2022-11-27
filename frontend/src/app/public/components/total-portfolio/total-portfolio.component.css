@@ -3,7 +3,7 @@
 }
 
 
-.balance, .pnl {
+.balance, .pnl, .coins {
   border: solid;
   width: 300px;
   padding: 30px;
