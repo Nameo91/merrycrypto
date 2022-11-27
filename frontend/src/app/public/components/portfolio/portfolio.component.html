@@ -1,11 +1,13 @@
 <body>
 
-<span class="title">
-  <h1>Portfolio Tracker</h1>
-</span>
+<div class="titleButton">
+<h1>My Portfolio</h1>
+<button mat-raised-button color="primary" (click)="navigateTo('new/holding')">Add New Coin</button>
+</div>
 
-<div class="addButton">
-  <button mat-raised-button color="primary" (click)="navigateTo('new/holding')">Add new holdings</button>
+
+<div class="totalPortfolio">
+  <app-total-portfolio></app-total-portfolio>
 </div>
 
 <div class="portfolioTable">

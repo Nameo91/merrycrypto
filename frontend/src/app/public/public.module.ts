@@ -27,6 +27,7 @@ import { PurchaseFormComponent } from './components/purchase-form/purchase-form.
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
+import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PortfolioTableComponent } from './components/portfolio-table/portfolio-
     PurchaseFormComponent,
     PortfolioComponent,
     PriceDisplayComponent,
-    PortfolioTableComponent
+    PortfolioTableComponent,
+    TotalPortfolioComponent
   ],
   imports: [
     CommonModule,

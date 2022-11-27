@@ -1,14 +1,29 @@
+.titleButton {
+  display: flex;
+}
+
+button {
+  margin-top: 105px;
+  margin-right: 0px;
+  margin-left: auto
+}
 
 body {
   max-width: 1000px;
   margin: auto;
 }
 
-.addButton {
+.totalPortfolio {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+/* .addButton {
   float: right;
   margin-bottom: 20px;
-  margin-right: 100px
-}
+  margin-right: 100px;
+  margin-top: 30px;
+} */
 
 .portfolioTable {
   height: 50px;
