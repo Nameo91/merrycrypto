@@ -3,43 +3,56 @@ import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { CoinsService } from '../../../../app/coins.service'
-import { SelectionModel } from '@angular/cdk/collections';
+import { CoinsService } from '../../../coins.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { StarService } from 'src/app/services/star.service';
 
- @Component({
+@Component({
   selector: 'table-root',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
 })
-
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['imageURL', 'name', 'price', 'mc', 'dc', 'volume', 'favourite'];
+  displayedColumns: string[] = [
+    'imageURL',
+    'name',
+    'price',
+    'mc',
+    'dc',
+    'volume',
+    'favourite',
+  ];
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
-  @Input() isActive!: boolean;
+  @Input() isWatchlist: boolean = false;
+  userId!: number;
+  starredCoins!: string[];
 
   constructor(
     private coinsService: CoinsService,
     private _liveAnnouncer: LiveAnnouncer,
-    private router: Router
-    ) {}
+    private router: Router,
+    private authService: AuthenticationService,
+    private starService: StarService
+  ) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.loadCoins();
-  } 
+    this.getUserId();
+  }
 
   loadCoins() {
-    this.coinsService.getCoins().subscribe(coins => {
+    this.coinsService.getCoins().subscribe((coins) => {
       this.coins = coins;
       this.dataSource = new MatTableDataSource(this.coins);
       this.dataSource.sort = this.sort;
     });
-  };
+  }
 
   get loading(): boolean {
     return this.coins === undefined;
-  };
+  }
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -47,16 +60,31 @@ export class TableComponent implements OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
-  };
+  }
 
   navigateToCoin(row: any) {
     let id = row.name;
     this.router.navigateByUrl('coins/' + id);
-  };
-  
-  onClick(row: any) {
-    console.log(row);
-    this.isActive = !this.isActive;
   }
 
+  onClick(rowdata: any) {
+    if (this.authService.isAuthenticated()) {
+      this.starService.updateWatchlist(rowdata.name, this.userId).subscribe(
+        (data) => { console.log(this.starredCoins = data.starredCoins)}
+      );
+    }
+  }
+
+  starButton(rowdata: any) {
+    if (this.starredCoins.includes(rowdata.name)) {
+      this.isWatchlist = !this.isWatchlist
+    } 
+  }
+
+  getUserId() {
+    this.authService.getUserInfo().subscribe((data) => {
+      this.userId = data.id;
+      this.starredCoins = data.starredCoins;
+    });
+  }
 }
