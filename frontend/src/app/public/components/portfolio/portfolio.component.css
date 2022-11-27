@@ -3,7 +3,7 @@
 }
 
 button {
-  margin-top: 105px;
+  margin-top: 110px;
   margin-right: 0px;
   margin-left: auto
 }
@@ -14,16 +14,11 @@ body {
 }
 
 .totalPortfolio {
-margin-top: 20px;
-margin-bottom: 20px;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: auto;
+margin-right: auto;
 }
-
-/* .addButton {
-  float: right;
-  margin-bottom: 20px;
-  margin-right: 100px;
-  margin-top: 30px;
-} */
 
 .portfolioTable {
   height: 50px;
@@ -31,7 +26,7 @@ margin-bottom: 20px;
   padding: 2px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 h1 {
