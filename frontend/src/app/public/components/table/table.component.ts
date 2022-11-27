@@ -3,7 +3,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { CoinsService } from '../../../coins.service';
+import { CoinsService } from 'src/app/services/coins.service';
 
 @Component({
   selector: 'table-root',

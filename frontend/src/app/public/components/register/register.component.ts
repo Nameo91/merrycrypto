@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl, FormBuilder, ValidationErrors } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 
 class CustomValidators {
