@@ -77,8 +77,10 @@ export class TableComponent implements OnInit {
 
   starButton(rowdata: any) {
     if (this.starredCoins.includes(rowdata.name)) {
-      this.isWatchlist = !this.isWatchlist
-    } 
+      return "star";
+    } else {
+      return "star_border";
+    }
   }
 
   getUserId() {

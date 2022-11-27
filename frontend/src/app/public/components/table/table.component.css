@@ -22,7 +22,9 @@ table {
   color: rgb(156, 34, 34);
 }
 
-.likeButton.active {
+.star-btn {
   color: rgb(156, 34, 34);
+  animation: animate 3s linear infinite;
 }
+
 
