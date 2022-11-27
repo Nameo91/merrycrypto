@@ -51,8 +51,7 @@
    <ng-container matColumnDef="favourite">
     <th mat-header-cell *matHeaderCellDef> </th>
     <td mat-cell *matCellDef="let rowdata">
-      <button mat-button (click)="onClick(rowdata)"><span><mat-icon class="star-btn">{{starButton(rowdata)}}</mat-icon></span>
-     </button>
+      <star-icon [rowdata]="rowdata"></star-icon>
     </td>
   </ng-container>
 

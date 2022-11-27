@@ -21,6 +21,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { GlobalDataComponent } from './components/global-data/global-data.component';
 import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
+import { StarComponent } from './components/star/star.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ExchangesComponent } from './components/exchanges/exchanges.component';
     ExchangesComponent,
     CoinComponent,
     GlobalDataComponent,
+    StarComponent,
   ],
   imports: [
     CommonModule,

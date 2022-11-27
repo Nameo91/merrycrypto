@@ -4,8 +4,6 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from '../../../coins.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { StarService } from 'src/app/services/star.service';
 
 @Component({
   selector: 'table-root',
@@ -26,20 +24,15 @@ export class TableComponent implements OnInit {
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
-  userId!: number;
-  starredCoins!: string[];
 
   constructor(
     private coinsService: CoinsService,
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
-    private authService: AuthenticationService,
-    private starService: StarService
   ) {}
 
   ngOnInit(): void {
     this.loadCoins();
-    this.getUserId();
   }
 
   loadCoins() {
@@ -65,35 +58,5 @@ export class TableComponent implements OnInit {
   navigateToCoin(row: any) {
     let id = row.name;
     this.router.navigateByUrl('coins/' + id);
-  }
-
-  onClick(rowdata: any) {
-    if(this.isLoggedIn()) {
-      this.starService.updateWatchlist(rowdata.name, this.userId).subscribe(
-        (data) => { this.starredCoins = data.starredCoins }
-      );
-    }
-  }
-
-  starButton(rowdata: any) {
-    if(this.isLoggedIn() && this.isStarred(rowdata.name)){
-      return "star";
-    } 
-    return "star_border";
-  }
-
-  getUserId() {
-    this.authService.getUserInfo().subscribe((data) => {
-      this.userId = data.id;
-      this.starredCoins = data.starredCoins;
-    });
-  }
-
-  private isLoggedIn(): boolean {
-    return this.authService.isAuthenticated();
-  }
-
-  private isStarred(data: any): boolean {
-    return this.starredCoins.includes(data);
   }
 }
