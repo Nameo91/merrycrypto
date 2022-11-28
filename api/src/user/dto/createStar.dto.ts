@@ -1,6 +1,6 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateWatchlistDto {
+export class CreateStarDto {
   @IsNotEmpty()
-  coinname: string;
+  starredCoins: string;
 }

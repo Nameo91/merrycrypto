@@ -20,10 +20,24 @@ import { PriceService } from './price/price.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(config), 
+    TypeOrmModule.forRoot(config),
     UserModule,
     ConfigModule.forRoot(),
-    HttpModule
+    HttpModule,
+  ],
+  controllers: [
+    AppController,
+    CoinController,
+    GlobalController,
+    NewsController,
+    ExchangesController,
+  ],
+  providers: [
+    AppService,
+    CoinService,
+    GlobalService,
+    NewsService,
+    ExchangesService,
   ],
   controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController, PriceController],
   providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService, PriceService],
