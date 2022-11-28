@@ -24,7 +24,6 @@ import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
 import { SearchComponent } from './components/search/search.component';
 
-
 @NgModule({
   declarations: [
     LoginComponent,

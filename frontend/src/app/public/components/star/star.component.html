@@ -1,7 +1,2 @@
-<button mat-button><span
-  class="likeButton"
-  [class.highlighted]="isActive"
-  (click)="onClick()"
-  aria-hidden="true"><mat-icon>star_border</mat-icon></span>
+<button mat-button (click)="onClick(rowdata)"><span><mat-icon class="star-btn">{{starButton(rowdata)}}</mat-icon></span>
 </button>
-

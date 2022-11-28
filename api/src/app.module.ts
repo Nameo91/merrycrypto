@@ -18,13 +18,25 @@ import { ExchangesService } from './exchanges/exchanges.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(config), 
+    TypeOrmModule.forRoot(config),
     UserModule,
     ConfigModule.forRoot(),
-    HttpModule
+    HttpModule,
   ],
-  controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController],
-  providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService],
+  controllers: [
+    AppController,
+    CoinController,
+    GlobalController,
+    NewsController,
+    ExchangesController,
+  ],
+  providers: [
+    AppService,
+    CoinService,
+    GlobalService,
+    NewsService,
+    ExchangesService,
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
