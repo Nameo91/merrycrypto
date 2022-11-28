@@ -1,0 +1,32 @@
+.total{
+  display: flex;
+}
+
+
+.balance, .pnl, .coins {
+  border: solid;
+  width: 300px;
+  padding: 30px;
+  height: 120px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 15px;
+  border-color: rgb(200, 208, 201);
+  box-shadow: 5px 5px 5px rgb(154, 163, 150);
+}
+
+.pnl .amount {
+  display: flex;
+  text-align: center;
+  text-align: bottom;
+}
+.pnl .amount h4 {
+  margin-left: 30px;
+}
+
+.pnl .amount h6 {
+  margin-left: 5px;
+  color: rgb(196, 48, 48);
+  margin-top: 7px
+}
+

@@ -23,6 +23,11 @@ import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
 import { SearchComponent } from './components/search/search.component';
+import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PriceDisplayComponent } from './components/price-display/price-display.component';
+import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
+import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import { SearchComponent } from './components/search/search.component';
     CoinComponent,
     GlobalDataComponent,
     StarComponent,
-    SearchComponent
+    SearchComponent,
+    PurchaseFormComponent,
+    PortfolioComponent,
+    PriceDisplayComponent,
+    PortfolioTableComponent,
+    TotalPortfolioComponent
   ],
   imports: [
     CommonModule,

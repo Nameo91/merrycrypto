@@ -15,6 +15,8 @@ import { NewsController } from './news/news.controller';
 import { NewsService } from './news/news.service';
 import { ExchangesController } from './exchanges/exchanges.controller';
 import { ExchangesService } from './exchanges/exchanges.service';
+import { PriceController } from './price/price.controller';
+import { PriceService } from './price/price.service';
 
 @Module({
   imports: [
@@ -37,6 +39,8 @@ import { ExchangesService } from './exchanges/exchanges.service';
     NewsService,
     ExchangesService,
   ],
+  controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController, PriceController],
+  providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService, PriceService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

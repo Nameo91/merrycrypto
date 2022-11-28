@@ -1,0 +1,46 @@
+<body>
+
+<div class="container mt-5">
+  <div class="row custom-wrapper">
+    <h2 class="mb-3 text-center">Add new holdings</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="d-grid">
+        <select
+          class="custom-select mb-3"
+          (change)="changeCrypto($event)"
+          formControlName="cryptoName"
+        >
+          <option value="">Choose Crypto</option>
+          <option *ngFor="let crypto of Crypto" [ngValue]="crypto">
+            <img src="https://www.cryptocompare.com{{crypto[1]}}" style="height: 20px;width: 20px;"/>
+            {{ crypto.name }}
+          </option>
+        </select>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Price of cryptocurrency at purchase</mat-label>
+          <input type="text" matInput placeholder="Price" formControlName="price">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Number of coins purchased</mat-label>
+          <input type="text" matInput placeholder="Number of coins" formControlName="amount">
+        </mat-form-field>
+
+        <!-- error block -->
+        <div class="invalid-feedback" *ngIf="isSubmitted && cryptoName?.invalid">
+          <sup>*</sup>Please provide crypto name
+        </div>
+        <!-- <button type="submit" class="btn btn-danger btn-lg btn-block">
+          Submit
+        </button> -->
+
+        <div class="button">
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
