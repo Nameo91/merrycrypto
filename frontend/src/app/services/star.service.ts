@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthenticationService } from './authentication.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -10,7 +9,6 @@ import { map } from 'rxjs/operators';
 export class StarService implements OnInit {
   constructor(
     private http: HttpClient,
-    private authService: AuthenticationService
   ) {}
 
   ngOnInit(): void {}
