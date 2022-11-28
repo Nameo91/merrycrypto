@@ -9,6 +9,7 @@ import { CoinComponent } from './components/coin/coin.component';
 import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,7 @@ const routes: Routes = [
 },
  {
   path: '**',
-  redirectTo: 'login',
+  component: PageNotFoundComponent,
   pathMatch: 'full'
  }
 ];

@@ -1,0 +1,11 @@
+.page-not-found-container {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.page-not-found-gif {
+  width: 780px;
+  height: 520px;
+  display: block;
+  margin: 0 auto;
+}
