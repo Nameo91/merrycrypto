@@ -18,11 +18,8 @@ export class UserEntity {
   @Column('text', { array: true, default: [] })
   starredCoins: string[];
 
-  // @Column({ array: true, default: [] })
-  // portfolio: any[];
-
-  @Column('jsonb', {nullable: true})
-  portfolio: object[];
+  @Column('jsonb', { default: [] })
+  portfolio: any[];
 
   @BeforeInsert()
   async hashPassword() {

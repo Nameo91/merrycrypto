@@ -117,7 +117,7 @@ export class UserService {
   async updatePortfolio(portfoliodto: CreatePortfolioDto, id: number) {
     const user = await this.findById(id);
     const coin = portfoliodto.coin;
-
+    
       user.portfolio.push(coin);
       return this.userRepository.save(user);
   }

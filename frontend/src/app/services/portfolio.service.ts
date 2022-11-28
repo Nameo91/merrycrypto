@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class StarService implements OnInit {
+export class PortfolioService implements OnInit {
   constructor(
     private http: HttpClient,
     private authService: AuthenticationService
@@ -16,6 +16,8 @@ export class StarService implements OnInit {
   ngOnInit(): void {}
 
   updatePortfolio(coin: object, userId: number): Observable<any> {
+    console.log(coin)
+    console.log(userId)
     const token: any = localStorage.getItem('token');
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
