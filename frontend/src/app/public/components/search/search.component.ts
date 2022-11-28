@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CoinsService } from '../../../../app/coins.service'
+import { CoinsService } from 'src/app/services/coins.service'
 
 
 @Component({
