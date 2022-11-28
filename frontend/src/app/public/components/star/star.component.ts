@@ -3,6 +3,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { StarService } from 'src/app/services/star.service';
 import { Router } from '@angular/router';
 
+type RowData = {name: string};
+
 @Component({
   selector: 'star-icon',
   templateUrl: './star.component.html',
@@ -11,7 +13,7 @@ import { Router } from '@angular/router';
 export class StarComponent implements OnInit{
   userId!: number;
   starredCoins: string[]=[];
-  @Input() rowdata!: {name: string};
+  @Input() rowdata!: RowData;
 
   constructor(    
     private authService: AuthenticationService,
@@ -23,7 +25,7 @@ export class StarComponent implements OnInit{
     this.getUserId();
   }
 
-  onClick(rowdata: {name: string}) {
+  onClick(rowdata: RowData) {
     if(this.isLoggedIn()) {
       this.starService.updateWatchlist(rowdata.name, this.userId).subscribe(
         (data) => { this.starredCoins = data.starredCoins }
@@ -33,7 +35,7 @@ export class StarComponent implements OnInit{
     }
   }
 
-  starButton(rowdata: {name: string}): string {
+  starButton(rowdata: RowData): 'star' | 'star_border' {
     if(this.isLoggedIn() && this.isStarred(rowdata.name)){
       return "star";
     } 

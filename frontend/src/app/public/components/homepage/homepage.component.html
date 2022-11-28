@@ -7,6 +7,10 @@
 <app-global-data></app-global-data>
 </div>
 
+<div class="display-username" *ngIf="token">
+  <span>Hello, {{username}}</span>
+</div>
+
 <div class="searchBar">
   <app-search></app-search>
 </div>

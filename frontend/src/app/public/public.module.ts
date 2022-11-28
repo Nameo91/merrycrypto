@@ -28,6 +28,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TotalPortfolioComponent } from './components/total-portfolio/total-port
     PortfolioComponent,
     PriceDisplayComponent,
     PortfolioTableComponent,
-    TotalPortfolioComponent
+    TotalPortfolioComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
