@@ -1,7 +1,7 @@
 <div class="total">
   <div class="balance">
     <div class="amount">
-      <h4>$52,139</h4>
+      <h4>{{currentBalance.toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 0})}}</h4>
     </div>
     <div class="title">
       Total Balance
@@ -10,7 +10,7 @@
 
   <div class="pnl">
     <div class="amount">
-      <h4>+$12,350</h4><h6> (+27.5%)</h6>
+      <h4>{{(currentBalance - initialBalance).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 0})}}</h4><h6> {{(((currentBalance - initialBalance) / initialBalance) * 100).toFixed(2)}}%</h6>
     </div>
     <div class="title">
       Total Profit Loss
@@ -19,7 +19,7 @@
 
   <div class="coins">
     <div class="amount">
-      <h3>5</h3>
+      <h3>{{coins}}</h3>
     </div>
     <div class="title">
       Cryptocurrencies Held

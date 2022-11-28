@@ -1,63 +1,45 @@
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatSort, Sort } from '@angular/material/sort';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { PriceService } from 'src/app/price.service';
 
  interface CryptoCoins {
   imgURL: any,
   name: string,
   priceBought: number,
-  amountBought: number
-  holdings: string
-  position: number
-  percent: number
+  amountBought: number,
+  [key: string]: any
  }
 
-const ELEMENT_DATA: CryptoCoins[] = [
+const PortfolioData: CryptoCoins[] = [
   {
     name: "BTC",
     priceBought: 10591,
     amountBought: 5,
-    imgURL: "/media/37746251/btc.png",
-    holdings: "82,605" , //(price * amountBought) = (16521 * 5)
-    position: 29545, // amount in $ up - (price * amountBought) - (priceBought * amountBought)
-    percent: 55.8
+    imgURL: "/media/37746251/btc.png"
   },
   {
     name: "ETH",
     priceBought: 2200,
     amountBought: 12,
-    imgURL: "/media/37746238/eth.png",
-    holdings: "14,532", //(price * amountBought) = (1211 * 12)
-    position:  -1200, // (price * amountBought) - (priceBought * amountBought),
-    percent: -45.5
+    imgURL: "/media/37746238/eth.png"
   },
   {
     name: "DOGE",
     priceBought: 0.08,
     amountBought: 1000,
-    imgURL: "/media/37746339/doge.png",
-    holdings: "7,569", //(price * amountBought) = (1211 * 12)
-    position:  2567, // (price * amountBought) - (priceBought * amountBought),
-    percent: 28.4
+    imgURL: "/media/37746339/doge.png"
   },
   {
     name: "BNB",
     priceBought: 400,
     amountBought: 200,
-    imgURL: "/media/40485170/bnb.png",
-    holdings: "8,567", //(price * amountBought) = (1211 * 12)
-    position:  -2500, // (price * amountBought) - (priceBought * amountBought),
-    percent: -24.0
+    imgURL: "/media/40485170/bnb.png"
   },
   {
     name: "USDT",
     priceBought: 0.99,
     amountBought: 35000,
-    imgURL: "/media/37746338/usdt.png",
-    holdings: "35,000", //(price * amountBought) = (1211 * 12)
-    position:  500, // (price * amountBought) - (priceBought * amountBought),
-    percent: 1.3
+    imgURL: "/media/37746338/usdt.png"
   }
 ];
 
@@ -67,23 +49,29 @@ const ELEMENT_DATA: CryptoCoins[] = [
   styleUrls: ['./portfolio-table.component.css']
 })
 
-export class PortfolioTableComponent implements AfterViewInit {
+export class PortfolioTableComponent implements OnInit {
   displayedColumns: string[] = ['imgURL', 'name', 'price', 'holdings', 'position$', 'position%'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource: any
+  numFor = Intl.NumberFormat('en-US')
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(private priceService: PriceService) {}
+  
+  ngOnInit(): void { 
+    this.dataSource = new MatTableDataSource(this.currentPrice());
+  } 
 
-  @ViewChild(MatSort) sort!: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+  currentPrice() {
+   PortfolioData.map(element => { this.priceService.getPrice(element.name, 'USD').subscribe(price => {
+        element['price'] = price
+        element['holdings'] = this.numFor.format((price * element.amountBought))
+        element['pnl'] = ((price * element.amountBought) - (element.priceBought * element.amountBought))
+        element['percentagePNL'] = (((price * element.amountBought) - (element.priceBought * element.amountBought)) / (element.priceBought * element.amountBought) * 100).toFixed(0)
+      });
+   }) 
+   return PortfolioData
   }
 
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
+  getData() {
+    return PortfolioData
   }
 }
