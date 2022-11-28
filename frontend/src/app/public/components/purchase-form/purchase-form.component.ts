@@ -46,7 +46,6 @@ export class PurchaseFormComponent {
     if (!this.registrationForm.valid) {
       false;
     } else {
-      console.log(JSON.stringify(this.registrationForm.value));
       this.router.navigate(['portfolio'])
     }
   }

@@ -18,6 +18,7 @@ import { UserEntity } from '@app/user/user.entity';
 import { User } from '@app/user/decorators/user.decorator';
 import { CreateStarDto } from '@app/user/dto/createStar.dto';
 import { async } from 'rxjs';
+import { CreatePortfolioDto } from './dto/createPortfolio.dto';
 
 @Controller()
 export class UserController {
@@ -58,5 +59,11 @@ export class UserController {
   @UseGuards(AuthGuard)
   async getStarredCoins(@Param('id') id: number) {
     return this.userService.getStarredCoins(id);
+  }
+
+  @Put('api/portfolio/:id')
+  @UseGuards(AuthGuard)
+  async updatePortfolio(@Param('id') id: number, @Body() data: CreatePortfolioDto) {
+    return this.userService.updatePortfolio(data, id);
   }
 }
