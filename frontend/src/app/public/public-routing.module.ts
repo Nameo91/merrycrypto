@@ -6,6 +6,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { CoinComponent } from './components/coin/coin.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   path: 'coins/:id',
   component: CoinComponent
  },
+ {
+ path: 'search',
+ component: SearchComponent
+},
  {
   path: '**',
   redirectTo: 'login',
