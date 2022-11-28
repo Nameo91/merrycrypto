@@ -29,6 +29,7 @@ import { PriceDisplayComponent } from './components/price-display/price-display.
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     PriceDisplayComponent,
     PortfolioTableComponent,
     TotalPortfolioComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SnowEffectComponent
   ],
   imports: [
     CommonModule,
