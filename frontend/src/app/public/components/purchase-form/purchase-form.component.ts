@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { CoinsService } from '../../../../app/coins.service';
+import { CoinsService } from 'src/app/services/coins.service';
 import { Router } from '@angular/router';
 
 @Component({

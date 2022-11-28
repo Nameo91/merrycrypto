@@ -31,6 +31,7 @@ import { PriceService } from './price/price.service';
     GlobalController,
     NewsController,
     ExchangesController,
+    PriceController,
   ],
   providers: [
     AppService,
@@ -38,9 +39,8 @@ import { PriceService } from './price/price.service';
     GlobalService,
     NewsService,
     ExchangesService,
+    PriceService,
   ],
-  controllers: [AppController, CoinController, GlobalController, NewsController, ExchangesController, PriceController],
-  providers: [AppService, CoinService, GlobalService, NewsService, ExchangesService, PriceService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
