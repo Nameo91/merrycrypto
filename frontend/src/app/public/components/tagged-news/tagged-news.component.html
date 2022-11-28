@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+  </head>
+  
+  <body>
+    <div class="news">
+      <h1>Related News</h1>
+      <div class="container mt-5">
+        <div class="row">
+          <div *ngFor="let article of filteredNews" class="col-lg-3 mt-3 mb-3">
+            <li>
+              <div class="box">
+                <img src="{{ article.image }}" width="100%" />
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.body }}</p>
+                <a mat-raised-button href="{{ article.url }}" class="button"
+                  >Read more</a
+                >
+              </div>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </body>  
+</html>
+
