@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
     this.cryptoName = cryptoName.target.value;
     
     if (this.coins.includes(this.cryptoName.toUpperCase())) {
-      this.navigateTo('/coins/'.concat(this.cryptoName))
+      this.navigateTo('/coins/'.concat(this.cryptoName.toUpperCase()))
     }
   }
 
