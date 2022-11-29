@@ -39,16 +39,16 @@ export class WatchlistComponent implements OnInit {
     this.filterAllCoins()
   }
 
-  loadStarredCoins() {
+  loadStarredCoins() { // pulling in all the users starred coins
     this.authService.getUserInfo().subscribe((data) => {
       this.starredCoins = data.starredCoins;
-      console.log(data.starredCoins)
+      console.log(data.starredCoins) // printing the starred coins in the inspect online console
     });
   }
 
-  filterAllCoins() {
+  filterAllCoins() { //currently just pulling in the top 30 coins
     this.coinsService.getCoins().subscribe((coins) => {
-      this.coins = coins;
+      coins.filter(); // filter through coins (which is every single coin) and only keep the coins which ate in this.starredcoins
       this.dataSource = new MatTableDataSource(this.coins);
       this.dataSource.sort = this.sort;
     });
