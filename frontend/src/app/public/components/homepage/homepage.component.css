@@ -26,24 +26,24 @@ margin-right: auto;
 }
 
 .globalData {
-margin-top: 30px;
+margin-top: 20px;
 margin-left: 50px;
 margin-right: auto;
 }
 
 .display-username {
-display: flex;
-justify-content: center;
+  display: flex;
 position: relative;
-text-align: center;
 margin-top: 40px;
 margin-left: 380px;
-margin-right: auto
+margin-right: auto;
+white-space: nowrap;
+  overflow: hidden;
 }
 
 .display-username button {
-margin-left: 1%;
-margin-top: -1%;
+margin-left: 7px;
+margin-top: -5%;
 background-color: white;
 border: none;
 font-size: 23pt;
