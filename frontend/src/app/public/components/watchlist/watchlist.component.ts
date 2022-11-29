@@ -1,10 +1,8 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from 'src/app/services/coins.service';
-import { StarComponent } from '../star/star.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 interface CryptoCoin {
@@ -29,7 +27,8 @@ export class WatchlistComponent implements OnInit {
     'price',
     'mc',
     'dc',
-    'volume'
+    'volume',
+    'favourite'
   ];
   dataSource!: any;
   coins!: any;
@@ -46,29 +45,21 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadStarredCoins();
-    this.filterAllCoins()
   }
 
   loadStarredCoins() {
     this.authService.getUserInfo().subscribe((data) => {
-      this.starredCoins = data.starredCoins;
-      console.log(data.starredCoins)
+      this.filterAllCoins(data.starredCoins);
     });
   }
 
-  filterAllCoins() {
+  filterAllCoins(selectedCoins: string[]) {
     this.coinsService.getCoins().subscribe((coins) => {
-      this.coins = coins;
-      this.filteredCoins = coins.filter(this.filterByName);
-      console.log(this.filteredCoins)
-      this.dataSource = new MatTableDataSource(this.coins);
+      this.dataSource = coins.filter((coin: CryptoCoin) => (selectedCoins.includes(coin.name)))
       this.dataSource.sort = this.sort;
     });
   }
 
-  filterByName = (coin: CryptoCoin) => {
-    this.starredCoins.includes(coin.name)
-  }
 
   get loading(): boolean {
     return this.coins === undefined;
@@ -85,5 +76,9 @@ export class WatchlistComponent implements OnInit {
   navigateToCoin(row: any) {
     let id = row.name;
     this.router.navigateByUrl('coins/' + id);
+  }
+
+  onClick(){
+    window.location.reload()
   }
 }
