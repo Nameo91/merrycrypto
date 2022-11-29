@@ -31,6 +31,7 @@ import { TotalPortfolioComponent } from './components/total-portfolio/total-port
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
 import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
+import { RelatedTwitComponent } from './components/related-twit/related-twit.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TaggedNewsComponent } from './components/tagged-news/tagged-news.compon
     TotalPortfolioComponent,
     PageNotFoundComponent,
     SnowEffectComponent,
-    TaggedNewsComponent
+    TaggedNewsComponent,
+    RelatedTwitComponent
   ],
   imports: [
     CommonModule,
