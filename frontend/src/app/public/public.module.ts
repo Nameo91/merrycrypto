@@ -23,6 +23,7 @@ import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -54,7 +55,9 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
     MatDividerModule,
     MatGridListModule,
     MatMenuModule,
-    MatTooltipModule
-  ]
+    MatTooltipModule,
+    MatChipsModule
+  ],
+  providers: [LineChartComponent]
 })
 export class PublicModule { }

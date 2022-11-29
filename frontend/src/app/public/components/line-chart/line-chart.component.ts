@@ -1,5 +1,4 @@
-import { CdkTextColumn } from '@angular/cdk/table';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -8,27 +7,27 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent {
-  public chart: any;
+  public lineChart!: any;
+  @Input() labels!: string[];
+  @Input() data!: string[];
+
   constructor() { }
 
   ngOnInit(): void {
     this.createChart();
   }
 
-
   createChart(){
-
-    this.chart = new Chart("MyChart", {
+  
+    this.lineChart = new Chart("MyChart", {
       type: 'line', 
 
-      data: {// values on X-Axis
-        labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
-								 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17', ], 
+      data: {
+        labels: this.labels, 
 	       datasets: [
           {
-            label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
+            label: "Closing price",
+            data: this.data,
             backgroundColor: 'rgb(39, 132, 64, 0.5)',
             borderColor: 'rgb(39, 132, 64)',
             fill: true
@@ -42,6 +41,11 @@ export class LineChartComponent {
             display: false
           }
         },
+        elements: {
+          point: {
+            radius: 2
+          }
+        },
         scales: {
           y: {
             grid: {
@@ -52,10 +56,20 @@ export class LineChartComponent {
           x: {
             grid: {
               display: false
-            }
+            },
+            display: false
           },
         }
       }
     });
+  }
+
+  updateChart(updatedData: number[], updatedLabels: Date[]) {
+    let chartExist = Chart.getChart('MyChart');
+    if (chartExist != undefined) {
+      chartExist.data.datasets[0].data = updatedData;
+      chartExist.data.labels = updatedLabels;
+      chartExist.update(); 
+    }
   }
 }
