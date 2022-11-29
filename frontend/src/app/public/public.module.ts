@@ -30,6 +30,7 @@ import { PortfolioTableComponent } from './components/portfolio-table/portfolio-
 import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
+import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SnowEffectComponent } from './components/snow-effect/snow-effect.compon
     PortfolioTableComponent,
     TotalPortfolioComponent,
     PageNotFoundComponent,
-    SnowEffectComponent
+    SnowEffectComponent,
+    TaggedNewsComponent
   ],
   imports: [
     CommonModule,
