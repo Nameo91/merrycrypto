@@ -16,7 +16,7 @@ export type News = {
   styleUrls: ['./tagged-news.component.css'],
 })
 export class TaggedNewsComponent implements OnInit {
-  filteredNews!: News;
+  filteredNews: News=[];
   public id!: any;
 
   constructor(
@@ -27,16 +27,14 @@ export class TaggedNewsComponent implements OnInit {
   ngOnInit(): void {
     this.getfilteredNews();
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
   }
 
   getfilteredNews() {
     this.newsService.getNews().subscribe((news: News) => {
       this.filteredNews = this.newsFilter(news);
-      console.log(this.filteredNews);
     });
   }
-
+  
   private newsFilter(news: News) {
     const filtered = news.filter((singleNews) =>
       singleNews.tags.includes(this.id) || singleNews.tags.includes(this.id.toLowerCase())
