@@ -20,8 +20,7 @@ export class WatchlistComponent implements OnInit {
     'price',
     'mc',
     'dc',
-    'volume',
-    'favourite',
+    'volume'
   ];
   dataSource!: any;
   coins!: any;
