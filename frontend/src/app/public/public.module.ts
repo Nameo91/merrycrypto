@@ -33,7 +33,7 @@ import { TotalPortfolioComponent } from './components/total-portfolio/total-port
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
 import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
-import { RelatedTwitComponent } from './components/related-twit/related-twit.component';
+import { RelatedTweetComponent } from './components/related-tweet/related-tweet.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
@@ -58,7 +58,7 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     PageNotFoundComponent,
     SnowEffectComponent,
     TaggedNewsComponent,
-    RelatedTwitComponent,
+    RelatedTweetComponent,
     WatchlistComponent
   ],
   imports: [
