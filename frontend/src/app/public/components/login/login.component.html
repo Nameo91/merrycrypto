@@ -35,6 +35,8 @@
               <h5>{{errorMessage}}</h5>
             </div>
 
+            <div class="login-error-gif" *ngIf="showErrorGif"><div class="login-error-gif-box"><iframe class = "login-error-gif-frame" allowfullscreen="" frameBorder="0" src="https://giphy.com/embed/dHJZAPXwT2eCmxE0Uf/video"></iframe></div></div>
+
             <div class="button">
               <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
             </div>
