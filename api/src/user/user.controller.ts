@@ -17,7 +17,6 @@ import { AuthGuard } from '@app/user/guards/auth.guard';
 import { UserEntity } from '@app/user/user.entity';
 import { User } from '@app/user/decorators/user.decorator';
 import { CreateStarDto } from '@app/user/dto/createStar.dto';
-import { async } from 'rxjs';
 import { CreatePortfolioDto } from './dto/createPortfolio.dto';
 
 @Controller()

@@ -5,7 +5,7 @@ import { CoinService } from "./coin.service";
 export class CoinController{
   constructor(private readonly coinService: CoinService) {}
 
-  @Get('api/:id')
+  @Get('api/data/history/:id')
   async getCoinData(@Param('id') id: string): Promise<any> {
     let coinData = await this.coinService.getCoinData(id);
     return { coinData };
