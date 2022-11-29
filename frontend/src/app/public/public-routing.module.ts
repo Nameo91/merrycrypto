@@ -9,6 +9,7 @@ import { CoinComponent } from './components/coin/coin.component';
 import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   path: 'news',
   component: NewsComponent
  },
+ {
+ path: 'watchlist',
+ component: WatchlistComponent
+ }, 
  {
   path: 'exchanges',
   component: ExchangesComponent

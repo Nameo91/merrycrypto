@@ -28,6 +28,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TotalPortfolioComponent } from './components/total-portfolio/total-port
     PortfolioComponent,
     PriceDisplayComponent,
     PortfolioTableComponent,
-    TotalPortfolioComponent
+    TotalPortfolioComponent,
+    WatchlistComponent
   ],
   imports: [
     CommonModule,
