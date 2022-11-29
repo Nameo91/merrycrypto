@@ -13,3 +13,8 @@ th.mat-sort-header-sorted {
 .negative {
   color: rgb(156, 34, 34);
 }
+
+.button {
+  padding: 1px;
+  font-size: 6;
+}
