@@ -66,4 +66,10 @@ export class UserController {
   async updatePortfolio(@Param('id') id: number, @Body() data: CreatePortfolioDto) {
     return this.userService.updatePortfolio(data, id);
   }
+
+  @Get('api/portfolio/:id')
+  @UseGuards(AuthGuard)
+  async getPortfolio(@Param('id') id: number) {
+    return this.userService.getPortfolio(id);
+  }
 }

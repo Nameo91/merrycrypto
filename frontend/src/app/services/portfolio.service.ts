@@ -31,4 +31,19 @@ export class PortfolioService implements OnInit {
         return res;
       }));
   }
+
+  getPortfolio(userId: number): Observable<any> {
+    const token: any = localStorage.getItem('token');
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Token ' + token,
+    });
+    let options = { headers };
+    return this.http
+      .get<any>(`http://localhost:3000/api/portfolio/${userId}`, options)
+      .pipe(map((res: any) => {
+          return res['_body'];
+        })
+      );
+  }
 }

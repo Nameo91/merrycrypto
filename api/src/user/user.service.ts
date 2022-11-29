@@ -121,4 +121,9 @@ export class UserService {
       user.portfolio.push(coin);
       return this.userRepository.save(user);
   }
+
+  async getPortfolio(id: number) {
+    const user = await this.findById(id);
+    return user.portfolio;
+  }
 }

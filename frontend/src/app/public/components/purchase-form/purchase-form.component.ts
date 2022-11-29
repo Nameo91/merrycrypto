@@ -19,8 +19,8 @@ export class PurchaseFormComponent {
   
   registrationForm = this.fb.group({
     cryptoName: ['', [Validators.required]],
-    price: ['', [Validators.required]],
-    amount: ['', [Validators.required]],
+    price: [0, [Validators.required]],
+    amount: [0, [Validators.required]],
   });
 
   ngOnInit(): void { 
@@ -63,15 +63,15 @@ export class PurchaseFormComponent {
     interface CryptoCoin {
       imgURL: any,
       name: string,
-      priceBought: string
-      amountBought: string
+      priceBought: any
+      amountBought: any
      }
   
     const newCoin: CryptoCoin = {
       name: this.cryptoCoin().name,
       imgURL: this.cryptoCoin().imageURL,
-      priceBought: JSON.stringify(this.registrationForm.value.price),
-      amountBought: JSON.stringify(this.registrationForm.value.amount)
+      priceBought: this.registrationForm.value.price,
+      amountBought: this.registrationForm.value.amount
     }
     return newCoin
   }
