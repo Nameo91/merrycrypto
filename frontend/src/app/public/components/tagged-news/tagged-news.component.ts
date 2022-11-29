@@ -15,6 +15,7 @@ export type News = {
   templateUrl: './tagged-news.component.html',
   styleUrls: ['./tagged-news.component.css'],
 })
+
 export class TaggedNewsComponent implements OnInit {
   filteredNews: News=[];
   public id!: any;
