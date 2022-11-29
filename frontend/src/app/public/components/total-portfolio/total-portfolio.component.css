@@ -26,7 +26,13 @@
 
 .pnl .amount h6 {
   margin-left: 5px;
-  color: rgb(196, 48, 48);
   margin-top: 7px
 }
 
+.positive {
+  color: rgb(97, 190, 97);
+}
+
+.negative {
+  color: rgb(156, 34, 34);
+}
