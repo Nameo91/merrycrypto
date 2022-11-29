@@ -55,7 +55,7 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     PageNotFoundComponent,
     SnowEffectComponent,
     TaggedNewsComponent,
-    RelatedTwitComponent
+    RelatedTwitComponent,
     WatchlistComponent
   ],
   imports: [
