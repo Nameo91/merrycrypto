@@ -9,6 +9,7 @@ import { sign } from 'jsonwebtoken';
 import { LoginUserDto } from '@app/user/dto/loginUser.dto';
 import { compare } from 'bcrypt';
 import { CreateStarDto } from './dto/createStar.dto';
+import { CreatePortfolioDto } from './dto/createPortfolio.dto';
 
 @Injectable()
 export class UserService {
@@ -111,5 +112,18 @@ export class UserService {
   async getStarredCoins(id: number) {
     const user = await this.findById(id);
     return user.starredCoins;
+  }
+
+  async updatePortfolio(portfoliodto: CreatePortfolioDto, id: number) {
+    const user = await this.findById(id);
+    const coin = portfoliodto.coin;
+    
+      user.portfolio.push(coin);
+      return this.userRepository.save(user);
+  }
+
+  async getPortfolio(id: number) {
+    const user = await this.findById(id);
+    return user.portfolio;
   }
 }
