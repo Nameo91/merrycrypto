@@ -7,6 +7,15 @@ import { CoinsService } from 'src/app/services/coins.service';
 import { StarComponent } from '../star/star.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+interface CryptoCoin {
+  name: any,
+  price: any,
+  mc: any,
+  dc: any,
+  imageURL: any
+  volume: any
+ }
+
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.component.html',
@@ -26,6 +35,7 @@ export class WatchlistComponent implements OnInit {
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
   starredCoins!: any;
+  filteredCoins!: any;
 
   constructor(
     private coinsService: CoinsService,
@@ -39,19 +49,25 @@ export class WatchlistComponent implements OnInit {
     this.filterAllCoins()
   }
 
-  loadStarredCoins() { // pulling in all the users starred coins
+  loadStarredCoins() {
     this.authService.getUserInfo().subscribe((data) => {
       this.starredCoins = data.starredCoins;
-      console.log(data.starredCoins) // printing the starred coins in the inspect online console
+      console.log(data.starredCoins)
     });
   }
 
-  filterAllCoins() { //currently just pulling in the top 30 coins
+  filterAllCoins() {
     this.coinsService.getCoins().subscribe((coins) => {
-      coins.filter(); // filter through coins (which is every single coin) and only keep the coins which ate in this.starredcoins
+      this.coins = coins;
+      this.filteredCoins = coins.filter(this.filterByName);
+      console.log(this.filteredCoins)
       this.dataSource = new MatTableDataSource(this.coins);
       this.dataSource.sort = this.sort;
     });
+  }
+
+  filterByName = (coin: CryptoCoin) => {
+    this.starredCoins.includes(coin.name)
   }
 
   get loading(): boolean {
@@ -71,4 +87,3 @@ export class WatchlistComponent implements OnInit {
     this.router.navigateByUrl('coins/' + id);
   }
 }
-

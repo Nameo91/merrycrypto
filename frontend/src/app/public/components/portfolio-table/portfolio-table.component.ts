@@ -50,6 +50,7 @@ export class PortfolioTableComponent implements OnInit {
         (data) => { 
           this.currentPrice(data.portfolio)
           this.dataSource = data.portfolio
+          window.location.reload()
         }
       );
     }
