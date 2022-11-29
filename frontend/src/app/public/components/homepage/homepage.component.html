@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <app-snow-effect></app-snow-effect>
   <body>
+    
     <h1>Merry Crypto</h1>
 
     <div class="globalData">
@@ -8,7 +10,8 @@
     </div>
 
     <div class="display-username" *ngIf="token">
-      <span><h3>Hello, {{ username }} 🎄</h3></span>
+        <h3>Hello, {{ username }}</h3> 
+        <button id="snowflake">&#10052;&#65039;</button>
     </div>
 
     <div class="searchBar">
