@@ -20,7 +20,6 @@ import { CoinService } from './coin/coin.service';
 import { PriceController } from './price/price.controller';
 import { PriceService } from './price/price.service';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot(config),

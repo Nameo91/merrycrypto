@@ -10,6 +10,7 @@ import { LoginUserDto } from '@app/user/dto/loginUser.dto';
 import { compare } from 'bcrypt';
 import { CreateStarDto } from './dto/createStar.dto';
 import { CreatePortfolioDto } from './dto/createPortfolio.dto';
+import { DeleteHoldingDto } from './dto/deleteHolding';
 
 @Injectable()
 export class UserService {
@@ -118,13 +119,48 @@ export class UserService {
   async updatePortfolio(portfoliodto: CreatePortfolioDto, id: number) {
     const user = await this.findById(id);
     const coin = portfoliodto.coin;
-    
+    const holding = user.portfolio.filter(holding => holding.name == coin['name'])
+    console.log(holding)
+
+    if (holding.length == 0) {
       user.portfolio.push(coin);
-      return this.userRepository.save(user);
-  }
+    } else if (holding.length == 1) {
+      const totalHolding = ((holding[0].priceBought) * (holding[0].amountBought)) + (coin['priceBought'] * coin['amountBought'])
+      const totalCoins = parseInt(holding[0].amountBought) + parseInt(coin['amountBought'])
+      const avgPrice = totalHolding / totalCoins
+
+      console.log(totalHolding)
+      console.log(totalCoins)
+      console.log(avgPrice)
+
+      user.portfolio = user.portfolio.filter((e) => e.name !== coin['name']);
+      
+      const updatedHolding = {
+        name: coin['name'],
+        imgURL: coin['imgURL'],
+        priceBought: avgPrice,
+        amountBought: totalCoins
+      }
+      user.portfolio.push(updatedHolding);
+    }
+  
+    return this.userRepository.save(user);
+  }  
 
   async getPortfolio(id: number) {
     const user = await this.findById(id);
+    return user.portfolio;
+  }
+
+  async removeHolding(coin: DeleteHoldingDto, id: number) {
+    const user = await this.findById(id);
+
+    const holding = user.portfolio.filter(holding => holding.name == coin.coin)
+
+    if (holding.length == 1) {
+      user.portfolio = user.portfolio.filter((e) => e.name !== coin.coin);
+      return this.userRepository.save(user);
+    }
     return user.portfolio;
   }
 }

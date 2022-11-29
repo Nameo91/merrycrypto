@@ -1,11 +1,18 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from 'src/app/services/coins.service';
-import { StarComponent } from '../star/star.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+
+interface CryptoCoin {
+  name: any,
+  price: any,
+  mc: any,
+  dc: any,
+  imageURL: any
+  volume: any
+ }
 
 @Component({
   selector: 'app-watchlist',
@@ -20,12 +27,14 @@ export class WatchlistComponent implements OnInit {
     'price',
     'mc',
     'dc',
-    'volume'
+    'volume',
+    'favourite'
   ];
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
   starredCoins!: any;
+  filteredCoins!: any;
 
   constructor(
     private coinsService: CoinsService,
@@ -36,23 +45,21 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadStarredCoins();
-    this.filterAllCoins()
   }
 
-  loadStarredCoins() { // pulling in all the users starred coins
+  loadStarredCoins() {
     this.authService.getUserInfo().subscribe((data) => {
-      this.starredCoins = data.starredCoins;
-      console.log(data.starredCoins) // printing the starred coins in the inspect online console
+      this.filterAllCoins(data.starredCoins);
     });
   }
 
-  filterAllCoins() { //currently just pulling in the top 30 coins
+  filterAllCoins(selectedCoins: string[]) {
     this.coinsService.getCoins().subscribe((coins) => {
-      coins.filter(); // filter through coins (which is every single coin) and only keep the coins which ate in this.starredcoins
-      this.dataSource = new MatTableDataSource(this.coins);
+      this.dataSource = coins.filter((coin: CryptoCoin) => (selectedCoins.includes(coin.name)))
       this.dataSource.sort = this.sort;
     });
   }
+
 
   get loading(): boolean {
     return this.coins === undefined;
@@ -70,5 +77,8 @@ export class WatchlistComponent implements OnInit {
     let id = row.name;
     this.router.navigateByUrl('coins/' + id);
   }
-}
 
+  onClick(){
+    window.location.reload()
+  }
+}

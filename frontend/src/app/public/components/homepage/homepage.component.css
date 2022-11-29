@@ -13,7 +13,7 @@ body {
 }
 
 .globalData {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 50px;
   margin-right: auto;
 }
@@ -51,4 +51,3 @@ body {
   80% { opacity: 1; }
   100% { opacity: 0; }
 }
-

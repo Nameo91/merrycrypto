@@ -24,13 +24,13 @@ export class PortfolioTableComponent implements OnInit {
   userId!: number;
   @Input() rowdata: any;
 
-  constructor(private priceService: PriceService, private portfolioService: PortfolioService, private authService: AuthenticationService,) {}
+  constructor(private priceService: PriceService, private portfolioService: PortfolioService, private authService: AuthenticationService) {}
   
   ngOnInit(): void {
     this.authService.getUserInfo().subscribe((data) => {
+      this.userId = data.id;
       this.currentPrice(data.portfolio)
       this.dataSource = data.portfolio;
-      console.log(this.dataSource)
     });
   } 
 
@@ -44,15 +44,16 @@ export class PortfolioTableComponent implements OnInit {
    }) 
   }
 
-  removeHolding(){
-    // if(this.isLoggedIn()) {
-    //   this.portfolioService.removeHolding(rowdata.name, this.userId).subscribe(
-    //     (data) => { 
-    //       this.currentPrice(data.portfolio)
-    //       this.dataSource = data.portfolio 
-    //     }
-    //   );
-    // }
+  onClick(rowdata: any){
+    if(this.isLoggedIn()) {
+      this.portfolioService.deleteHolding(rowdata.name, this.userId).subscribe(
+        (data) => { 
+          this.currentPrice(data.portfolio)
+          this.dataSource = data.portfolio
+          window.location.reload()
+        }
+      );
+    }
   }
 
   private isLoggedIn(): boolean {
