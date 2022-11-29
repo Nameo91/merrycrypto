@@ -4,6 +4,8 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CoinsService } from 'src/app/services/coins.service';
+import { StarComponent } from '../star/star.component';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-watchlist',
@@ -24,18 +26,28 @@ export class WatchlistComponent implements OnInit {
   dataSource!: any;
   coins!: any;
   @ViewChild(MatSort) sort!: MatSort;
+  starredCoins!: any;
 
   constructor(
     private coinsService: CoinsService,
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
+    private authService: AuthenticationService
   ) {}
 
   ngOnInit(): void {
-    this.loadCoins();
+    this.loadStarredCoins();
+    this.filterAllCoins()
   }
 
-  loadCoins() {
+  loadStarredCoins() {
+    this.authService.getUserInfo().subscribe((data) => {
+      this.starredCoins = data.starredCoins;
+      console.log(data.starredCoins)
+    });
+  }
+
+  filterAllCoins() {
     this.coinsService.getCoins().subscribe((coins) => {
       this.coins = coins;
       this.dataSource = new MatTableDataSource(this.coins);
