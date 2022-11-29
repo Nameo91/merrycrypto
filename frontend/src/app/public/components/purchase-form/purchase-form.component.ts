@@ -19,8 +19,8 @@ export class PurchaseFormComponent {
   
   registrationForm = this.fb.group({
     cryptoName: ['', [Validators.required]],
-    price: [0, [Validators.required]],
-    amount: [0, [Validators.required]],
+    price: ['', [Validators.required]],
+    amount: ['', [Validators.required]],
   });
 
   ngOnInit(): void { 
