@@ -4,27 +4,16 @@
   <body>
     
     <h1>Merry Crypto</h1>
-<<<<<<< HEAD
-    
-  <div class="topRow">
+    <div class="topRow">
     <div class="display-username" *ngIf="token">
-      <span><h3>Hello, {{ username }} 🎄</h3></span>
-=======
+      <h3>Hello, {{ username }}</h3> 
+      <button (click)="displaySnow()" id="snowflake">&#10052;&#65039;</button>
+   </div>
 
-    <div class="globalData">
-      <app-global-data></app-global-data>
-    </div>
-
-    <div class="display-username" *ngIf="token">
-        <h3>Hello, {{ username }}</h3> 
-        <button (click)="displaySnow()" id="snowflake">&#10052;&#65039;</button>
->>>>>>> 467ff1e450944d599bf7f541b66c1de2ac84be69
-    </div>
-
-    <div class="searchBar">
-      <app-search></app-search>
-    </div>
+   <div class="searchBar">
+    <app-search></app-search>
   </div>
+</div>
 
     <div class="globalData">
       <app-global-data></app-global-data>
