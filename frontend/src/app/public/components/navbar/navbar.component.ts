@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +17,9 @@ export class NavbarComponent {
 
   logout() {
     this.authService.logout();
-    this.router.navigate([''])
+    this.router.navigate(['']).then(() => {
+      window.location.reload()
+    })
   }
 
   isLoggedIn():boolean {

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
@@ -38,21 +38,15 @@ export class AuthenticationService {
     return !this.jwtHelper.isTokenExpired(token);
   };
 
-  getUserInfo() {
+  getUserInfo(): Observable<any> {
     let token: any = localStorage.getItem('token');
-    console.log(token);
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Token ' + token });
     let options = { headers: headers };
 
-    return this.http.get<any>("http://localhost:3000/api/user", options).subscribe(
-      res => {
-        console.log(res);
-        return res;  
-      },
-      err => { console.log(err) }
-    )
+    return this.http.get<any>("http://localhost:3000/api/user", options)
+      .pipe(map((res: any) => res['user']));
   };
 
   private handleError(error: HttpErrorResponse) {

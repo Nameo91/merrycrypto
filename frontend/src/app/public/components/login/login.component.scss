@@ -36,6 +36,24 @@
       }
     }
   }
+  
+  .login-error-gif {
+    width: 100%
+  }
 
+  .login-error-gif-box {
+    height: 0;
+    padding-bottom: 41.40625%;
+    position: relative;
+    width: 100%;
+  }
+
+  .login-error-gif-frame {
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
 }
 

@@ -17,16 +17,35 @@ import { ExchangesController } from './exchanges/exchanges.controller';
 import { ExchangesService } from './exchanges/exchanges.service';
 import { CoinController } from './coin/coin.controller';
 import { CoinService } from './coin/coin.service';
+import { PriceController } from './price/price.controller';
+import { PriceService } from './price/price.service';
+
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(config), 
+    TypeOrmModule.forRoot(config),
     UserModule,
     ConfigModule.forRoot(),
-    HttpModule
+    HttpModule,
   ],
-  controllers: [AppController, CoinsController, GlobalController, NewsController, ExchangesController, CoinController],
-  providers: [AppService, CoinsService, GlobalService, NewsService, ExchangesService, CoinService],
+  controllers: [
+    AppController,
+    CoinsController,
+    GlobalController,
+    NewsController,
+    ExchangesController,
+    PriceController,
+    CoinController,
+  ],
+  providers: [
+    AppService,
+    CoinsService,
+    GlobalService,
+    NewsService,
+    ExchangesService,
+    PriceService,
+    CoinService,
+  ],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

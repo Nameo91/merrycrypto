@@ -13,7 +13,11 @@ body {
 }
 
 .globalData {
-  margin-top: 60px;
-  margin-left: 90px;
+  margin-top: 50px;
+  margin-left: 50px;
   margin-right: auto;
+}
+
+.display-username {
+  text-align: center;
 }
