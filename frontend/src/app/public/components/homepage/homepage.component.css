@@ -3,6 +3,11 @@ body {
     margin: auto;
 }
 
+.display-username {
+  text-align: center;
+  margin-top: 40px;
+}
+
 .cryptoTable {
   height: 50px;
   width: 800px;
@@ -13,11 +18,8 @@ body {
 }
 
 .globalData {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 50px;
   margin-right: auto;
 }
 
-.display-username {
-  text-align: center;
-}
