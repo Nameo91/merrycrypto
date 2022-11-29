@@ -118,10 +118,33 @@ export class UserService {
   async updatePortfolio(portfoliodto: CreatePortfolioDto, id: number) {
     const user = await this.findById(id);
     const coin = portfoliodto.coin;
-    
+    const holding = user.portfolio.filter(holding => holding.name == coin['name'])
+    console.log(holding)
+
+    if (holding.length == 0) {
       user.portfolio.push(coin);
-      return this.userRepository.save(user);
-  }
+    } else if (holding.length == 1) {
+      const totalHolding = ((holding[0].priceBought) * (holding[0].amountBought)) + (coin['priceBought'] * coin['amountBought'])
+      const totalCoins = parseInt(holding[0].amountBought) + parseInt(coin['amountBought'])
+      const avgPrice = totalHolding / totalCoins
+
+      console.log(totalHolding)
+      console.log(totalCoins)
+      console.log(avgPrice)
+
+      user.portfolio = user.portfolio.filter((e) => e.name !== coin['name']);
+      
+      const updatedHolding = {
+        name: coin['name'],
+        imgURL: coin['imgURL'],
+        priceBought: avgPrice,
+        amountBought: totalCoins
+      }
+      user.portfolio.push(updatedHolding);
+    }
+  
+    return this.userRepository.save(user);
+  }  
 
   async getPortfolio(id: number) {
     const user = await this.findById(id);
