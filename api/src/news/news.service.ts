@@ -28,12 +28,13 @@ export class NewsService {
       tags: string;
     }
 
+
     function specificData(data: any) {
       const newsObject: newsData = {
         title: data.title,
         url: data.url,
         image: data.imageurl,
-        body: data.body.substring(0, 130).concat('...'),
+        body: data.body, //.substring(0, 180).concat('...'),
         tags: data.tags,
       };
       return newsObject;
