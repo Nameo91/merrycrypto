@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -8,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { JwtHelperService, JwtInterceptor, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { JwtHelperService, JwtInterceptor, JWT_OPTIONS } from '@auth0/angular-jw
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule
   ],
   providers: [
     JwtHelperService,
