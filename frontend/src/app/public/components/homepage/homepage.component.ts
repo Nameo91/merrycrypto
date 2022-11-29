@@ -9,13 +9,14 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class HomepageComponent implements OnInit{
   token: any = localStorage.getItem('token');
   username!: string;
+  isSnowDisplayed: boolean = false;
   constructor(
     private authService: AuthenticationService,
   ) {}
 
   ngOnInit(): void {
     this.getUserName();
-  }
+  };
 
   getUserName() {
     if(this.token) {
@@ -23,5 +24,12 @@ export class HomepageComponent implements OnInit{
         this.username = data.username;
       });
     }
+  };
+
+  displaySnow() {
+    this.isSnowDisplayed = true;
+    setTimeout(() => this.isSnowDisplayed = false, 30000 );
   }
+
+
 }
