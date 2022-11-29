@@ -2,18 +2,19 @@
 <html>
   <body>
     <h1>Merry Crypto</h1>
-
+    
+  <div class="topRow">
     <div class="display-username" *ngIf="token">
       <span><h3>Hello, {{ username }} 🎄</h3></span>
     </div>
 
-    <div class="globalData">
-      <app-global-data></app-global-data>
-    </div>
-
-
     <div class="searchBar">
       <app-search></app-search>
+    </div>
+  </div>
+
+    <div class="globalData">
+      <app-global-data></app-global-data>
     </div>
 
     <div class="cryptoTable">

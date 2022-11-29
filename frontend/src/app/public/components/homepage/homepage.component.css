@@ -6,20 +6,34 @@ body {
 .display-username {
   text-align: center;
   margin-top: 40px;
+  margin-left: 380px;
+  margin-right: auto
+}
+
+.topRow{
+  display: flex;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchBar{
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .cryptoTable {
   height: 50px;
   width: 800px;
-  padding: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .globalData {
-  margin-top: 30px;
-  margin-left: 50px;
+  margin-top: 15px;
+  margin-left: 30px;
   margin-right: auto;
 }
 
