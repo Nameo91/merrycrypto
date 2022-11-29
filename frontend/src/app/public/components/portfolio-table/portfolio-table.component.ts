@@ -45,15 +45,11 @@ export class PortfolioTableComponent implements OnInit {
   }
 
   onClick(rowdata: any){
-    console.log(this.userId)
-    console.log(rowdata.name)
     if(this.isLoggedIn()) {
       this.portfolioService.deleteHolding(rowdata.name, this.userId).subscribe(
         (data) => { 
-          console.log('hey')
-          console.log(data)
           this.currentPrice(data.portfolio)
-          this.dataSource = data.portfolio 
+          this.dataSource = data.portfolio
         }
       );
     }
