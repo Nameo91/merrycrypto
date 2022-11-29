@@ -28,6 +28,7 @@ export class TotalPortfolioComponent implements OnInit {
   
   ngOnInit(): void { 
     this.authService.getUserInfo().subscribe((data) => {
+      console.log(data)
       this.getData(data.portfolio)
       this.pnl = this.currentBalance - this.initialBalance
     });
