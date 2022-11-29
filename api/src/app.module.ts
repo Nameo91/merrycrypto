@@ -19,6 +19,8 @@ import { CoinController } from './coin/coin.controller';
 import { CoinService } from './coin/coin.service';
 import { PriceController } from './price/price.controller';
 import { PriceService } from './price/price.service';
+import { TwitterController } from './twitter/twitter.controller';
+import { TwitterService } from './twitter/twitter.service';
 
 @Module({
   imports: [
@@ -35,6 +37,7 @@ import { PriceService } from './price/price.service';
     ExchangesController,
     PriceController,
     CoinController,
+    TwitterController,
   ],
   providers: [
     AppService,
@@ -44,6 +47,7 @@ import { PriceService } from './price/price.service';
     ExchangesService,
     PriceService,
     CoinService,
+    TwitterService,
   ],
 })
 export class AppModule {
