@@ -3,11 +3,6 @@ body {
     margin: auto;
 }
 
-.display-username {
-  text-align: center;
-  margin-top: 40px;
-}
-
 .cryptoTable {
   height: 50px;
   width: 800px;
@@ -23,3 +18,36 @@ body {
   margin-right: auto;
 }
 
+.display-username {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.display-username h3 {
+  text-align: center;
+}
+
+.display-username button {
+  margin-left: 1%;
+  margin-top: -1%;
+  background-color: white;
+  border: none;
+  font-size: 23pt;
+  transition: transform .7s ease-in-out;
+}
+
+.display-username button:hover {
+  transform: rotate(360deg);
+}
+
+#snow-animation {
+  animation: fadeInOut 30s;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% {opacity: 0.7}
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
