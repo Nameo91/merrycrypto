@@ -19,6 +19,7 @@ import { User } from '@app/user/decorators/user.decorator';
 import { CreateStarDto } from '@app/user/dto/createStar.dto';
 import { async } from 'rxjs';
 import { CreatePortfolioDto } from './dto/createPortfolio.dto';
+import { DeleteHoldingDto } from './dto/deleteHolding';
 
 @Controller()
 export class UserController {
@@ -65,6 +66,12 @@ export class UserController {
   @UseGuards(AuthGuard)
   async updatePortfolio(@Param('id') id: number, @Body() data: CreatePortfolioDto) {
     return this.userService.updatePortfolio(data, id);
+  }
+
+  @Put('api/holding/:id')
+  @UseGuards(AuthGuard)
+  async removeHolding(@Param('id') id: number, @Body() data: DeleteHoldingDto) {
+    return this.userService.removeHolding(data, id);
   }
 
   @Get('api/portfolio/:id')
