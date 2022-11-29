@@ -31,18 +31,9 @@ export class TaggedNewsComponent implements OnInit {
 
   getfilteredNews() {
     this.newsService.getNews().subscribe((news: News) => {
-      console.log(news)
       this.filteredNews = this.newsFilter(news);
     });
   }
-  
-  // noRelatedNews() {
-  //   if(this.filteredNews.length === 0) {
-  //     return `No ${this.id} related news today`
-  //   } else {
-  //     return ''
-  //   }
-  // }
   
   private newsFilter(news: News) {
     const filtered = news.filter((singleNews) =>
