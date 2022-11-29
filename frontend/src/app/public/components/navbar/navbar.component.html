@@ -14,7 +14,24 @@
             <span class="spacer"></span>
 
             <span class="rightside-component">
-                <button id="signout" mat-button color="primary" (click)="logout()">Sign out</button>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>stars</mat-icon>
+                      <span>Watchlist</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>work</mat-icon>
+                      <span>Portfolio</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>logout</mat-icon>
+                      <span>Sign out</span>
+                    </button>
+                  </mat-menu>
+                <!-- <button id="signout" mat-button color="primary" (click)="logout()">Sign out</button> -->
             </span>
 </mat-toolbar>
 

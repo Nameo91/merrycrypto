@@ -126,7 +126,7 @@
 
 /* INFO ICON DISPLAY */
 
-::ng-deep.mat-icon {
+/* ::ng-deep.mat-icon {
   height: 17px;
   width: 17px;
   font-size: 17px;
@@ -138,4 +138,4 @@
   width: 1px;
   height: 1px; 
   padding: 1px;
-}
+} */
