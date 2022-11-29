@@ -10,6 +10,7 @@ import { LoginUserDto } from '@app/user/dto/loginUser.dto';
 import { compare } from 'bcrypt';
 import { CreateStarDto } from './dto/createStar.dto';
 import { CreatePortfolioDto } from './dto/createPortfolio.dto';
+import { DeleteHoldingDto } from './dto/deleteHolding';
 
 @Injectable()
 export class UserService {
@@ -125,6 +126,18 @@ export class UserService {
 
   async getPortfolio(id: number) {
     const user = await this.findById(id);
+    return user.portfolio;
+  }
+
+  async removeHolding(coin: DeleteHoldingDto, id: number) {
+    const user = await this.findById(id);
+
+    const holding = user.portfolio.filter(holding => holding.name == coin.coin)
+
+    if (holding.length == 1) {
+      user.portfolio = user.portfolio.filter((e) => e.name !== coin.coin);
+      return this.userRepository.save(user);
+    }
     return user.portfolio;
   }
 }
