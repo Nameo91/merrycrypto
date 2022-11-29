@@ -25,21 +25,31 @@ h1{
 }
 
 .box {
+  position: relative;
   padding: 20px 20px 20px 20px;
-  height: 400px;
+  height: 480px;
   width: 250px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 100px;
 }
 
 .box h4 {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 16px;
+  overflow: hidden;
+  height: 80px
 }
 
 .box p {
-  font-size: 12px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.box .button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 li{
