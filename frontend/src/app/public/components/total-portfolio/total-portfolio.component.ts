@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PriceService } from 'src/app/price.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 interface CryptoCoins {
   imgURL: any,
@@ -8,39 +9,6 @@ interface CryptoCoins {
   amountBought: number,
   [key: string]: any
  }
-
-const PortfolioData: CryptoCoins[] = [
-  {
-    name: "BTC",
-    priceBought: 10591,
-    amountBought: 5,
-    imgURL: "/media/37746251/btc.png"
-  },
-  {
-    name: "ETH",
-    priceBought: 2200,
-    amountBought: 12,
-    imgURL: "/media/37746238/eth.png"
-  },
-  {
-    name: "DOGE",
-    priceBought: 0.08,
-    amountBought: 1000,
-    imgURL: "/media/37746339/doge.png"
-  },
-  {
-    name: "BNB",
-    priceBought: 400,
-    amountBought: 200,
-    imgURL: "/media/40485170/bnb.png"
-  },
-  {
-    name: "USDT",
-    priceBought: 0.99,
-    amountBought: 35000,
-    imgURL: "/media/37746338/usdt.png"
-  }
-];
 
 @Component({
   selector: 'app-total-portfolio',
@@ -54,16 +22,20 @@ export class TotalPortfolioComponent implements OnInit {
   pnl = 0
   percentPnl = 0;
   coins = 0;
+  balanceString!: string
 
-  constructor(private priceService: PriceService) {}
+  constructor(private priceService: PriceService, private authService: AuthenticationService) {}
   
   ngOnInit(): void { 
-    this.getData()
-    this.pnl = this.currentBalance - this.initialBalance
+    this.authService.getUserInfo().subscribe((data) => {
+      console.log(data)
+      this.getData(data.portfolio)
+      this.pnl = this.currentBalance - this.initialBalance
+    });
   } 
 
-  getData() {
-   PortfolioData.map(element => { this.priceService.getPrice(element.name, 'USD').subscribe(price => {
+  getData(portfolio: CryptoCoins[]) {
+   portfolio.map(element => { this.priceService.getPrice(element.name, 'USD').subscribe(price => {
         this.currentBalance += (price * element.amountBought)
         this.coins += 1
         this.initialBalance += (element.priceBought * element.amountBought)

@@ -10,7 +10,8 @@
 
   <div class="pnl">
     <div class="amount">
-      <h4>{{(currentBalance - initialBalance).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 0})}}</h4><h6> {{(((currentBalance - initialBalance) / initialBalance) * 100).toFixed(2)}}%</h6>
+      <h4>{{(currentBalance - initialBalance).toLocaleString("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 0})}}</h4>
+      <h6 [ngClass]="{'positive': (currentBalance - initialBalance)>0, 'negative': (currentBalance - initialBalance)<0 || (currentBalance - initialBalance)==0}"> {{(((currentBalance - initialBalance) / initialBalance) * 100).toFixed(2)}}%</h6>
     </div>
     <div class="title">
       Total Profit Loss

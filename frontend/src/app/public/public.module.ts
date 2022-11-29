@@ -32,6 +32,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
 import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
 import { RelatedTwitComponent } from './components/related-twit/related-twit.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { RelatedTwitComponent } from './components/related-twit/related-twit.com
     SnowEffectComponent,
     TaggedNewsComponent,
     RelatedTwitComponent
+    WatchlistComponent
   ],
   imports: [
     CommonModule,
