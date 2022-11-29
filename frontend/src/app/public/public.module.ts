@@ -22,6 +22,8 @@ import { GlobalDataComponent } from './components/global-data/global-data.compon
 import { NewsComponent } from './components/news/news.component';
 import { ExchangesComponent } from './components/exchanges/exchanges.component';
 import { StarComponent } from './components/star/star.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { MatChipsModule } from '@angular/material/chips';
 import { SearchComponent } from './components/search/search.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -46,6 +48,7 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     CoinComponent,
     GlobalDataComponent,
     StarComponent,
+    LineChartComponent,
     SearchComponent,
     PurchaseFormComponent,
     PortfolioComponent,
@@ -73,7 +76,9 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     MatDividerModule,
     MatGridListModule,
     MatMenuModule,
-    MatTooltipModule
-  ]
+    MatTooltipModule,
+    MatChipsModule
+  ],
+  providers: [LineChartComponent]
 })
 export class PublicModule { }

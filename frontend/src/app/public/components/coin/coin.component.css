@@ -1,7 +1,7 @@
 .main-wrapper {
-  padding-top: 150px;
-  padding-left: 230px;
-  padding-right: 230px;
+  padding-top: 7%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 /* TOP HEADER */
@@ -9,34 +9,69 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: -1%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
-.top-header div {
-  margin: 20px;
+.top-header-left {
+  overflow: auto;
+}
+
+.top-header-left h1 {
+  float:left;
+  font-size: 33pt;
+  font-weight: 350;
+  left: 100px; 
+}
+
+.top-header-left img {
+  float:left;
+  width: 60px;
+  height: 60px;
+  margin-top: 15%;
+}
+
+#coin-logo {
+  width: 60px;
+  float: left;
 }
 
 #coin-name {
+  position: relative;
   font-size: 33pt;
   font-weight: 350;
+  top: 18px;
+  left: 10px;
 }
 
 /* PRICE HEADER */
 
-.price-header {
-  margin: 20px;
+.price-wrapper {
+  margin-bottom: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
-.price-header .heading {
+.price-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-header div .heading {
   font-weight: 600;
-  font-size: 12pt;
+  font-size: 13pt;
   color: rgb(98, 98, 98);
 }
 
-.price-header .big-price {
+.price-header div .big-price {
   font-size: 25pt;
+  margin-bottom: -8%;
+  margin-top: -8%;
 }
 
-.price-header .change {
+.price-header div .change {
   font-size: 14pt;
   color: rgb(205, 3, 3);
 }
@@ -46,7 +81,9 @@
 .market-header {
   align-items: center;
   display: flex;
-  margin: 20px;
+  margin-bottom: -1%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 #market-heading {
@@ -57,31 +94,35 @@
 .market-stats-header {
   align-items: center;
   display: flex;
-  margin: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.market-stats-header h2 {
+  font-size: 17pt;
+  font-weight: 400;
 }
 
 .market-stats-section {
+  margin-bottom: -1%;
+  margin-right: 5%;
+  margin-left: 5%;
   align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 150px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20%;
 }
 
 .stat-heading {
   font-weight: 500;
-  color: rgb(98, 98, 98);;
+  color: rgb(98, 98, 98);
 }
 
 .stat-number {
   margin-top: 8px;
   font-size: 15pt;
 }
-
-
-
 
 /* INFO ICON DISPLAY */
 

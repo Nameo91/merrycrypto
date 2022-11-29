@@ -21,7 +21,7 @@ import { JwtHelperService, JwtInterceptor, JWT_OPTIONS } from '@auth0/angular-jw
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [
     JwtHelperService,

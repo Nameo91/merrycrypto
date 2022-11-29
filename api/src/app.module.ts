@@ -7,16 +7,19 @@ import { UserModule } from '@app/user/user.module';
 import { AuthMiddleware } from '@app/user/middlewares/auth.middleware';
 import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
-import { CoinController } from './coins/coins.controller';
-import { CoinService } from './coins/coins.service';
+import { CoinsController } from './coins/coins.controller';
+import { CoinsService } from './coins/coins.service';
 import { GlobalController } from './global/global.controller';
 import { GlobalService } from './global/global.service';
 import { NewsController } from './news/news.controller';
 import { NewsService } from './news/news.service';
 import { ExchangesController } from './exchanges/exchanges.controller';
 import { ExchangesService } from './exchanges/exchanges.service';
+import { CoinController } from './coin/coin.controller';
+import { CoinService } from './coin/coin.service';
 import { PriceController } from './price/price.controller';
 import { PriceService } from './price/price.service';
+
 
 @Module({
   imports: [
@@ -27,19 +30,21 @@ import { PriceService } from './price/price.service';
   ],
   controllers: [
     AppController,
-    CoinController,
+    CoinsController,
     GlobalController,
     NewsController,
     ExchangesController,
     PriceController,
+    CoinController,
   ],
   providers: [
     AppService,
-    CoinService,
+    CoinsService,
     GlobalService,
     NewsService,
     ExchangesService,
     PriceService,
+    CoinService,
   ],
 })
 export class AppModule {
