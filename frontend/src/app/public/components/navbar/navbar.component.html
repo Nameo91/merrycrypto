@@ -8,30 +8,26 @@
             <button mat-button color="primary" (click)="navigateTo('')">Cryptocurrencies</button>
             <button mat-button color="primary" (click)="navigateTo('exchanges')">Exchanges</button>
             <button mat-button color="primary" (click)="navigateTo('news')">News</button>
-            <button mat-button color="primary" (click)="navigateTo('watchlist')">Watchlist</button>
-            <button mat-button color="primary" (click)="navigateTo('portfolio')">Portfolio</button>
             </span>
             <span class="spacer"></span>
-
             <span class="rightside-component">
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon-button with a menu">
                     <mat-icon>account_circle</mat-icon>
-                  </button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>stars</mat-icon>
-                      <span>Watchlist</span>
+                </button>
+                <mat-menu #menu="matMenu" >
+                    <button mat-menu-item id="test" (click)="navigateTo('watchlist')">
+                        <mat-icon [ngStyle]="{'color':'rgb(28, 105, 58)'}">stars</mat-icon>
+                        <span>Watchlist</span>
                     </button>
-                    <button mat-menu-item>
-                      <mat-icon>work</mat-icon>
-                      <span>Portfolio</span>
+                    <button mat-menu-item (click)="navigateTo('portfolio')">
+                        <mat-icon [ngStyle]="{'color':'rgb(28, 105, 58)'}">work</mat-icon>
+                        <span>Portfolio</span>
                     </button>
-                    <button mat-menu-item>
-                      <mat-icon>logout</mat-icon>
-                      <span>Sign out</span>
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon [ngStyle]="{'color':'rgb(28, 105, 58)'}">logout</mat-icon>
+                        <span>Sign out</span>
                     </button>
-                  </mat-menu>
-                <!-- <button id="signout" mat-button color="primary" (click)="logout()">Sign out</button> -->
+                </mat-menu>
             </span>
 </mat-toolbar>
 
@@ -45,8 +41,8 @@
     <button mat-button color="primary" (click)="navigateTo('')">Cryptocurrencies</button>
     <button mat-button color="primary" (click)="navigateTo('login')">Exchanges</button>
     <button mat-button color="primary" (click)="navigateTo('login')">News</button>
-    <button mat-button color="primary" (click)="navigateTo('login')">Watchlist</button>
-    <button mat-button color="primary" (click)="navigateTo('login')">Portfolio</button>
+    <!-- <button mat-button color="primary" (click)="navigateTo('login')">Watchlist</button>
+    <button mat-button color="primary" (click)="navigateTo('login')">Portfolio</button> -->
     </span>
     <span class="spacer"></span>
 
