@@ -18,7 +18,7 @@ export class NewsService {
       {},
     );
 
-    const data = json.Data;
+    console.log(json)
 
     interface newsData {
       title: string;
@@ -40,8 +40,7 @@ export class NewsService {
       return newsObject;
     }
 
-    const finalData = data.map(specificData);
-    return finalData;
+    return json.Data.map(specificData);
   }
 
   private async request<T>(
