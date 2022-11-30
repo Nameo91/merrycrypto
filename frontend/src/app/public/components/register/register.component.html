@@ -1,65 +1,61 @@
-<div class="container">
+<div class="register-wrapper">
+  <div class="register-form">
 
-  <div>
-    <div class="login">
-      <a mat-stroked-button color="accent" href="['../login']">Go to Login</a> <!--wont need this, login will be in navbar-->
-    </div>
+    <h1>Create an account</h1>
+    <mat-hint><small>Required fields have an asterisk: *</small></mat-hint>
 
-    <div>
-      <mat-card>
-        <div class="register-text">
-          <mat-card-title>Register</mat-card-title>
-        </div>
-        <mat-card-content>
-          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h5 class="small-headings">Email</h5>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email address</mat-label>
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your email address</mat-label>
-              <input type="email" matInput placeholder="Email" formControlName="email">
-              <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
-              <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
-            </mat-form-field>
+      <h5 class="small-headings">Username</h5>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your username</mat-label>
+        <input type="text" matInput placeholder="Username" formControlName="username">
+        <mat-error *ngIf="username.touched && username.hasError('required')">Username is required</mat-error>
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your username</mat-label>
-              <input type="text" matInput placeholder="Username" formControlName="username">
-              <mat-error *ngIf="username.touched && username.hasError('required')">Username is required</mat-error>
-            </mat-form-field>
+      <h5 class="small-headings">Password</h5>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input [type]="passwordHideOne ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
+        <button mat-icon-button matSuffix color="primary" (click)="passwordHideOne = !passwordHideOne" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideOne">
+          <mat-icon>{{passwordHideOne ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your password</mat-label>
-              <input [type]="passwordHideOne ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
-              <button mat-icon-button matSuffix color="primary" (click)="passwordHideOne = !passwordHideOne" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideOne">
-                <mat-icon>{{passwordHideOne ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
-            </mat-form-field>
+      <h5 class="small-headings">Password confirmation</h5>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm your password</mat-label>
+        <input [type]="passwordHideTwo ? 'password' : 'text'" matInput placeholder="Password confirmation" formControlName="passwordConfirm">
+        <button mat-icon-button matSuffix color="primary" (click)="passwordHideTwo = !passwordHideTwo " [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideTwo">
+          <mat-icon>{{passwordHideTwo  ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Confirm your password</mat-label>
-              <input [type]="passwordHideTwo ? 'password' : 'text'" matInput placeholder="Password confirmation" formControlName="passwordConfirm">
-              <button mat-icon-button matSuffix color="primary" (click)="passwordHideTwo = !passwordHideTwo " [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHideTwo">
-                <mat-icon>{{passwordHideTwo  ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
 
-  
-            <mat-hint *ngIf="!registerForm.valid"><small>Please fill out all needed information</small></mat-hint>
-            <mat-error *ngIf="passwordConfirm.touched && registerForm.hasError('passwordsNotMatching')">
-              <small>Passwords are not matching</small>
-            </mat-error>
+      <mat-hint *ngIf="!registerForm.valid"><small>Please fill out all needed information</small></mat-hint>
+      <mat-error *ngIf="passwordConfirm.touched && registerForm.hasError('passwordsNotMatching')">
+        <small>Passwords are not matching</small>
+      </mat-error>
 
-            <div id="register-error-message">
-              <h5>{{errormessage}}</h5>
-            </div>
+      <mat-error id="bottom-error"><small>{{errormessage}}</small></mat-error>
 
-            <div class="button">
-              <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Create an account</button>
-            </div>
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Create an account</button>
+      </div>
+    </form>
+  </div>
 
-          </form>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div class="right-side-register">
+    <h1>Discover your inner Grinch, only on MerryCrypto</h1>
+    <p>Set up your account and verify your photo ID to get started on trading crypto.</p>
+    <img src="assets/img/grinch_register.png">
   </div>
 </div>
