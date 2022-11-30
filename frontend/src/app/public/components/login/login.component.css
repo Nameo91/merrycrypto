@@ -1,73 +1,9 @@
-/* .container {
-  display: flex;
-  justify-content: center;
-  margin: 100px;
-  min-width: 350px;
-
-  .register {
-    margin-bottom: 20px;
-  }
-
-  .login-text {
-    margin-bottom: 10px;
-    margin-left: 16px;
-  }
-
-  .needed-info {
-    margin-left: 3px;
-  }
-
-  // mat-card {
-  //   mat-card-content {
-  //     form {
-  //       display: flex;
-  //       flex-direction: column;
-  //       justify-content: center;
-
-  //       mat-form-field {
-  //         width: 100%;
-  //         min-width: 300px;
-  //       }
-
-  //       .button {
-  //         display: flex;
-  //         justify-content: flex-end;
-  //       }
-  //     }
-  //   }
-  // }
-  
-  .login-error-gif {
-    width: 100%
-  }
-
-  .login-error-gif-box {
-    height: 0;
-    padding-bottom: 41.40625%;
-    position: relative;
-    width: 100%;
-  }
-
-  .login-error-gif-frame {
-    left: 0;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-  }
-} */
-
-.background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: linear-gradient(333deg, rgba(31,53,32,1) 0%, rgba(39,106,42,1) 100%);
-}
 
 mat-card {
   margin:auto;
-  width: 25%;
+  width: 27%;
   margin-top: 10%;
+  padding: 1%;
 }
 
 form {
@@ -83,6 +19,7 @@ mat-card-title {
   padding-top: 5%;
   padding-left: 5%;
   padding-bottom: 5%;
+  text-align: center;
 }
 
 form div button {

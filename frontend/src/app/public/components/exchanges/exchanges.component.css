@@ -1,27 +1,19 @@
-/* body {
-  max-width: 1000px;
-  margin: auto;
-} */
-
-.globalData {
-  padding: 20px;
-  margin-top: 80px;
-  margin-left: 27px;
-  margin-right: auto;
-}
 
 .exchangeTable {
-  height: 50px;
-  width: 800px;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 8%;
+  margin: auto;
+  width: 50%;
 }
 
-/* .mat-mdc-row:hover .mat-mdc-cell {
-cursor: pointer;
+.exchangeTable h3 {
+  text-align: center;
+  font-weight: 350;
+  padding-bottom: 5%;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
 background-color: rgba(195, 194, 194, 0.1);
-} */
+}
 
 .good {
   color: rgb(97, 190, 97);
