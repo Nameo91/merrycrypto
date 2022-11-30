@@ -13,8 +13,6 @@ export class ExchangesService {
     let json = await this.request<{ [key: string]: any }>(
       ExchangesService.API_ROOT, {
       });
-      
-      const data = json
 
       interface exchangeData { //need to add specifc types
         trustRank: number,
@@ -39,8 +37,7 @@ export class ExchangesService {
         return exchangeObject
       }
       
-      const finalData = data.map(specificData)
-    return finalData
+    return json.map(specificData)
   } 
 
   private async request<T>(url: string, params: { [key: string]: any }): Promise<T> {
