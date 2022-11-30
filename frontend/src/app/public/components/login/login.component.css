@@ -89,3 +89,7 @@ form div button {
   width: 100%;
   height: 55px;
 }
+
+#bottom-error {
+  padding-bottom: 2%;
+}

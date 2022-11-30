@@ -26,11 +26,9 @@
 
       <mat-hint *ngIf="!loginForm.valid"><small class="needed-info">Please fill out all needed information</small></mat-hint>
 
-      <div id="login-error-message">
-        <h5>{{errorMessage}}</h5>
-      </div>
+      <mat-error id="bottom-error"><small>{{errorMessage}}</small></mat-error>
 
-      <div class="login-error-gif" *ngIf="showErrorGif"><div class="login-error-gif-box"><iframe class = "login-error-gif-frame" allowfullscreen="" frameBorder="0" src="https://giphy.com/embed/dHJZAPXwT2eCmxE0Uf/video"></iframe></div></div>
+      <!-- <div class="login-error-gif" *ngIf="showErrorGif"><div class="login-error-gif-box"><iframe class = "login-error-gif-frame" allowfullscreen="" frameBorder="0" src="https://giphy.com/embed/dHJZAPXwT2eCmxE0Uf/video"></iframe></div></div> -->
 
       <div class="button">
         <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
