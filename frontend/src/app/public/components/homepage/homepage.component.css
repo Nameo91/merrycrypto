@@ -1,15 +1,12 @@
-body {
-  max-width: 1000px;
-  margin: auto;
-}
 
-.searchBar{
+/* .searchBar{
   margin-top: 0px;
   margin-left: auto;
   margin-right: 0;
-}
+} */
 
 .topRow{
+  padding-top: 5%;
   display: flex;
   text-align:center;
   margin-left: auto;
