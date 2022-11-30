@@ -29,7 +29,7 @@ describe('GlobalService', () => {
 
     jest.spyOn(httpService, 'get').mockImplementation(() => of(fakeResponse));
     let response = await service.getData();
-    expect(response).toEqual({"mc":"891,700,764,657","mcChange":"2.04","volume":"53,827,434,066","coins":13148});
+    expect(response).toEqual({"mc":"891,700,764,657","mcChange":"2.04","volume":"53,827,434,066","coins":"13,148"});
     expect(httpService.get).toHaveBeenCalledWith(
       'https://api.coingecko.com/api/v3/global', {}
     );
