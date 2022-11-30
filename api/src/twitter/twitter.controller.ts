@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { TwitterService } from '@app/twitter/twitter.service';
+import { TwitterService } from './twitter.service';
 
 @Controller()
 export class TwitterController {
