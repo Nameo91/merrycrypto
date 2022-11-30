@@ -36,7 +36,7 @@ describe('PriceService', () => {
       'https://min-api.cryptocompare.com/data/price',
       {
         params: {
-          apiKey: undefined,
+          apiKey: "1234",
           fsym: 'BTC',
           tsyms: 'USD',
         },
