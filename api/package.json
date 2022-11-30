@@ -40,6 +40,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "twitter-api-sdk": "^1.2.1",
+    "twitter-api-v2": "^1.12.9",
     "typeorm": "^0.3.10"
   },
   "devDependencies": {

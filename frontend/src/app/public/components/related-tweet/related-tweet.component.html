@@ -1,1 +1,24 @@
-<p>related-tweet works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+  <h1>Click to see the recent tweets on {{id}}</h1>
+  <button mat-button color="primary" (click)="toggleTweetButtons()">{{buttonName}}</button>
+</div>
+
+<div *ngIf="showTweets">
+  <mat-card class="tweet-card" *ngFor="let tweet of relatedTweets">
+    <mat-card-header class="tweet-card-header">
+      <img class="profile-img" src="{{ tweet.user.profile_image_url }}" style="border-radius: 100%;">
+      <mat-card-title-group class="tweet-title">
+        <mat-card-title><i class="fa fa-twitter" id="twitter-icon"></i>{{ tweet.user.name }}</mat-card-title>
+        <mat-card-subtitle>{{ tweet.created_at}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      {{ tweet.text }}
+    </mat-card-content>
+  </mat-card>
+</div>
+
