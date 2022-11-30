@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map, Observable, startWith } from 'rxjs';
 import { CoinsService } from 'src/app/services/coins.service'
 
+export interface Coin {
+  name: any;
+  price: any;
+  mc: any;
+  dc: any;
+  imageURL: any;
+  volume: any;
+}
 
 @Component({
   selector: 'app-search',
@@ -10,10 +20,24 @@ import { CoinsService } from 'src/app/services/coins.service'
 })
 
 export class SearchComponent implements OnInit {
-  cryptoName: string = "";
-  coins!: any;
+  coinCtrl = new FormControl('');
 
-  constructor(private coinsService: CoinsService, private router: Router) {}
+  filteredCoins!: Observable<Coin[]>;
+
+  coins: Coin[] = [
+  ];
+
+  constructor(private coinsService: CoinsService, private router: Router) {
+    this.filteredCoins = this.coinCtrl.valueChanges.pipe(
+      startWith(''),
+      map(coin => (coin ? this._filterCoins(coin) : this.coins.slice())),
+    );
+  };
+
+  private _filterCoins(value: string): Coin[] {
+    const filterValue = value.toLowerCase();
+    return this.coins.filter(coin => coin.name.toLowerCase().includes(filterValue));
+  };
 
   ngOnInit(): void { 
     this.loadCoins();
@@ -21,19 +45,11 @@ export class SearchComponent implements OnInit {
 
   loadCoins() {
     this.coinsService.getCoins().subscribe(coins => {
-      this.coins = coins.map((coin: any) => coin.name);
+      this.coins = coins;
     });
   };
 
-  getSearchResult(cryptoName: any) {
-    this.cryptoName = cryptoName.target.value;
-    
-    if (this.coins.includes(this.cryptoName.toUpperCase())) {
-      this.navigateTo('/coins/'.concat(this.cryptoName.toUpperCase()))
-    }
-  }
-
   navigateTo(value: string) {
-    this.router.navigate([value]);
+    this.router.navigate(['/coins/'+ value]);
   }
 }

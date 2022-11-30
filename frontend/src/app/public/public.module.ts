@@ -35,6 +35,8 @@ import { SnowEffectComponent } from './components/snow-effect/snow-effect.compon
 import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
 import { RelatedTweetComponent } from './components/related-tweet/related-tweet.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     MatGridListModule,
     MatMenuModule,
     MatTooltipModule,
-    MatChipsModule
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule
   ],
   providers: [LineChartComponent]
 })
