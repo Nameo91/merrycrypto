@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600");
+// @import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600");
 
-body {
-  max-width: 1000px;
-  margin: auto;
-}
+// body {
+//   max-width: 1000px;
+//   margin: auto;
+// }
 
 .container {
   display: flex;
@@ -12,16 +12,16 @@ body {
   min-width: 350px;
 }
   
-h2 {
-  font-size: 1.45rem;
-  margin-top: 100px;
-}
-label {
-  font-size: 15px;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 6px;
-}
+// h2 {
+//   font-size: 1.45rem;
+//   margin-top: 100px;
+// }
+// label {
+//   font-size: 15px;
+//   font-weight: 600;
+//   color: #222;
+//   margin-bottom: 6px;
+// }
 .group-gap {
   margin-bottom: 40px;
 }
@@ -71,9 +71,9 @@ label {
 .invalid-feedback {
   color: #e91e63;
 }
-.btn-danger,
-body .btn-danger:hover {
-  background: #f63240;
-  border-color: #f63240;
-  color: #fff;
-}
+// .btn-danger,
+// body .btn-danger:hover {
+//   background: #f63240;
+//   border-color: #f63240;
+//   color: #fff;
+// }

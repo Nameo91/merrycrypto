@@ -17,25 +17,25 @@
     margin-left: 3px;
   }
 
-  mat-card {
-    mat-card-content {
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+  // mat-card {
+  //   mat-card-content {
+  //     form {
+  //       display: flex;
+  //       flex-direction: column;
+  //       justify-content: center;
 
-        mat-form-field {
-          width: 100%;
-          min-width: 300px;
-        }
+  //       mat-form-field {
+  //         width: 100%;
+  //         min-width: 300px;
+  //       }
 
-        .button {
-          display: flex;
-          justify-content: flex-end;
-        }
-      }
-    }
-  }
+  //       .button {
+  //         display: flex;
+  //         justify-content: flex-end;
+  //       }
+  //     }
+  //   }
+  // }
   
   .login-error-gif {
     width: 100%
