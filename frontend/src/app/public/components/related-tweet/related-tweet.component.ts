@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class RelatedTweetComponent implements OnInit {
   public id!: any;
   relatedTweets!: any;
+  showTweets: boolean = false;
+  buttonName: 'Show' | 'Hide' = 'Show';
 
   constructor(
     private relatedTweetService: RelatedTweetService,
@@ -26,5 +28,15 @@ export class RelatedTweetComponent implements OnInit {
       this.relatedTweets = tweets;
       console.log(tweets)
     })
+  }
+
+  toggleTweetButtons() {
+    this.showTweets = !this.showTweets;
+    
+    if(this.showTweets) {
+      this.buttonName = 'Hide'
+    } else {
+      this.buttonName = 'Show'
+    }
   }
 }
