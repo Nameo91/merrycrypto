@@ -40,7 +40,8 @@ export class NewsService {
       return newsObject;
     }
 
-    return json.Data.map(specificData);
+    console.log(json)
+    return json.Data?.map(specificData);
   }
 
   private async request<T>(
