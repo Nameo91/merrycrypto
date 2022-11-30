@@ -1,8 +1,8 @@
-body {
+/* body {
   margin: auto;
   margin-top: 0px;
   margin-right: 100px;
-}
+} */
 
 .news {
   margin-top: 0px;
@@ -17,12 +17,12 @@ body {
   position: relative;
 }
 
-h1{
+/* h1{
   margin-top: 100px;
   font-size: 30px;
   margin-left: 150px;
   margin-right: auto
-}
+} */
 
 .box {
   position: relative;
@@ -52,10 +52,10 @@ h1{
   right: 0;
 }
 
-li{
+/* li{
   float: left;
   list-style-type: none;
-} 
+}  */
 
 /* .image {
   height: 300px;

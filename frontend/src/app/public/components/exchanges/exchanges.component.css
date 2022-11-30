@@ -1,7 +1,7 @@
-body {
+/* body {
   max-width: 1000px;
   margin: auto;
-}
+} */
 
 .globalData {
   padding: 20px;
@@ -18,10 +18,10 @@ body {
   margin-right: auto;
 }
 
-.mat-mdc-row:hover .mat-mdc-cell {
+/* .mat-mdc-row:hover .mat-mdc-cell {
 cursor: pointer;
 background-color: rgba(195, 194, 194, 0.1);
-}
+} */
 
 .good {
   color: rgb(97, 190, 97);
