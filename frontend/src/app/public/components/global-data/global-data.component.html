@@ -1,44 +1,48 @@
-<div *ngIf="loading">Loading...</div>
-<p *ngIf="!loading">
-  <span class="coinsTitle">
-    Total Active Coins:
-  </span>
+<div class="loading-bar" *ngIf="loading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
 
-  <span class="coins">
-    {{globalData.coins}}
-  </span>
+<div class="market-stats" *ngIf="!loading">
+
+  <div class="box">
+    <h5 class="data">
+        {{globalData.coins}}
+    </h5>
+    <div class="data-heading">
+      # of Coins
+    </div>
+  </div>
+
+  <div class="box">
+    <h5 class="data">
+      ${{globalData.mc}} 
+      <span [ngClass]="{'positive': globalData.mcChange>0, 'negative': globalData.mcChange<0 || globalData.mcChange==0}">
+        <span *ngIf="globalData.mcChange>0">
+            +{{globalData.mcChange}}% ↑
+        </span>
+        <span *ngIf="globalData.mcChange<0">
+          {{globalData.mcChange}}% ↓
+        </span>
+      </span>
+    </h5>
+    <div class="data-heading">
+      Market Capitalization
+    </div>
+  </div>
+
+  <div class="box">
+    <h5 class="data">
+      ${{globalData.volume}}
+    </h5>
+    <div class="data-heading">
+      24h Trading Volume
+    </div>
+  </div>
+
+</div>
   
-  <span class="marketTitle">
-    Total Market Cap:
-  </span>
-
-  <span class="mc">
-    ${{globalData.mc}}
-  </span>
-
-  <span class="mcChangeTitle">
-    ( 24hr Change:
-  </span>
-
-  <span [ngClass]="{'positive': globalData.mcChange>0, 'negative': globalData.mcChange<0 || globalData.mcChange==0}">
-    <span *ngIf="globalData.mcChange>0">
-        +{{globalData.mcChange}}% &#9757;
-    </span>
-    <span *ngIf="globalData.mcChange<0">
-      {{globalData.mcChange}}% 👎
-    </span>
-  </span>
-
-  <span class="mcChangeBracket">
-    )
-  </span>
   
-  <span class="volumeTitle">
-    Total 24hr Vol: 
-  </span>
-
-  <span class="volume">
-    ${{globalData.volume}}
-  </span>
-</p>
+  
+  
+  
 

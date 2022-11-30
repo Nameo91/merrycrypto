@@ -25,7 +25,7 @@ export class GlobalService {
          mc: Math.round(json.data.total_market_cap.usd).toLocaleString("en-US"),
          mcChange: json.data.market_cap_change_percentage_24h_usd.toFixed(2),
          volume: Math.round(json.data.total_volume.usd).toLocaleString("en-US"),
-         coins: json.data.active_cryptocurrencies
+         coins: json.data.active_cryptocurrencies.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       }
     
     return requiredData
