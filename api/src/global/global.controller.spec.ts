@@ -13,7 +13,7 @@ describe('GlobalController', () => {
       .overrideProvider(GlobalService)
       .useValue({
         getData: async () => {
-          return ''
+          return {"mc":"890,868,815,096","mcChange":"1.94","volume":"53,862,711,377","coins":13148}
         }
       })
       .compile();
@@ -23,6 +23,6 @@ describe('GlobalController', () => {
 
   it('returns global market data', async () => {
     let response = await controller.get();
-    expect(response).toEqual({ globalData: '' });
+    expect(response).toEqual({"globalData":{"mc":"890,868,815,096","mcChange":"1.94","volume":"53,862,711,377","coins":13148}});
   });
 });
