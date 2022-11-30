@@ -5,6 +5,7 @@
 .logo {
   width: 200px;
   cursor: pointer;
+  margin-left: 10%;
 }
 
 ::ng-deep.mat-mdc-raised-button {
@@ -15,12 +16,9 @@
   font-weight: 600;
 }
 
-.logo {
-  margin-left: 10%;
-}
-
 .central-component {
-  margin-right: 13%;
+  position: fixed;
+  left: 40%;
 }
 
 .central-component button {
@@ -40,4 +38,10 @@
   right: 0;
   z-index: 2;
   color: rgb(28, 105, 58);
+}
+
+#username {
+  font-weight: 600;
+  position: relative;
+  bottom: 6px;
 }

@@ -53,7 +53,10 @@ export class LoginComponent {
     const password = this.loginForm.value.password;
     this.authService
       .signin('user', email, password)
-      .pipe(map((token) => this.router.navigate([''])))
+      .pipe(map((token) => this.router.navigate([''])
+      .then(() => {
+        window.location.reload();
+      })))
       .subscribe(
         (data) => {
           return data;
