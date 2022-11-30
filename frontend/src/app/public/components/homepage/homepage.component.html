@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <app-snow-effect id="snow-animation" *ngIf="isSnowDisplayed"></app-snow-effect>
-  <body>
-    
-    <h1>Merry Crypto</h1>
-    <div class="topRow">
-    <span class="display-username" *ngIf="token">
-      <h3>Hello, {{ username }}</h3>
-      <button (click)="displaySnow()" id="snowflake">&#10052;&#65039;</button>
-    </span>
+<app-snow-effect id="snow-animation" *ngIf="isSnowDisplayed"></app-snow-effect>
 
-   <div class="searchBar">
+<div class="topRow">
+  
+  <span class="display-username" *ngIf="token">
+    <h3>Hello, {{ username }}</h3>
+    <button (click)="displaySnow()" id="snowflake">&#10052;&#65039;</button>
+  </span>
+
+  <div class="searchBar">
     <app-search></app-search>
   </div>
 </div>
 
-    <div class="globalData">
-      <app-global-data></app-global-data>
-    </div>
+<div class="globalData">
+  <app-global-data></app-global-data>
+</div>
 
-    <div class="cryptoTable">
-      <table-root></table-root>
-    </div>
-  </body>
-</html>
+<div class="cryptoTable">
+  <table-root></table-root>
+</div>

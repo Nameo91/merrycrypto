@@ -123,19 +123,3 @@
   margin-top: 8px;
   font-size: 15pt;
 }
-
-/* INFO ICON DISPLAY */
-
-/* ::ng-deep.mat-icon {
-  height: 17px;
-  width: 17px;
-  font-size: 17px;
-  line-height: 32px;
-  color: rgb(98, 98, 98);
-}
-
-::ng-deep.mat-mdc-icon-button.mat-mdc-button-base {
-  width: 1px;
-  height: 1px; 
-  padding: 1px;
-} */

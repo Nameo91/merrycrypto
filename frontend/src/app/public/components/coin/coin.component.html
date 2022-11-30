@@ -4,7 +4,7 @@
   <!-- Coin name -->
   <div class="top-header">
     <div class="top-header-left">
-      <img src="https://www.cryptocompare.com{{coinData.imageURL}}" alt="">
+      <img src="https://www.cryptocompare.com{{coinData.imageURL}}" alt="Cryptocurrency logo">
       <h1>{{id}}</h1>
     </div>
 
@@ -28,7 +28,6 @@
       <div>
         <p class="heading">Price</p>
         <p class="big-price">{{coinData.price}}</p>
-        <p class="change">{{coinData.change24h}} (-0.53%)</p>
       </div>
 
       <div>
@@ -70,7 +69,7 @@
       <span><button mat-icon-button
         matTooltip="Market cap is calculated by multiplying the asset's circulating supply with its current price."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.mktcap}}</div>
@@ -81,7 +80,7 @@
       <span><button mat-icon-button
         matTooltip="The amount of coins that have already been created, minus any coins that have been burned (removed from circulation). It is comparable to outstanding shares in the stock market."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.tsupply}}</div>
@@ -92,7 +91,7 @@
       <span><button mat-icon-button
         matTooltip="The amount of coins that are circulating in the market and are tradeable by the public. It is comparable to looking at shares readily available in the market (not held & locked by insiders, governments)."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.csupply}}</div>
@@ -103,7 +102,7 @@
       <span><button mat-icon-button
         matTooltip="The percent change in trading volume for this asset compared to 24 hours ago."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.change24h}}</div>
@@ -114,7 +113,7 @@
       <span><button mat-icon-button
         matTooltip="The total dollar value of all transactions for this asset processed in the top-tier exchanges over the past 24 hours."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.topvolume24h}}</div>
@@ -125,7 +124,7 @@
       <span><button mat-icon-button
         matTooltip="The total dollar value of all transactions for this asset over the past 24 hours."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.volume24h}}</div>
@@ -136,7 +135,7 @@
       <span><button mat-icon-button
         matTooltip="The highest selling price of the asset in 24 hours."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+         <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.high24h}}</div>
@@ -148,7 +147,7 @@
       <span><button mat-icon-button
         matTooltip="The lowest selling price of the asset in 24 hours."
         matTooltipPosition="above">
-        <mat-icon>info</mat-icon>
+        <mat-icon [ngStyle]="{'color':'rgb(98, 98, 98)', 'font-size':'15pt'}">info</mat-icon>
       </button></span>
       <br>
       <div class="stat-number">{{coinData.low24h}}</div>
