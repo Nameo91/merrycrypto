@@ -1,14 +1,15 @@
 .topRow{
   padding-top: 7%;
   margin: auto;
-  width: 25%;
+  width: 23%;
   text-align:center;
-  padding-bottom: 6%;
+  padding-bottom: 4%;
 }
 
 .topRow div h3 {
+  margin-left: -10%;
   font-weight: 350;
-  margin-bottom: 6%;
+  margin-bottom: 4%;
   overflow: hidden;
 }
 
@@ -36,7 +37,7 @@ white-space: nowrap;
 #snowflake {
 float: right;
 /* margin-left: -10%; */
-margin-top: -15.5%;
+margin-top: -14%;
 background-color: transparent;
 border: none;
 font-size: 23pt;
