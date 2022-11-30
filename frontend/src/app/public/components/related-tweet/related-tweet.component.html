@@ -6,13 +6,16 @@
 
 <div *ngIf="showTweets">
   <mat-card class="tweet-card" *ngFor="let tweet of relatedTweets">
-    <mat-card-header>
+    <mat-card-header class="tweet-card-header">
       <img class="profile-img" src="{{ tweet.user.profile_image_url }}" style="border-radius: 100%;">
       <mat-card-title-group class="tweet-title">
         <mat-card-title><i class="fa fa-twitter" id="twitter-icon"></i>{{ tweet.user.name }}</mat-card-title>
         <mat-card-subtitle>{{ tweet.created_at}}</mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
+
+    <mat-divider></mat-divider>
+
     <mat-card-content>
       {{ tweet.text }}
     </mat-card-content>
