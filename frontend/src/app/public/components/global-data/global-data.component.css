@@ -1,39 +1,40 @@
-.coins {
-  display:inline;
-  color: rgb(114, 183, 218);
-  margin-right: 20px;
+.loading-bar {
+  margin: auto;
+  width: 22%;
+  padding-bottom: 2%;
 }
 
-.mc {
-  display:inline;
-  color: rgb(114, 183, 218);
-}
 
-.mcChangeTitle {
-  display:inline;
-  color: rgb(129, 126, 126);
-}
-
-.mcChangeBracket {
-  display:inline;
-  color: rgb(129, 126, 126);
-  margin-right: 20px;
+.market-stats {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  padding-bottom: 2%;
 }
 
 .positive {
-  display:inline;
+  position: relative;
+  bottom: 5px;
+  font-size: 10pt;
   color: rgb(97, 190, 97);
+  margin-bottom: 10%;
 }
 
 .negative {
-  display:inline;
+  font-size: 10pt;
   color: rgb(156, 34, 34);
 }
 
-.volume {
-  display:inline;
-  color: rgb(114, 183, 218);
+.data-heading {
+  color: rgb(129, 128, 128);
+  font-size: 11pt;
 }
+
+.data {
+  font-size: 17pt;
+  margin-bottom: 1%;
+}
+
 
 
 

@@ -37,6 +37,8 @@ import { RelatedTweetComponent } from './components/related-tweet/related-tweet.
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +83,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatTooltipModule,
     MatChipsModule,
     MatAutocompleteModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressBarModule 
   ],
   providers: [LineChartComponent]
 })
