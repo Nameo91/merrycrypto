@@ -44,11 +44,12 @@ form div button {
 }
 
 .right-side-register p {
-  color: rgb(155, 155, 155);
+  color: rgb(132, 132, 132);
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  font-weight: 300;
 }
 
 h1 {
