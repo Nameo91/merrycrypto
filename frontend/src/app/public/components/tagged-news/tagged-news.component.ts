@@ -18,7 +18,6 @@ export type News = {
 
 export class TaggedNewsComponent implements OnInit {
   filteredNews: News=[];
-  displayedNews: News=[];
   public id!: any;
 
   constructor(
@@ -34,7 +33,6 @@ export class TaggedNewsComponent implements OnInit {
   getfilteredNews() {
     this.newsService.getNews().subscribe((news: News) => {
       this.filteredNews = this.newsFilter(news);
-      this.displayedNews = this.filteredNews.slice(0,3);
     });
   }
   
