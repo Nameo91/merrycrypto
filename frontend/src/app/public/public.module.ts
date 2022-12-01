@@ -38,6 +38,8 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 @NgModule({
@@ -84,7 +86,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatChipsModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
-    MatProgressBarModule 
+    MatProgressBarModule,
+    MatSelectModule
   ],
   providers: [LineChartComponent]
 })

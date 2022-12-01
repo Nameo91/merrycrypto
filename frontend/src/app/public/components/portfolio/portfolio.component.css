@@ -1,37 +1,32 @@
 .wrapper {
   padding-top: 8%;
   margin: auto;
-  width: 50%;
+  width: 60%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.wrapper h1 {
+.wrapper h3 {
   text-align: center;
   font-weight: 350;
-  padding-bottom: 1%;
 }
 
-.titleButton {
+.wrapper div {
+  padding-bottom: 5%;
+}
+
+.heading {
   display: flex;
+  justify-content: space-between;
 }
 
-button {
-  margin-top: 110px;
-  margin-right: 0px;
-  margin-left: auto
+.stats {
+  padding-left: 2%;
 }
 
-.totalPortfolio {
-margin-top: 30px;
-margin-bottom: 30px;
-margin-left: auto;
-margin-right: auto;
+.portfolio-table {
+  display: flex;
+  justify-content: center;
 }
 
-.portfolioTable {
-  height: 50px;
-  width: 800px;
-  padding: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-}

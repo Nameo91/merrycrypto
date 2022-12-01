@@ -1,15 +1,17 @@
 <div class="wrapper">
 
-  <h1>My Portfolio</h1>
-  <button mat-raised-button color="primary" (click)="navigateTo('new/holding')">Add New Coin</button>
+  <div class="heading">
+    <h3>My Portfolio</h3>
+    <button mat-raised-button color="primary" (click)="navigateTo('new/holding')">Add New Coin</button>
+  </div>
+  
 
-
-  <div class="totalPortfolio">
+  <div class="stats">
     <app-total-portfolio></app-total-portfolio>
   </div>
-
-  <div class="portfolioTable">
+    
+  <div class="portfolio-table">
     <app-portfolio-table></app-portfolio-table>
   </div>
-
+  
 </div>

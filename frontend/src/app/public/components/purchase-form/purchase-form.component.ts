@@ -53,8 +53,10 @@ export class PurchaseFormComponent {
   cryptoCoin() {
     let coin = JSON.stringify(this.registrationForm.value.cryptoName)
       if (coin[2] == ':') {
+        console.log(this.Crypto[parseInt(coin[1]) - 1]);
         return this.Crypto[parseInt(coin[1]) - 1]
       } else {
+        console.log(this.Crypto[parseInt(coin[1] + coin[2])  - 1]);
         return this.Crypto[parseInt(coin[1] + coin[2])  - 1]
       }
   }

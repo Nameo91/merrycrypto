@@ -1,39 +1,24 @@
-.total{
+.stats-wrapper {
   display: flex;
+  justify-content: space-between;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
-
-.balance, .pnl, .coins {
-  border: solid;
-  width: 300px;
-  padding: 30px;
-  height: 120px;
-  margin-right: 20px;
+.stats-wrapper mat-card {
+  width: 250px;
   text-align: center;
-  border-radius: 15px;
-  border-color: rgb(200, 208, 201);
-  box-shadow: 5px 5px 5px rgb(154, 163, 150);
+}
+
+.stats-wrapper mat-card mat-card-content {
+  text-align: center;
+
 }
 
 .amount {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  padding-top: 10%;
 }
 
-.pnl .amount {
-  display: flex;
-  text-align: center;
-  text-align: bottom;
-}
-.pnl .amount h4 {
-  margin-left: 30px;
-}
-
-.pnl .amount h6 {
-  margin-left: 5px;
-  margin-top: 7px
-}
 
 .positive {
   color: rgb(97, 190, 97);
@@ -42,3 +27,16 @@
 .negative {
   color: rgb(156, 34, 34);
 }
+
+#percentage {
+  font-size: 10pt;
+  position: relative;
+  bottom: 7px;
+}
+
+.title {
+  color: rgb(129, 128, 128);
+}
+
+
+

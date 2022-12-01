@@ -1,40 +1,50 @@
 
-  <div class="container mt-5">
-    <div class="row custom-wrapper">
-      <h2 class="mb-3 text-center">Add new a holding</h2>
-      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-        <div class="d-grid">
-          <select
+ <mat-card>
+  <mat-card-title>
+    Add transaction &#10024;
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Choose a coin</mat-label>
+        <mat-select
+        (change)="changeCrypto($event)"
+        formControlName="cryptoName">
+          <mat-option *ngFor="let crypto of Crypto" [ngValue]="crypto">
+            {{crypto.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+      <select
             class="custom-select mb-3"
             (change)="changeCrypto($event)"
             formControlName="cryptoName"
           >
-            <option value="">Choose Crypto</option>
+            <option value="">Choose a coin*</option>
             <option *ngFor="let crypto of Crypto" [ngValue]="crypto">
               {{ crypto.name }}
             </option>
           </select>
-  
-          <mat-form-field appearance="outline">
-            <mat-label>Price of cryptocurrency at purchase</mat-label>
-            <input type="text" matInput placeholder="Price" formControlName="price">
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline">
-            <mat-label>Number of coins purchased</mat-label>
-            <input type="text" matInput placeholder="Number of coins" formControlName="amount">
-          </mat-form-field>
-  
-          <!-- error block -->
-          <div class="invalid-feedback" *ngIf="isSubmitted && cryptoName?.invalid">
-            <sup>*</sup>Please provide crypto name
-          </div>
-  
-          <div class="button">
-            <button mat-raised-button color="primary" type="submit">Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
- 
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price of cryptocurrency at purchase</mat-label>
+        <input type="text" matInput placeholder="Price" formControlName="price">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Number of coins purchased</mat-label>
+        <input type="text" matInput placeholder="Number of coins" formControlName="amount">
+      </mat-form-field>
+
+      <div class="invalid-feedback" *ngIf="isSubmitted && cryptoName?.invalid">
+        <sup>*</sup>Please provide crypto name
+      </div>
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

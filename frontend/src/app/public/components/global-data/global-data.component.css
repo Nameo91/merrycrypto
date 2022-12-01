@@ -23,6 +23,10 @@
 .negative {
   font-size: 10pt;
   color: rgb(156, 34, 34);
+  margin-bottom: 10%;
+  position: relative;
+  bottom: 5px;
+  font-size: 10pt;
 }
 
 .data-heading {
