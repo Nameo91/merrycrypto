@@ -1,10 +1,13 @@
+.watchlistTable{
+  padding-top: 8%;
+  margin: auto;
+  width: 50%;
+}
 
-.watchlistTable {
-  height: 50px;
-  width: 800px;
-  padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
+.watchlistTable h3 {
+  text-align: center;
+  font-weight: 350;
+  padding-bottom: 5%;
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {

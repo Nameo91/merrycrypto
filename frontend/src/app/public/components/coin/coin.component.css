@@ -1,5 +1,5 @@
 .main-wrapper {
-  padding-top: 7%;
+  padding-top: 8%;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: -1%;
+  margin-bottom: 1%;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -29,25 +29,12 @@
   float:left;
   width: 60px;
   height: 60px;
-  margin-top: 15%;
-}
-
-#coin-logo {
-  width: 60px;
-  float: left;
-}
-
-#coin-name {
-  position: relative;
-  font-size: 33pt;
-  font-weight: 350;
-  top: 18px;
-  left: 10px;
 }
 
 /* PRICE HEADER */
 
 .price-wrapper {
+  padding-top: 2%;
   margin-bottom: 3%;
   margin-right: 5%;
   margin-left: 5%;
@@ -68,12 +55,7 @@
 .price-header div .big-price {
   font-size: 25pt;
   margin-bottom: -8%;
-  margin-top: -8%;
-}
-
-.price-header div .change {
-  font-size: 14pt;
-  color: rgb(205, 3, 3);
+  margin-top: -15%;
 }
 
 /* MARKET HEADER */
@@ -81,7 +63,8 @@
 .market-header {
   align-items: center;
   display: flex;
-  margin-bottom: -1%;
+  margin-top: 1.5%;
+  margin-bottom: 0.5%;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -94,6 +77,7 @@
 .market-stats-header {
   align-items: center;
   display: flex;
+  margin-top: 1.5%;
   margin-right: 5%;
   margin-left: 5%;
 }
@@ -104,14 +88,14 @@
 }
 
 .market-stats-section {
-  margin-bottom: -1%;
+  margin-bottom: 3%;
   margin-right: 5%;
   margin-left: 5%;
   align-items: center;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 20%;
+  row-gap: 1%;
 }
 
 .stat-heading {

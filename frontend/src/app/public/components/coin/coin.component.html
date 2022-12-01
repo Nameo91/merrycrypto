@@ -44,7 +44,6 @@
     </div>
 
     <app-line-chart [data]="coinHistory.price" [labels]="coinHistory.time"></app-line-chart>
-    <!-- <app-line-chart></app-line-chart> -->
   </div>
   
   
@@ -153,7 +152,27 @@
       <div class="stat-number">{{coinData.low24h}}</div>
     </div>
   </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- MARKET HEADER -->
+  <div class="market-header">
+    <h1 id="market-heading">{{id}} Latest News</h1>
+  </div>
+
+  <mat-divider></mat-divider>
+
   <app-tagged-news></app-tagged-news>
+
+  <mat-divider></mat-divider>
+
+  <!-- MARKET HEADER -->
+  <div class="market-header">
+    <h1 id="market-heading">{{id}} Latest Tweets</h1>
+  </div>
+
+  <mat-divider></mat-divider>
+
   <app-related-tweet></app-related-tweet>
 </div>
 

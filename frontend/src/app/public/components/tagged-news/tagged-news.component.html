@@ -1,4 +1,4 @@
-
+<!-- 
     <div class="relatedNews">
       <div class="relatedNewsHeader">
       <h1>Related News</h1>
@@ -21,6 +21,25 @@
         </div>
       </div>
       <div class="no-related-news" *ngIf="filteredNews.length === 0"><p>No {{id}} related news today</p></div>
-    </div>    
+    </div>     -->
 
+<div class="container">
+  <mat-card *ngFor="let article of filteredNews" class="card">
+    <img mat-card-image src="{{article.image}}" alt="News image">
+    <mat-card-content>
+      <h5>News</h5>
+      <div class="content">
+        <h4>{{article.title}}</h4>
+        <p>{{article.body}}</p>
+      </div>
+
+      <a class="read-more" href="{{article.url}}">Read more...</a>
+      
+    </mat-card-content>
+  </mat-card>
+
+  <div class="no-related-news" *ngIf="filteredNews.length === 0">
+    <p>No {{id}} related news today <span id="emoji">🥶</span></p> 
+  </div>
+</div> 
 
