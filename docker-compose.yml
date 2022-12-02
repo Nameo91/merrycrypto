@@ -1,0 +1,60 @@
+version: '4.14.0'
+
+services:
+  # # Our NestJS Api
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+      # Only build development stage from Dockerfile
+      target: development
+    # Mount our host dir to the docker container
+    # Mount api directory (./api) to (:) docker container (/merrycrypto/src/app)
+    # Reflect File changes from host to container
+    volumes:
+      - ./api:/merrycrypto/src/app
+      - /merrycrypto/src/app/node_modules/
+    # RUN in debug mode: npm run start:debug --> Also start your vscode debugger
+    # Run in dev mode: npm run start:dev
+    command: yarn run start:dev
+    depends_on: 
+      - database
+    environment:
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      # DATABASE_URL: postgres://user:password@postgres:5432/db   
+      - NODE_ENV=development
+      - JWT_SECRET=super-secret
+      # PORT: 3000
+    ports:
+      - 3000:3000
+    
+  #   # Our Angular Frontend
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+      target: development
+    command: yarn run start
+    volumes:
+      - ./frontend:/merrycrypto/frontend/src/app
+      - /merrycrypto/frontend/src/app/node_modules
+    ports:
+      - 4200:4200
+    links:
+      - api
+
+  # Our Postgres Database for NestJS to connect to
+  database:
+    container_name: database
+    image: postgres:14.5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=merrycrypto
+      - POSTGRES_ENTITIES
+      - POSTGRES_MIGRATIONS
+    volumes:
+      - ./log-directory:/var/lib/postgresql/data
