@@ -30,7 +30,6 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
 import { PortfolioTableComponent } from './components/portfolio-table/portfolio-table.component';
 import { TotalPortfolioComponent } from './components/total-portfolio/total-portfolio.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SnowEffectComponent } from './components/snow-effect/snow-effect.component';
 import { TaggedNewsComponent } from './components/tagged-news/tagged-news.component';
 import { RelatedTweetComponent } from './components/related-tweet/related-tweet.component';
@@ -39,8 +38,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
-
-
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -61,11 +59,11 @@ import { MatSelectModule } from '@angular/material/select';
     PriceDisplayComponent,
     PortfolioTableComponent,
     TotalPortfolioComponent,
-    PageNotFoundComponent,
     SnowEffectComponent,
     TaggedNewsComponent,
     RelatedTweetComponent,
-    WatchlistComponent
+    WatchlistComponent,
+    ErrorPageComponent,
   ],
   imports: [
     CommonModule,
