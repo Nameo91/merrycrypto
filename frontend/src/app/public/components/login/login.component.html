@@ -1,49 +1,40 @@
-<div class="container">
+<div class="background">
+  
 
-  <div>
-    <div class="register">
-      <a [routerLink]="['../register']">Go to Register</a><!-- might not need this either, should be in navbar -->
-    </div>
-
-    <div>
-      <mat-card>
-        <div class="login-text">
-          <mat-card-title>Login</mat-card-title>
-        </div>
-        <mat-card-content>
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your email address</mat-label>
-              <input type="email" matInput placeholder="Email" formControlName="email">
-              <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
-              <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your password</mat-label>
-              <input [type]="passwordHide ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
-              <button mat-icon-button matSuffix color="primary" (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
-                <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
-            </mat-form-field>
-
-            <mat-hint *ngIf="!loginForm.valid"><small class="needed-info">Please fill out all needed information</small></mat-hint>
-
-            <div id="login-error-message">
-              <h5>{{errorMessage}}</h5>
-            </div>
-
-            <div class="login-error-gif" *ngIf="showErrorGif"><div class="login-error-gif-box"><iframe class = "login-error-gif-frame" allowfullscreen="" frameBorder="0" src="https://giphy.com/embed/dHJZAPXwT2eCmxE0Uf/video"></iframe></div></div>
-
-            <div class="button">
-              <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
-            </div>
-
-          </form>
-        </mat-card-content>
-      </mat-card>
-    </div>
+<mat-card>
+  <div class="login-text">
+    <mat-card-title>Login to track your favorite coin easily &#10024;</mat-card-title>
   </div>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email address</mat-label>
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input [type]="passwordHide ? 'password' : 'text'" matInput placeholder="Password" formControlName="password">
+        <button mat-icon-button matSuffix color="primary" (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+          <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
+      </mat-form-field>
+
+      <mat-hint *ngIf="!loginForm.valid"><small class="needed-info">Please fill out all needed information</small></mat-hint>
+
+      <mat-error id="bottom-error"><small>{{errorMessage}}</small></mat-error>
+
+      <!-- <div class="login-error-gif" *ngIf="showErrorGif"><div class="login-error-gif-box"><iframe class = "login-error-gif-frame" allowfullscreen="" frameBorder="0" src="https://giphy.com/embed/dHJZAPXwT2eCmxE0Uf/video"></iframe></div></div> -->
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
 </div>

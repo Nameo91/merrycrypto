@@ -1,34 +1,32 @@
-.titleButton {
-  display: flex;
-}
-
-/* button {
-  margin-top: 110px;
-  margin-right: 0px;
-  margin-left: auto
-}
-
-body {
-  max-width: 1000px;
+.wrapper {
+  padding-top: 8%;
   margin: auto;
-} */
-
-.totalPortfolio {
-margin-top: 30px;
-margin-bottom: 30px;
-margin-left: auto;
-margin-right: auto;
+  width: 60%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.portfolioTable {
-  height: 50px;
-  width: 800px;
-  padding: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
+.wrapper h3 {
+  text-align: center;
+  font-weight: 350;
 }
 
-/* h1 {
-  margin-top: 100px
-} */
+.wrapper div {
+  padding-bottom: 5%;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats {
+  padding-left: 2%;
+}
+
+.portfolio-table {
+  display: flex;
+  justify-content: center;
+}
+

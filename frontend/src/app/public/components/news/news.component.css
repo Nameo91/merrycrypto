@@ -1,63 +1,68 @@
-/* body {
-  margin: auto;
-  margin-top: 0px;
-  margin-right: 100px;
-} */
-
-.news {
-  margin-top: 0px;
-  margin-left: 50px;
-  width: 1000px
-}
 
 .container {
-  margin-top: 0px;
-  margin-left: 130px;
-  margin-right: auto;
-  position: relative;
+  padding-top: 8%;
+  margin:auto;
+  width: 90%;
 }
 
-/* h1{
-  margin-top: 100px;
-  font-size: 30px;
-  margin-left: 150px;
-  margin-right: auto
-} */
-
-.box {
-  position: relative;
-  padding: 20px 20px 20px 20px;
-  height: 480px;
-  width: 250px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 100px;
+.container h3 {
+  text-align: center;
+  font-weight: 350;
+  padding-bottom: 3%;
 }
 
-.box h4 {
-  margin-top: 10px;
-  font-size: 16px;
+.card {
+  max-width: 400px;
+  display: inline-block;
+  margin: 1%;
+  height: 500px;
+}
+
+img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+
+.content {
+  height: 200px;
+  display: block;
   overflow: hidden;
-  height: 80px
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.box p {
-  height: 100px;
+.card p {
+  height: 80px;
+  display: block;
   overflow: hidden;
+  color: rgb(146, 145, 145);
+  font-size: 10pt;
+  line-height: 25px;
+  margin-top: 15px;
 }
 
-.box .button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.card h4 {
+  font-size: 15pt;
+  line-height: 25px;
 }
 
-/* li{
-  float: left;
-  list-style-type: none;
-}  */
+.card h5 {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #276a2a;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-/* .image {
-  height: 300px;
-  width: 300px;
-} */
+.read-more {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #276a2a;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}

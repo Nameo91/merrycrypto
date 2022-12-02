@@ -1,44 +1,21 @@
+<div class="container" >
+  <h3>Latest cryptocurrency news</h3>
 
-<div class="news">
-  <h1>Recent Crypto News</h1>
-<div class="container mt-5" >
-
-  <div class="row">
-
-    <div *ngFor="let article of news" class="col-lg-3 mt-3 mb-3">
-        
-    <li>
-      <div class="box">
-        <img src="{{article.image}}" width="100%">
+  <mat-card *ngFor="let article of news" class="card">
+    <img mat-card-image src="{{article.image}}" alt="News image">
+    <mat-card-content>
+      <h5>News</h5>
+      <div class="content">
         <h4>{{article.title}}</h4>
-        <p>{{article.body}}</p> 
-        <a mat-raised-button href="{{article.url}}" class="button">Read more</a>
+        <p>{{article.body}}</p>
       </div>
-    </li> 
- 
-    </div>
-  
-  </div>
+
+      <a class="read-more" href="{{article.url}}">Read more...</a>
+      
+    </mat-card-content>
+  </mat-card>
 
 </div>
-</div>
 
 
 
-
-<!-- <h1>Latest Crypto News</h1>
-
-<div class="mb-1" style="width: 60%" *ngFor="let article of news">
-  <div class="image">
-    <img src="{{article.image}}">
-  </div>
-  <div class="title">
-     <h2>{{article.title}}</h2>
-  </div>
-  <div class="body">
-    {{article.body}}
- </div>
-
- <a href="{{article.url}}" target="_blank">Visit Article</a>
-  
-</div> -->

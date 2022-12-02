@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm!: FormGroup;
@@ -53,7 +53,10 @@ export class LoginComponent {
     const password = this.loginForm.value.password;
     this.authService
       .signin('user', email, password)
-      .pipe(map((token) => this.router.navigate([''])))
+      .pipe(map((token) => this.router.navigate([''])
+      .then(() => {
+        window.location.reload();
+      })))
       .subscribe(
         (data) => {
           return data;
