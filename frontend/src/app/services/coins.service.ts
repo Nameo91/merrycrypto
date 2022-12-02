@@ -12,7 +12,7 @@ export class CoinsService {
   constructor(private http: HttpClient) { }
 
   getCoins(): Observable<any> {
-    return this.http.get(`${CoinsService.API_URL}/coins`)
+    return this.http.get(`${CoinsService.API_URL}/api/coins`)
       .pipe(map((res: any) => res['coins']));
   }
 }

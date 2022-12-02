@@ -12,7 +12,7 @@ export class ExchangesService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get(`${ExchangesService.API_URL}/exchanges`)
+    return this.http.get(`${ExchangesService.API_URL}/api/exchanges`)
       .pipe(map((res: any) => res['exchangeData']));
   }
 }

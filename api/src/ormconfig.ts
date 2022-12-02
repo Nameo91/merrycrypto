@@ -7,14 +7,14 @@ const data: any = dotenv.parse(fs.readFileSync(`${environment}.env`));
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'database',
   port: 5432,
   username: data.DB_USERNAME,
   password: data.DB_PASSWORD,
   database: 'merrycrypto',
-	entities: ['dist/**/*.entity{.ts,.js}'], 
-  synchronize: false,
-	migrations: ['dist/migrations/**/*{.ts,.js}']
+  entities: ['dist/**/*.entity{.ts,.js}'],
+  synchronize: true,
+  migrations: ['dist/migrations/**/*{.ts,.js}'],
 };
 
 export default config;

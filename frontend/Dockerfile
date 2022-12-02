@@ -1,4 +1,3 @@
-# Stage 1: build
 FROM node:18 AS development
 
 WORKDIR /merrycrypto/frontend/src/app
@@ -9,6 +8,10 @@ RUN yarn install
 
 COPY . .
 
+CMD ["ng", "serve", "--host", "0.0.0.0"]
+
 RUN yarn run build
 
 EXPOSE 4200
+
+

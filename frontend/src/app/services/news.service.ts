@@ -12,7 +12,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   getNews(): Observable<any> {
-    return this.http.get(`${NewsService.API_URL}/news`)
+    return this.http.get(`${NewsService.API_URL}/api/news`)
       .pipe(map((res: any) => res['news']));
   }
 }

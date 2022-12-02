@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoinService } from 'src/app/coin.service';
-import { LineChartComponent } from '../line-chart/line-chart.component';
+import { LineChartComponent } from 'src/app/public/components/line-chart/line-chart.component';
 
 export interface Currency {
   name: string;

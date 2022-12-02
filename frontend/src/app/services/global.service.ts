@@ -12,7 +12,7 @@ export class GlobalService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get(`${GlobalService.API_URL}/global`)
+    return this.http.get(`${GlobalService.API_URL}/api/global`)
       .pipe(map((res: any) => res['globalData']));
   }
 }

@@ -12,7 +12,7 @@ export class PriceService {
   constructor(private http: HttpClient) { }
 
   getPrice(from: string, to: string): Observable<number> {
-    return this.http.get(`${PriceService.API_URL}/price?from=${from}&to=${to}`)
+    return this.http.get(`${PriceService.API_URL}/api/price?from=${from}&to=${to}`)
       .pipe(map((res: any) => res['price']));
   }
 }

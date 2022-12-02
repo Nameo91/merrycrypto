@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

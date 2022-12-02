@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { CoinsService } from '@app/coins/coins.service';
 
-@Controller('coins')
+@Controller()
 export class CoinsController {
   constructor(private readonly coinsService: CoinsService) {}
 
