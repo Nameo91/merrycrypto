@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from "@nestjs/common";
-import { CoinService } from "./coin.service";
+import { CoinService } from "@app/coin/coin.service";
 
 @Controller()
 export class CoinController{

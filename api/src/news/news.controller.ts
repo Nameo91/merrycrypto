@@ -1,11 +1,11 @@
 import { Controller, Get } from '@nestjs/common';
-import { NewsService } from './news.service';
+import { NewsService } from '@app/news/news.service';
 
-@Controller('news')
+@Controller()
 export class NewsController {
   constructor(private readonly newsService: NewsService) {}
 
-  @Get()
+  @Get('api/news')
   async get(): Promise<{ news: any }> {
     let news = await this.newsService.getNews();
     return { news };

@@ -12,9 +12,9 @@ const config: PostgresConnectionOptions = {
   username: data.DB_USERNAME,
   password: data.DB_PASSWORD,
   database: 'merrycrypto',
-	entities: [__dirname + '/**/*.entity{.ts,.js}'], 
+	entities: ['dist/**/*.entity{.ts,.js}'], 
   synchronize: false,
-	migrations: [__dirname + '/migrations/**/*{.ts,.js}']
+	migrations: ['dist/migrations/**/*{.ts,.js}']
 };
 
 export default config;

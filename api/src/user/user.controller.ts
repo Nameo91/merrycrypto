@@ -17,8 +17,8 @@ import { AuthGuard } from '@app/user/guards/auth.guard';
 import { UserEntity } from '@app/user/user.entity';
 import { User } from '@app/user/decorators/user.decorator';
 import { CreateStarDto } from '@app/user/dto/createStar.dto';
-import { CreatePortfolioDto } from './dto/createPortfolio.dto';
-import { DeleteHoldingDto } from './dto/deleteHolding';
+import { CreatePortfolioDto } from '@app/user/dto/createPortfolio.dto';
+import { DeleteHoldingDto } from '@app/user/dto/deleteHolding';
 
 @Controller()
 export class UserController {

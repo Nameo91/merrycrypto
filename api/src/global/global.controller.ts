@@ -1,11 +1,11 @@
 import { Controller, Get } from '@nestjs/common';
-import { GlobalService } from './global.service';
+import { GlobalService } from '@app/global/global.service';
 
-@Controller('global')
+@Controller()
 export class GlobalController {
   constructor(private readonly globalService: GlobalService) {}
 
-  @Get()
+  @Get('api/global')
   async get(): Promise<{ globalData: any }> {
     let globalData = await this.globalService.getData();
     return { globalData };

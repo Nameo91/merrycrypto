@@ -7,20 +7,20 @@ import { UserModule } from '@app/user/user.module';
 import { AuthMiddleware } from '@app/user/middlewares/auth.middleware';
 import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
-import { CoinsController } from './coins/coins.controller';
-import { CoinsService } from './coins/coins.service';
-import { GlobalController } from './global/global.controller';
-import { GlobalService } from './global/global.service';
-import { NewsController } from './news/news.controller';
-import { NewsService } from './news/news.service';
-import { ExchangesController } from './exchanges/exchanges.controller';
-import { ExchangesService } from './exchanges/exchanges.service';
-import { CoinController } from './coin/coin.controller';
-import { CoinService } from './coin/coin.service';
-import { PriceController } from './price/price.controller';
-import { PriceService } from './price/price.service';
-import { TwitterController } from './twitter/twitter.controller';
-import { TwitterService } from './twitter/twitter.service';
+import { CoinsController } from '@app/coins/coins.controller';
+import { CoinsService } from '@app/coins/coins.service';
+import { GlobalController } from '@app/global/global.controller';
+import { GlobalService } from '@app/global/global.service';
+import { NewsController } from '@app/news/news.controller';
+import { NewsService } from '@app/news/news.service';
+import { ExchangesController } from '@app/exchanges/exchanges.controller';
+import { ExchangesService } from '@app/exchanges/exchanges.service';
+import { CoinController } from '@app/coin/coin.controller';
+import { CoinService } from '@app/coin/coin.service';
+import { PriceController } from '@app/price/price.controller';
+import { PriceService } from '@app/price/price.service';
+import { TwitterController } from '@app/twitter/twitter.controller';
+import { TwitterService } from '@app/twitter/twitter.service';
 
 @Module({
   imports: [

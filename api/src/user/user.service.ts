@@ -8,9 +8,9 @@ import { JWT_SECRET } from '../config';
 import { sign } from 'jsonwebtoken';
 import { LoginUserDto } from '@app/user/dto/loginUser.dto';
 import { compare } from 'bcrypt';
-import { CreateStarDto } from './dto/createStar.dto';
-import { CreatePortfolioDto } from './dto/createPortfolio.dto';
-import { DeleteHoldingDto } from './dto/deleteHolding';
+import { CreateStarDto } from '@app/user/dto/createStar.dto';
+import { CreatePortfolioDto } from '@app/user/dto/createPortfolio.dto';
+import { DeleteHoldingDto } from '@app/user/dto/deleteHolding';
 
 @Injectable()
 export class UserService {
