@@ -1,6 +1,26 @@
-## Description
+# MerryCrypto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This project serves as a tool for collecting and organising cryptocurrency data. It includes a built-in portfolio manager and is designed with a festive twist, featuring Christmas theme.
+
+# Description
+
+Our user story:
+- Users can sign-up to the platform.
+- Users can log in and sign out of the platform.
+- Users can track all their cryptocurrency purchases.
+- Users can favourite cryptocurrencies and view them in their watchlist.
+- Users can see live crypto data, latest news and tweets.
+
+To obtain real-time data, this project makes use of 10 distinct API calls from three different providers.
+
+# Technologies
+
+Merrycrypto was developed using TypeScript and features a frontend built with Angular and a backend built with NestJS. 
+
+# Project Setup
+
+1. Fork this repository
+2. Clone your fork to your local machine
 
 ## Backend (NestJS) installation
 
@@ -53,19 +73,22 @@ CRYPTOCOMPARE_API_KEY=... <- Insert your own api key
 ```
 
 ## Frontend (Angular) installation
+
 ```bash
 $ cd frontend
 $ yarn install
 ```
 
-
-## Running the app
+# Running the application
 
 ```bash
 # development
 $ cd api
 $ yarn start
 ```
+# How to contribute ❤
 
-## Test
+Follow the Project Setup / Running the application steps above to build upon our exsiting project. Open source contributions can include translating to other languages, adding new features, and improving and expanding test functionality.
+
+We welcome any and all contributions. 
 
