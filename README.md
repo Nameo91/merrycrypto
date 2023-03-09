@@ -86,8 +86,7 @@ $ yarn install
 $ cd api
 $ yarn start
 ```
-Click the DemoDay below and Enjoy our showcase on Makers Demo Day
-[DemoDay](https://youtu.be/jNPUt79UpsA?t=2056)
+Enjoy our showcase on Makers Demo Day! [Click here](https://youtu.be/jNPUt79UpsA?t=2056)
 
 # How to contribute ❤
 
